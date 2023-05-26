@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class PortfolioCards extends Block
+class Questionnaire extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Portfolio Cards';
+    public $name = 'Questionnaire';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Portfolio Cards block.';
+    public $description = 'A simple Questionnaire block.';
 
     /**
      * The block category.
@@ -33,7 +33,7 @@ class PortfolioCards extends Block
      *
      * @var string|array
      */
-    public $icon = 'format-gallery';
+    public $icon = 'editor-ul';
 
     /**
      * The block keywords.
@@ -47,7 +47,7 @@ class PortfolioCards extends Block
      *
      * @var array
      */
-    public $post_types = ['page'];
+    public $post_types = [];
 
     /**
      * The parent block type allow list.
@@ -90,7 +90,7 @@ class PortfolioCards extends Block
      * @var array
      */
     public $supports = [
-        'align' => false,
+        'align' => true,
         'align_text' => false,
         'align_content' => false,
         'full_height' => false,
@@ -123,7 +123,8 @@ class PortfolioCards extends Block
      * @var array
      */
     public $example = [
-        'portfolio_cards_field' => '',
+        'questionnaire_title_field' => 'Questionnaire Title',
+        'questions_field' => ''
     ];
 
     /**
@@ -134,7 +135,8 @@ class PortfolioCards extends Block
     public function with()
     {
         return [
-            'portfolio_cards_field' => $this->portfolioCardsField(),
+            'questionnaire_title_field' => $this->questionnaireTitleField(),
+            'questions_field' => $this->questionsField()
         ];
     }
 
@@ -145,25 +147,16 @@ class PortfolioCards extends Block
      */
     public function fields()
     {
-        $portfolioCards = new FieldsBuilder('portfolio_cards');
+        $questionnaire = new FieldsBuilder('questionnaire');
 
-        $portfolioCards
-            ->addRepeater('portfolio_cards_field', [
-
-            ])
-                ->addRelationship('title_field', [
-                    'label' => 'Title/Category',
-                    'required' => 1,
-                    'post_type' => 'portfolio_image',
-                    'filters' => [2 => 'taxonomy'],
-                    'return_format' => 'object',
-                    'elements' => 'featured_image',
-                    'min' => 1,
-                    'max' => 1,
-                ])
+        $questionnaire
+            ->addText('questionnaire_title_field')
+            ->addRepeater('questions_field')
+                ->addText('question_title_field')
+                ->addText('question_answer_field')
             ->endRepeater();
 
-        return $portfolioCards->build();
+        return $questionnaire->build();
     }
 
     /**
@@ -171,9 +164,14 @@ class PortfolioCards extends Block
      *
      * @return array
      */
-    public function portfolioCardsField()
+    public function questionnaireTitleField()
     {
-        return get_field('portfolio_cards_field') ?: $this->example['portfolio_cards_field'];
+        return get_field('questionnaire_title_field') ?: $this->example['questionnaire_title_field'];
+    }
+
+    public function questionsField()
+    {
+        return get_field('questions_field') ?: $this->example['questions_field'];
     }
 
     /**
