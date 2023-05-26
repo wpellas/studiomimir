@@ -3,10 +3,6 @@
 @import 'tailwindcss/utilities';
 
 /* Extra */
-.bgCalc1 {
-    background-color: #F2F2F2;
-}
-.bgCalc2 {
+.bgCalc {
     top: calc(50% - 150px);
-    background-color: #8f9e82;
 }

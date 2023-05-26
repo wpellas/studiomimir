@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class ImageDivider extends Block
+class PortfolioCards extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Image Divider';
+    public $name = 'Portfolio Cards';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Image Divider block.';
+    public $description = 'A simple Portfolio Cards block.';
 
     /**
      * The block category.
@@ -33,7 +33,7 @@ class ImageDivider extends Block
      *
      * @var string|array
      */
-    public $icon = 'images-alt2';
+    public $icon = 'editor-ul';
 
     /**
      * The block keywords.
@@ -123,8 +123,7 @@ class ImageDivider extends Block
      * @var array
      */
     public $example = [
-        'field_image_type' => true,
-        'dividerImages' => ''
+        'portfolio_cards_field' => '',
     ];
 
     /**
@@ -135,8 +134,7 @@ class ImageDivider extends Block
     public function with()
     {
         return [
-            'field_image_type' => $this->imageType(),
-            'dividerImages' => $this->dividerImages()
+            'portfolio_cards_field' => $this->portfolioCardsField(),
         ];
     }
 
@@ -147,38 +145,35 @@ class ImageDivider extends Block
      */
     public function fields()
     {
-        $imageDivider = new FieldsBuilder('image_divider');
+        $portfolioCards = new FieldsBuilder('portfolio_cards');
 
-        $imageDivider
-            ->addRepeater('dividerImages', [
-                'label' => 'Custom Divider Images',
-                'instructions' => 'Leave empty for random portfolio images.',
-                'button_label' => 'Add Image',
-                'min' => 1,
-                'max' => 5
+        $portfolioCards
+            ->addRepeater('portfolio_cards_field', [
+
             ])
-                ->addImage('image', [
-                    'label' => 'Image',
-                    'instructions' => 'Select image.'
+                ->addRelationship('title_field', [
+                    'label' => 'Title/Category',
+                    'required' => 1,
+                    'post_type' => 'portfolio_image',
+                    'filters' => [2 => 'taxonomy'],
+                    'return_format' => 'object',
+                    'elements' => 'featured_image',
+                    'min' => 1,
+                    'max' => 1,
                 ])
             ->endRepeater();
 
-        return $imageDivider->build();
+        return $portfolioCards->build();
     }
 
     /**
-     * Return the dividerImages field.
+     * Return the items field.
      *
      * @return array
      */
-    public function dividerImages()
+    public function portfolioCardsField()
     {
-        return get_field('dividerImages') ?: $this->example['dividerImages'];
-    }
-
-    public function imageType()
-    {
-        return get_field('field_image_type') ?: $this->example['field_image_type'];
+        return get_field('portfolio_cards_field') ?: $this->example['portfolio_cards_field'];
     }
 
     /**
