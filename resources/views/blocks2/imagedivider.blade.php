@@ -34,11 +34,11 @@
     'posts_per_page' => 5,
     'orderby' => 'rand'
 ])
-@endif
 
 <div class="w-full h-96 relative hidden lg:flex justify-between gap-2 lg:gap-4 py-4 lg:py-8">
     @posts
-        <img class="h-full w-auto object-scale-down" src="{{get_the_post_thumbnail_url()}}" alt="">
+    <img class="h-full w-auto object-scale-down" src="{{get_the_post_thumbnail_url()}}" alt="">
     @endposts
 </div>
+@endif
 

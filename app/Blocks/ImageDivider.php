@@ -123,7 +123,8 @@ class ImageDivider extends Block
      * @var array
      */
     public $example = [
-        'dividerImages' => ''
+        'dividerImages' => '',
+        'field_image_type' => false
     ];
 
     /**
@@ -135,6 +136,7 @@ class ImageDivider extends Block
     {
         return [
             'dividerImages' => $this->dividerImages(),
+            'field_image_type' => $this->imageType()
         ];
     }
 
@@ -148,13 +150,11 @@ class ImageDivider extends Block
         $imageDivider = new FieldsBuilder('image_divider');
 
         $imageDivider
-            ->addTrueFalse('image_type', [
+            ->addTrueFalse('field_image_type', [
                 'label' => 'Custom Images',
                 'required' => 1,
-                'default_value' => 0,
-            ]);
-        
-        $imageDivider
+                'default_value' => false,
+            ])
             ->addRepeater('dividerImages', [
                 'label' => 'Divider Images',
                 'instructions' => 'Add your custom images, at least one and five at most.',
@@ -162,6 +162,7 @@ class ImageDivider extends Block
                 'min' => 1,
                 'max' => 5
             ])
+            ->conditional('field_image_type', '!=', false)
                 ->addImage('image', [
                     'label' => 'Image',
                     'instructions' => 'Select image.'
@@ -179,6 +180,11 @@ class ImageDivider extends Block
     public function dividerImages()
     {
         return get_field('dividerImages') ?: $this->example['dividerImages'];
+    }
+
+    public function imageType()
+    {
+        return get_field('field_image_type') ?: $this->example['field_image_type'];
     }
 
     /**
