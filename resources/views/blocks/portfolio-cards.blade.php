@@ -9,7 +9,7 @@
                 <div class="h-full w-full p-6 flex flex-wrap justify-center">
                     <a class="h-8 w-full p-2 text-3xl text-center font-primary text-primary hover:text-primary" href="{{!is_admin() ? get_home_url() . "/$terms->taxonomy/$terms->slug" : ""}}">
                     <div class="w-full h-80 bg-cover bg-center mb-2" style="background-image: url({{get_the_post_thumbnail_url($title->ID)}})"></div>
-                        {{esc_html(mb_strtoupper($terms->name))}}
+                      {{esc_html(mb_strtoupper($terms->name))}}
                     </a>
                 </div>
               </li>

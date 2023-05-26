@@ -6,7 +6,7 @@
       <ul class="w-full flex justify-center flex-wrap">
           @fields('questions_field')
           <li id="questionnaire" class="relative w-full border-b-[1px] border-primary my-4 pb-2 text-primary font-primary list-none">
-              <h1 class="text-xl">
+              <h1 class="text-xl capitalize">
                 @sub('question_title_field')
               </h1>
               @if(!is_admin())
