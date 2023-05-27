@@ -147,7 +147,7 @@ class Questionnaire extends Block
      */
     public function fields()
     {
-        $questionnaire = new FieldsBuilder('questionnaire');
+        $questionnaire = new FieldsBuilder('questionnaire', ['position' => 'normal']);
 
         $questionnaire
             ->addText('questionnaire_title_field')

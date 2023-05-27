@@ -134,7 +134,7 @@ class Instagram extends Block
     public function with()
     {
         return [
-            'title_field' => $this->titleField(),
+            'title_field' => $this->titleField()
         ];
     }
 
@@ -168,8 +168,8 @@ class Instagram extends Block
      *
      * @return void
      */
-    public function enqueue()
+    public function enqueue(): void
     {
-        //
+        wp_enqueue_script( 'Instagram', get_template_directory_uri() . '/resources/scripts/blocks/Instagram.jsx', array( 'jquery' ), '1.0', true );
     }
 }

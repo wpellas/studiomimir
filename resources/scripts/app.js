@@ -1,4 +1,5 @@
 import domReady from '@roots/sage/client/dom-ready';
+import MyComponent from './blocks/Instagram.js';
 
 /**
  * Application entrypoint
