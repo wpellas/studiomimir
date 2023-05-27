@@ -12,8 +12,8 @@
   @endif
 
 @if (has_nav_menu('primary_navigation'))
-  <header class="block lg:hidden z-20 fixed h-[400px] w-[100vw] top-0">
-    <span id="openSmallMenu" class="material-symbols-outlined absolute top-4 right-4 text-primary cursor-pointer text-4xl select-none">menu</span>
+  <header class="block lg:hidden z-20 fixed h-full w-[100vw] top-0">
+    <span id="openSmallMenu" class="material-symbols-outlined absolute top-4 right-4 text-black cursor-pointer text-4xl select-none">menu</span>
     {{-- Small Format --}}
     <nav id="smallMenu" class="nav-small relative top-0 left-0 hidden flex justify-end h-full" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       <div class="text-primary bg-secondary h-full w-[80%] p-8 text-4xl">

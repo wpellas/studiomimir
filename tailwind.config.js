@@ -11,7 +11,10 @@ const config = {
         secondary: '#F2F2F2'
       }, // Extend Tailwind's default colors
       spacing: {
-        default: '1024px'
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px'
       }
     },
     screens: {

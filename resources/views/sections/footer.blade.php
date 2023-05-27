@@ -1,5 +1,5 @@
 <footer class="content-info flex flex-wrap justify-center items-center font-primary my-8">
-  <div class="w-full lg:w-[1024px] px-8 lg:px-0 h-[100px]">
+  <div class="w-full lg:w-lg px-8 lg:px-0 h-[100px]">
 
     {{-- @php(dynamic_sidebar('sidebar-footer')) --}}
     @if (has_nav_menu('secondary_navigation'))

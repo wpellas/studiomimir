@@ -7,7 +7,7 @@
     'meta_type' => 'DATETIME'
 ])
 <div class="w-full h-full relative flex flex-wrap justify-center my-4 lg:my-8 {{ $block->classes }}">
-    <div class="w-[1024px] h-full z-10">
+    <div class="w-lg h-full z-10">
         <h1 class="text-4xl text-center font-primary text-primary pb-8 uppercase">{{esc_html(strip_tags($title_field))}}</h1>
         <ul class="w-full h-full flex flex-wrap justify-center items-center gap-4 lg:gap-8">
         @posts
