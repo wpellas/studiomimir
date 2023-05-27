@@ -123,9 +123,9 @@ class WhoAmI extends Block
      * @var array
      */
     public $example = [
-        'title' => 'Hello World',
-        'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores nemo fuga ipsa quod praesentium, consectetur ex. Deserunt unde officia incidunt reiciendis ipsam velit nostrum ad tempora ducimus totam quia, exercitationem vel, beatae vitae a eligendi, dolore accusantium consequuntur sunt veritatis voluptatem! Sint molestiae aperiam non culpa natus eligendi consequatur a?',
-        'image' => ''
+        'title_field' => 'About Me',
+        'body_field' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores nemo fuga ipsa quod praesentium, consectetur ex. Deserunt unde officia incidunt reiciendis ipsam velit nostrum ad tempora ducimus totam quia, exercitationem vel, beatae vitae a eligendi, dolore accusantium consequuntur sunt veritatis voluptatem! Sint molestiae aperiam non culpa natus eligendi consequatur a?',
+        'image_field' => ''
     ];
     /**
      * Data to be passed to the block before rendering.
@@ -135,9 +135,9 @@ class WhoAmI extends Block
     public function with()
     {
         return [
-            'title' => $this->title(),
-            'body' => $this->body(),
-            'image' => $this->image()
+            'title_field' => $this->title(),
+            'body_field' => $this->body(),
+            'image_field' => $this->image()
         ];
     }
 
@@ -151,17 +151,17 @@ class WhoAmI extends Block
         $whoAmI = new FieldsBuilder('who_am_i');
 
         $whoAmI
-            ->addText('title', [
+            ->addText('title_field', [
                 'label' => 'Title Text'
             ])
-            ->addWysiwyg('body', [
+            ->addWysiwyg('body_field', [
                 'label' => 'Body Text',
                 'instructions' => 'Write the content in this field.',
                 'tabs' => 'visual',
                 'toolbar' => 'basic',
                 'media_upload' => 0,
             ])
-            ->addImage('image');
+            ->addImage('image_field');
 
         return $whoAmI->build();
     }
@@ -173,17 +173,17 @@ class WhoAmI extends Block
      */
     public function title()
     {
-        return get_field('title') ?: $this->example['title'];
+        return get_field('title_field') ?: $this->example['title_field'];
     }
 
     public function body()
     {
-        return get_field('body') ?: $this->example['body'];
+        return get_field('body_field') ?: $this->example['body_field'];
     }
 
     public function image()
     {
-        return get_field('image') ?: $this->example['image'];
+        return get_field('image_field') ?: $this->example['image_field'];
     }
 
     /**
