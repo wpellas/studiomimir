@@ -5,4 +5,5 @@
   @else
   
   @endif
+  <MyComponent />
 </div>

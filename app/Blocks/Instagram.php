@@ -170,6 +170,6 @@ class Instagram extends Block
      */
     public function enqueue(): void
     {
-        wp_enqueue_script( 'Instagram', get_template_directory_uri() . '/resources/scripts/blocks/Instagram.jsx', array( 'jquery' ), '1.0', true );
+        wp_enqueue_script( 'Instagram', get_template_directory_uri() . '/resources/scripts/blocks/instagram.js', array( 'jquery' ), '1.0', true );
     }
 }
