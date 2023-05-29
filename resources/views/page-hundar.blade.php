@@ -13,7 +13,7 @@
         
     @php($pedigreeImages = get_field('pedigree_images'))
     <li id="dogPedigree" class="h-60 w-60">
-        <img id="pedigreeImage" class="h-60 w-60 object-cover" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
+        <img id="pedigreeImage" class="h-60 w-60 object-cover hover:opacity-60" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
         <div id="pedigreeContainer" class="hidden fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75"></div>
             <div class="z-30 bg-secondary w-lg relative">
@@ -23,13 +23,13 @@
                 <div class="p-4">
                     <div class="w-[992px] h-[500px] flex gap-4">
                         <div class="min-w-[480px] h-[480px]">
-                            <div class="min-w-[480px] h-[480px] bg-cover" style="background-image: url({{$pedigreeImages[0]['pedigree_image']}})">
+                            <div id="pedigreeImageBig" class="min-w-[480px] h-[480px] bg-cover bg-center" style="background-image: url({{$pedigreeImages[0]['pedigree_image']}})">
                                 
                             </div>
                             <div class="min-w-[480px] h-[30px] flex justify-center items-center">
-                            <span class="material-symbols-outlined">arrow_back_ios</span>
-                            <p class="text-zinc-800">1/{{count($pedigreeImages)}}</p>
-                            <span class="material-symbols-outlined">arrow_forward_ios</span>
+                            <span id="pedigreePrevious" class="material-symbols-outlined">arrow_back_ios</span>
+                            <p class="text-zinc-800"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
+                            <span id="pedigreeNext" class="material-symbols-outlined">arrow_forward_ios</span>
                         </div>
                     </div>
                     <div class="relative min-w-[480px] text-left">
@@ -44,7 +44,7 @@
                     <div class="w-full pt-4">
                         <ul class="flex gap-[6.4px]">
                             @foreach ($pedigreeImages as $pedigreeImage)
-                            <li class="w-40 h-40 bg-cover" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
+                            <li id="pedigreeImageSmall" class="w-40 h-40 bg-cover bg-center hover:opacity-60" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
                             @endforeach
                         </ul>
                     </div>
