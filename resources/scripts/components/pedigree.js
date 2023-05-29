@@ -83,6 +83,13 @@ if (dogPedigree) {
     function toggleHidden() {
       pedigreeCard.classList.toggle('hidden')
       checkOpen = !checkOpen
+      id = 0
+      pedigreeImageSmall.forEach((item) => {
+        item.classList.remove("border-2")
+      })
+      pedigreeImageSmall[0].classList.add("border-2")
+      pedigreeImageBig.setAttribute('style', smallImages[0].image)
+      pedigreeImageNumber.innerHTML = 1
     }
 
     // Change image by pressing keyboard arrows
