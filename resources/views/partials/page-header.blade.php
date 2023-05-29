@@ -1,4 +1,8 @@
+@php($subtitleCheck = "")
+@if(get_field('subtitles'))
 @php($subtitleCheck = get_field('subtitles')[0]['subtitle'])
+@endif
+
 <div class="w-full {{$subtitleCheck == "" ? "h-[66vh]" : "h-[100vh]"}}">
   <div class="w-full {{$subtitleCheck == "" ? "h-full" : "h-2/3"}} bg-cover bg-top" style="background-image: url({{get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : $thumbnail}})"></div>
   @if(!$subtitleCheck == "")

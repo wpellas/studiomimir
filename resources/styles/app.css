@@ -30,16 +30,21 @@
                 gap: 2rem;
                 border-bottom: 1px solid #ececec;
                 .menu-item {
+                    flex-grow: 0;
                     color: #ececec;
                     position: relative;
+                    font-size: 1.5rem;
                     .sub-menu {
                         position: absolute;
-                        overflow: hidden;
-                        top: 24px;
-                        max-height: 0px;
-                    }
-                    .sub-menu:hover {
-                        max-height: 500px;
+                        width: 100%;
+                        height: 100%;
+                        overflow:visible;
+                        display: flex;
+                        flex-wrap: wrap;
+                        a {
+                            font-size: .75rem;
+                            width: 100%;
+                        }
                     }
                 }
                 .current_page_item::after {

@@ -59,3 +59,26 @@ if (portfolioImage) {
     })
   })
 }
+
+
+// Pedigree Logic
+const dogPedigree = document.querySelectorAll('#dogPedigree')
+
+if (dogPedigree) {
+  
+  dogPedigree.forEach((item) => {
+    let pedigreeImage = item.querySelector('#pedigreeImage')
+    let pedigreeCard = item.querySelector('#pedigreeContainer')
+    let exitCard = item.querySelector('#pedigreeExit')
+    let exitCardOverlay = item.querySelector('#pedigreeBackdrop')
+    function toggleHidden() {
+      pedigreeCard.classList.toggle('hidden')
+    }
+    pedigreeImage.addEventListener('click', toggleHidden)
+    exitCard.addEventListener('click', toggleHidden)
+    exitCardOverlay.addEventListener('click', toggleHidden)
+
+  })
+
+}
+

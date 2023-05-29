@@ -6,3 +6,8 @@
 .bgCalc {
     top: calc(50% - 150px);
 }
+
+.repeaterImage {
+    max-height: 100px;
+    width: auto;
+}

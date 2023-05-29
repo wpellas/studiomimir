@@ -46,9 +46,10 @@ add_action('init', function() {
     
     // Dog Pedigree
     register_post_type('dog_pedigree', [
-        'supports' => ['title', 'editor'],
+        'supports' => ['title'],
         'public' => true,
         'show_in_rest' => true,
+        'has_archive' => true,
         'labels' => [
             'name' => __('Dog Pedigrees'),
             'add_new_item' => __('Add New Dog Pedigree'),
