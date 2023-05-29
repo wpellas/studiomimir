@@ -27,9 +27,9 @@
                                 
                             </div>
                             <div class="min-w-[480px] h-[30px] flex justify-center items-center">
-                            <span id="pedigreePrevious" class="material-symbols-outlined">arrow_back_ios</span>
-                            <p class="text-zinc-800"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
-                            <span id="pedigreeNext" class="material-symbols-outlined">arrow_forward_ios</span>
+                            <span id="pedigreePrevious" class="material-symbols-outlined select-none cursor-pointer">arrow_back_ios</span>
+                            <p class="text-zinc-800 select-none"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
+                            <span id="pedigreeNext" class="material-symbols-outlined select-none cursor-pointer">arrow_forward_ios</span>
                         </div>
                     </div>
                     <div class="relative min-w-[480px] text-left">
@@ -44,7 +44,7 @@
                     <div class="w-full pt-4">
                         <ul class="flex gap-[6.4px]">
                             @foreach ($pedigreeImages as $pedigreeImage)
-                            <li id="pedigreeImageSmall" class="w-40 h-40 bg-cover bg-center hover:opacity-60" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
+                            <li id="pedigreeImageSmall" class="w-40 h-40 bg-cover bg-center hover:opacity-60 cursor-pointer" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
                             @endforeach
                         </ul>
                     </div>

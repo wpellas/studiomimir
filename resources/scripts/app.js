@@ -76,36 +76,70 @@ if (dogPedigree) {
     let pedigreePrevious = item.querySelector('#pedigreePrevious')
     let pedigreeNext = item.querySelector('#pedigreeNext')
 
-    pedigreePrevious.addEventListener('click', () => {
-      
-    })
-
-    pedigreeNext.addEventListener('click', () => {
-      
-    })
+    
     
     const testedArray = []
 
     let id = 1;
-    pedigreeImageSmall.forEach((small) => {
-      let smallId = id++
-      testedArray.push({
-        image: small.getAttribute('style'),
-        index: smallId,
+    function registerSmallImages() {
+      pedigreeImageSmall.forEach((small) => {
+        let smallId = id++
+        testedArray.push({
+          image: small.getAttribute('style'),
+          index: smallId,
+        })
+        small.addEventListener('click', () => {
+          changeImage(smallId)
+        })
       })
-      small.addEventListener('click', () => {
-        changeImage(smallId)
-      })
-    })
+
+      id = 1
+    }
+    registerSmallImages()
 
     function changeImage(e) {
       testedArray.forEach((item) => {
         if (item.index == e) {
           pedigreeImageBig.setAttribute('style', item.image)
           pedigreeImageNumber.innerHTML = item.index
+          id = item.index
         }
       })
       
+    }
+
+    pedigreePrevious.addEventListener('click', () => {
+      arrowChangeImage('previous')
+    })
+
+    pedigreeNext.addEventListener('click', () => {
+      arrowChangeImage('next')
+    })
+
+    function arrowChangeImage(e) {
+      if (e === 'previous') {
+        if (id === 1) {
+          id = 6
+        } else {
+          id--
+        }
+      }
+
+      if (e === 'next') {
+        if (id === 6) {
+          id = 1
+        } else {
+          id++
+        }
+      }
+
+      testedArray.forEach((item) => {
+        if (item.index == id) {
+          pedigreeImageBig.setAttribute('style', item.image)
+          pedigreeImageNumber.innerHTML = item.index
+          id = item.index
+        }
+      })
     }
 
     
