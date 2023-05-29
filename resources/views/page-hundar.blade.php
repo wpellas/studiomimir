@@ -4,16 +4,17 @@
 <section class="min-h-[100vh] flex justify-center">
     @query([
         'post_type' => 'dog_pedigree',
-        'posts_per_page' => -1
+        'posts_per_page' => -1,
+        'orderby' => 'rand'
     ])
     <div class="w-full lg:w-lg xl:w-xl h-full px-8 lg:px-0 font-primary text-primary text-center">
         <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Hundar")}}</h1>
-        <ul class="relative flex flex-wrap after:flex-grow-[999] gap-2">
+            <ul class="relative w-full h-full grid grid-cols-3 gap-4">
     @posts
-        
+
     @php($pedigreeImages = get_field('pedigree_images'))
-    <li id="dogPedigree" class="h-60 w-60">
-        <img id="pedigreeImage" class="h-60 w-60 object-cover hover:opacity-60" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
+    <li id="dogPedigree" class="w-full h-full">
+        <img id="pedigreeImage" class="w-full h-full object-cover hover:opacity-60" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
         <div id="pedigreeContainer" class="hidden fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75"></div>
             <div class="z-30 bg-secondary w-lg relative">
@@ -44,7 +45,7 @@
                     <div class="w-full pt-4">
                         <ul class="flex gap-[6.4px]">
                             @foreach ($pedigreeImages as $pedigreeImage)
-                            <li id="pedigreeImageSmall" class="w-40 h-40 bg-cover bg-center hover:opacity-60 cursor-pointer" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
+                                <li id="pedigreeImageSmall" class="w-40 h-40 bg-cover bg-center hover:opacity-60 cursor-pointer border-primary" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
                             @endforeach
                         </ul>
                     </div>

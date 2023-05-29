@@ -60,6 +60,12 @@ add_action('init', function() {
         'menu_icon' => 'dashicons-pets'
     ]);
 
+    register_taxonomy('dog_breed', 'dog_pedigree', [
+        'label' => __('Dog Breed'),
+        'rewrite' => ['slug' => 'dog_breed'],
+        'hierarchical' => true
+    ]);
+
     // Upcoming Events
     register_post_type('upcoming_events', [
         'map_meta_cap' => true,
