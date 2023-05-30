@@ -48,8 +48,8 @@ add_action('init', function() {
     register_post_type('dog_pedigree', [
         'supports' => ['title'],
         'public' => true,
-        'show_in_rest' => true,
         'has_archive' => true,
+        'show_in_rest' => true,
         'labels' => [
             'name' => __('Dog Pedigrees'),
             'add_new_item' => __('Add New Dog Pedigree'),
@@ -71,8 +71,8 @@ add_action('init', function() {
         'map_meta_cap' => true,
         'supports' => ['title'],
         'rewrite' => ['slug' => 'events'],
-        'has_archive' => true,
         'public' => true,
+        'has_archive' => true,
         'show_in_rest' => true,
         'labels' => [
             'name' => __('Upcoming Events'),

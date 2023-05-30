@@ -5,6 +5,7 @@
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url($id)])
 
 <section class="min-h-[100vh] flex justify-center">
+    
     @query([
         'post_type' => 'portfolio_image',
         'posts_per_page' => -1,
@@ -12,6 +13,7 @@
         ])
 <div class="w-full lg:w-lg xl:w-xl h-full px-8 lg:px-0 font-primary text-primary text-center">
     <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Portfolio")}}</h1>
+    @content
     <ul class="relative flex flex-wrap after:flex-grow-[999] gap-2">
         @posts
             {{-- Small Format --}}

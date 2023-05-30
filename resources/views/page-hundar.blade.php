@@ -2,6 +2,7 @@
 @extends('layouts.app')
 @include('partials.page-header', ['thumbnail' => 'https://cdn.discordapp.com/attachments/537909129952624640/1112648478133334066/pexels-simona-kidric-2607544.jpg'])
 <section class="min-h-[100vh] flex justify-center">
+    @content
     @query([
         'post_type' => 'dog_pedigree',
         'posts_per_page' => -1,
@@ -21,7 +22,7 @@
     </li>
     {{-- Large Format --}}
     <li id="dogPedigree" class="w-full h-full hidden lg:block">
-        <img id="pedigreeImage" class="w-full h-full object-cover hover:opacity-60 cursor-pointer" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
+        <img id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
         <div id="pedigreeContainer" class="hidden fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-20"></div>
             <div class="z-30 bg-secondary lg:w-lg xl:w-xl relative">

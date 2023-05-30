@@ -29,30 +29,53 @@
                 align-items: center;
                 gap: 4rem;
                 .menu-item {
-                    flex-grow: 0;
                     color: #ececec;
                     position: relative;
                     font-size: 2rem;
+                    padding: 1rem;
+                    width: 200px;
+                    text-align: center;
                     .sub-menu {
-                        display: none;
+                        
+                        display: block;
                         position: absolute;
+                        left: 0;
                         overflow:visible;
                         flex-wrap: wrap;
                         transition: all;
                         animation-duration: 0.3s;
                         animation: ease-in-out;
                         background-color: var(--wp--preset--color--secondary);
-                        padding: 2px;
+                        width: 100%;
+                        border-top: 1px solid var(--wp--preset--color--primary);
+                        border-radius: 0 0 1rem 1rem ;
                         .menu-item {
+                            text-align: left;
                             position: relative;
+                            width: 100%;
+                            height: 50px;
+                            padding: 0;
+                            padding-left: 1rem;
+                            padding-right: 1rem;
+                            margin: 0;
+                            border-bottom: 1px dotted var(--wp--preset--color--primary);
+                            display: flex;
+                        }
+                        .menu-item:hover {
+                            border-radius: 0;
+                        }
+                        .menu-item:last-child {
+                            padding-bottom: .5rem;
+                            border-radius: 0 1rem 1rem 1rem ;
+                            border: none;
                         }
                         a {
-                            font-size: 1rem;
                             width: 100%;
+                            font-size: 1rem;
                             color: var(--wp--preset--color--primary);
                         }
                         a:hover {
-                            color: var(--wp--preset--color--primary);
+                            color: black;
                         }
                     }
                     
@@ -61,7 +84,12 @@
                     }
                 }
                 .menu-item:hover {
-                    color: var(--wp--preset--color--primary)
+                    color: var(--wp--preset--color--primary);
+                    background-color: var(--wp--preset--color--secondary);
+                    border-radius: 1rem 1rem 0 0;
+                    &:first-child {
+                        border-radius: 1rem;
+                    }
                 }
                 .current_page_item::after {
                     content: " ";
@@ -69,8 +97,8 @@
                     z-index: 20;
                     width: 8px;
                     height: 8px;
-                    left: -12px;
-                    top: 0;
+                    left: 8px;
+                    top: 8px;
                     border-radius: 100%;
                     background-color: var(--wp--preset--color--primary);
                 }
