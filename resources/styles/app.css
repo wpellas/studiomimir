@@ -77,7 +77,7 @@
         
         .menu-secondary_navigation-container {
             .nav {
-                width: 1024px;
+                width: 100%;
                 display: flex;
                 justify-content: center;
                 gap: 2rem;

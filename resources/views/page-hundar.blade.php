@@ -9,33 +9,40 @@
     ])
     <div class="w-full lg:w-lg xl:w-xl h-full px-8 lg:px-0 font-primary text-primary text-center">
         <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Hundar")}}</h1>
-            <ul class="relative w-full h-full grid grid-cols-3 gap-4">
+        <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     @posts
 
     @php($pedigreeImages = get_field('pedigree_images'))
-    <li id="dogPedigree" class="w-full h-full">
-        <img id="pedigreeImage" class="w-full h-full object-cover hover:opacity-60" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
+    {{-- Small Format --}}
+    <li class="w-full h-full block lg:hidden">
+        <a class="w-full h-full cursor-pointer" href="{{the_permalink()}}">
+            <img class="w-full h-full object-cover hover:opacity-60 cursor-pointer" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
+        </a>
+    </li>
+    {{-- Large Format --}}
+    <li id="dogPedigree" class="w-full h-full hidden lg:block">
+        <img id="pedigreeImage" class="w-full h-full object-cover hover:opacity-60 cursor-pointer" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
         <div id="pedigreeContainer" class="hidden fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center">
-            <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75"></div>
-            <div class="z-30 bg-secondary w-lg relative">
+            <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-20"></div>
+            <div class="z-30 bg-secondary lg:w-lg xl:w-xl relative">
                 <div id="pedigreeExit" class="absolute top-0 right-0 z-40 cursor-pointer">
                     <span class="material-symbols-outlined z-30 text-5xl transition-all delay-200 hover:text-red-700">close</span>
                 </div>
                 <div class="p-4">
-                    <div class="w-[992px] h-[500px] flex gap-4">
-                        <div class="min-w-[480px] h-[480px]">
-                            <div id="pedigreeImageBig" class="min-w-[480px] h-[480px] bg-cover bg-center" style="background-image: url({{$pedigreeImages[0]['pedigree_image']}})">
+                    <div class="w-full h-[500px] flex gap-4">
+                        <div class="w-full h-full">
+                            <div id="pedigreeImageBig" class="w-full h-[480px] bg-cover bg-center" style="background-image: url({{$pedigreeImages[0]['pedigree_image']}})">
                                 
                             </div>
-                            <div class="min-w-[480px] h-[30px] flex justify-center items-center">
+                            <div class="w-full h-[30px] flex justify-center items-center">
                             <span id="pedigreePrevious" class="material-symbols-outlined select-none cursor-pointer">arrow_back_ios</span>
                             <p class="text-zinc-800 select-none"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                             <span id="pedigreeNext" class="material-symbols-outlined select-none cursor-pointer">arrow_forward_ios</span>
                         </div>
                     </div>
-                    <div class="relative min-w-[480px] text-left">
-                        <h1 class="text-5xl">@title</h1>
-                        <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name') </h3>
+                    <div class="relative w-full text-left">
+                        <a class="text-5xl" href="{{the_permalink()}}">@title</a>
+                        <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name')</h3>
                         <div class="pt-4 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
                         @if(get_field('dog_owner'))
                             <h5 class="absolute bottom-0 text-sm italic text-zinc-800">Ägare: @field('dog_owner')</p>
@@ -43,9 +50,9 @@
                         </div>
                     </div>
                     <div class="w-full pt-4">
-                        <ul class="flex gap-[6.4px]">
+                        <ul class="flex gap-[6.4px] w-full h-40">
                             @foreach ($pedigreeImages as $pedigreeImage)
-                                <li id="pedigreeImageSmall" class="w-40 h-40 bg-cover bg-center hover:opacity-60 cursor-pointer border-primary" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
+                                <li id="pedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary" style="background-image: url({{$pedigreeImage['pedigree_image']}})"></li>
                             @endforeach
                         </ul>
                     </div>
@@ -54,8 +61,6 @@
         </div>
     </li>
     @endposts
-    </ul>
-
-</div>
-    
+        </ul>
+    </div>
 </section>
