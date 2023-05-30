@@ -32,35 +32,49 @@
                     color: #ececec;
                     position: relative;
                     font-size: 2rem;
-                    padding: 1rem;
+                    padding-top: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                    margin-bottom: 1rem;
                     width: 200px;
                     text-align: center;
+                    border-radius: 1rem 1rem 0 0;
+                    transition: all 0.3s ease-in-out;
+                    &:first-child {
+                        border-radius: 1rem;
+                        padding-bottom: 1rem;
+                        margin-bottom: 0;
+                    }
                     .sub-menu {
-                        
-                        display: block;
-                        position: absolute;
-                        left: 0;
-                        overflow:visible;
-                        flex-wrap: wrap;
-                        transition: all;
-                        animation-duration: 0.3s;
-                        animation: ease-in-out;
-                        background-color: var(--wp--preset--color--secondary);
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                        pointer-events: none;
                         width: 100%;
+                        position: absolute;
+                        overflow:visible;
+                        left: 0;
+                        display: flex;
+                        flex-wrap: wrap;
+                        background-color: var(--wp--preset--color--secondary);
                         border-top: 1px solid var(--wp--preset--color--primary);
-                        border-radius: 0 0 1rem 1rem ;
+                        border-radius: 0 0 1rem 1rem;
                         .menu-item {
-                            text-align: left;
                             position: relative;
                             width: 100%;
                             height: 50px;
+                            display: flex;
+                            align-items: center;
+                            text-align: left;
                             padding: 0;
                             padding-left: 1rem;
                             padding-right: 1rem;
                             margin: 0;
                             border-bottom: 1px dotted var(--wp--preset--color--primary);
-                            display: flex;
+                            &:first-child {
+                                border-radius: 0;
+                            }
                         }
+                        
                         .menu-item:hover {
                             border-radius: 0;
                         }
@@ -70,26 +84,28 @@
                             border: none;
                         }
                         a {
+                            position: relative;
+                            height: 25px;
                             width: 100%;
-                            font-size: 1rem;
+                            font-size: 1.1rem;
                             color: var(--wp--preset--color--primary);
                         }
                         a:hover {
                             color: black;
+                            transition: color 0.3s ease-in-out;
                         }
                     }
                     
                     &:hover .sub-menu {
-                        display: flex;
+                        opacity: 1;
+                        pointer-events: all;
+                        transition: opacity 0.3s ease-in-out;
                     }
                 }
                 .menu-item:hover {
                     color: var(--wp--preset--color--primary);
                     background-color: var(--wp--preset--color--secondary);
-                    border-radius: 1rem 1rem 0 0;
-                    &:first-child {
-                        border-radius: 1rem;
-                    }
+                    transition: all 0.3s ease-in-out;
                 }
                 .current_page_item::after {
                     content: " ";
