@@ -114,3 +114,89 @@ if (dogPedigree) {
 
 }
 
+// Single Page
+
+const singlePedigreeImageBig = document.querySelector('#singlePedigreeImageBig')
+if (singlePedigreeImageBig) {
+  let singlePedigreeImageSmall = document.querySelectorAll("#singlePedigreeImageSmall")
+  let singlePedigreePrevious = document.querySelector("#singlePedigreePrevious")
+  let singlePedigreeImageNumber = document.querySelector("#singlePedigreeImageNumber")
+  let singlePedigreeNext = document.querySelector("#singlePedigreeNext")
+
+  const smallImages = []
+
+    let id = 0;
+    function registerSmallImages() {
+      singlePedigreeImageSmall.forEach((small) => {
+        let smallId = id++
+        smallImages.push({
+          image: small.getAttribute('style'),
+          index: smallId,
+        })
+        small.addEventListener('click', () => {
+          changeImage(smallId)
+        })
+      })
+      if (singlePedigreeImageSmall[0]) {
+        singlePedigreeImageSmall[0].classList.add('border-2')
+      }
+
+      id = 0
+    }
+    registerSmallImages()
+    
+    // Change image by pressing the arrows on the page
+    singlePedigreePrevious.addEventListener('click', () => {
+      changeImage('previous')
+  })
+
+  singlePedigreeNext.addEventListener('click', () => {
+      changeImage('next')
+  })
+
+  function changeImage(e) {
+  // If incoming value is a string
+    if (e === 'previous') {
+      if (id === 0) {
+        id = smallImages.length - 1
+      } else {
+        id--
+      }
+    }
+
+    if (e === 'next') {
+      if (id === smallImages.length - 1) {
+        id = 0
+      } else {
+        id++
+      }
+    }
+  //   If incoming value is a number
+    if (Number.isInteger(e)) {
+      id = e
+    }
+
+    // Removes styling from all items but adds it to the matching image
+    // Also sets the ID variable to properly display which image is currently shown. +1 cause array.
+    smallImages.forEach((item) => {
+      singlePedigreeImageSmall[item.index].classList.remove("border-2")
+      if (item.index == id) {
+        singlePedigreeImageBig.setAttribute('style', item.image)
+        singlePedigreeImageNumber.innerHTML = Number(item.index) + 1
+        id = item.index
+        singlePedigreeImageSmall[item.index].classList.add("border-2")
+      }
+    })
+  }
+
+  // Change image by pressing keyboard arrows
+  document.addEventListener('keydown', arrowKeys)
+  function arrowKeys(e) {
+    if (e.keyCode === 37) {
+      changeImage('previous')
+    }
+    if (e.keyCode === 39) {
+      changeImage('next')
+    }
+  }
+}
