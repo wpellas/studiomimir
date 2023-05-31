@@ -8,7 +8,7 @@
         'posts_per_page' => -1,
         'orderby' => 'rand'
     ])
-    <div class="w-full lg:w-lg xl:w-xl h-full px-8 lg:px-0 font-primary text-primary text-center">
+    <div class="w-full lg:w-lg   h-full px-8 lg:px-0 font-primary text-primary text-center">
         <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Hundar")}}</h1>
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     @posts
@@ -25,7 +25,7 @@
         <img id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer" src="{{$pedigreeImages[0]['pedigree_image']}}" alt="">
         <div id="pedigreeContainer" class="hidden fixed z-20 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-20"></div>
-            <div class="z-30 bg-secondary lg:w-lg xl:w-xl relative">
+            <div class="z-30 bg-secondary lg:w-lg   relative">
                 <div id="pedigreeExit" class="absolute top-0 right-0 z-40 cursor-pointer">
                     <span class="material-symbols-outlined z-30 text-5xl transition-all delay-200 hover:text-red-700">close</span>
                 </div>

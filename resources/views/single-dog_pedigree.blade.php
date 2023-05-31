@@ -5,9 +5,9 @@
     <div class="w-full h-full flex justify-center items-center text-primary">
 
     @php($pedigreeImages = get_field('pedigree_images'))
-    <div class="w-full lg:w-lg xl:w-xl h-full px-8 lg:px-0">
+    <div class="w-full lg:w-lg   h-full px-8 lg:px-0">
     <div class="top-0 left-0 w-full h-full flex justify-center items-center">
-        <div class="lg:w-lg xl:w-xl relative">
+        <div class="lg:w-lg   relative">
             <div class="pt-8">
                 <div class="w-full h-full flex flex-wrap lg:flex-nowrap gap-4">
                     <div class="w-full h-full">

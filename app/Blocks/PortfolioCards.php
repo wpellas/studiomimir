@@ -149,17 +149,18 @@ class PortfolioCards extends Block
 
         $portfolioCards
             ->addRepeater('portfolio_cards_field', [
-
+                'min' => 1,
+                'max' => 1
             ])
                 ->addRelationship('title_field', [
-                    'label' => 'Title/Category',
+                    'label' => 'Portfolio Image',
                     'required' => 1,
                     'post_type' => 'portfolio_image',
-                    'filters' => [2 => 'taxonomy'],
+                    'filters' => [],
                     'return_format' => 'object',
-                    'elements' => 'featured_image',
+                    'elements' => 'featured-image',
                     'min' => 1,
-                    'max' => 1,
+                    'max' => 4,
                 ])
             ->endRepeater();
 

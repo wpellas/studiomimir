@@ -11,10 +11,10 @@
         'posts_per_page' => -1,
         'orderby' => 'rand'
         ])
-<div class="w-full lg:w-lg xl:w-xl h-full px-8 lg:px-0 font-primary text-primary text-center">
-    <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Portfolio")}}</h1>
+<div class="w-full h-full px-8 lg:px-0 font-primary text-primary text-center flex flex-wrap justify-center">
+    <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase font-secondary">{{__("Portfolio")}}</h1>
     @content
-    <ul class="relative flex flex-wrap after:flex-grow-[999] gap-2">
+    <ul class="relative w-full lg:w-lg flex flex-wrap after:flex-grow-[999] gap-2">
         @posts
             {{-- Small Format --}}
             <li class="block lg:hidden">

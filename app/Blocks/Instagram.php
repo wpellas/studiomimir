@@ -124,6 +124,7 @@ class Instagram extends Block
      */
     public $example = [
         'title_field' => 'My Instagram Feed',
+        'choice_field' => '1'
     ];
 
     /**
@@ -134,7 +135,8 @@ class Instagram extends Block
     public function with()
     {
         return [
-            'title_field' => $this->titleField()
+            'title_field' => $this->titleField(),
+            'choice_field' => $this->choiceField()
         ];
     }
 
@@ -148,7 +150,16 @@ class Instagram extends Block
         $instagram = new FieldsBuilder('instagram');
 
         $instagram
-            ->addText('title_field');
+            ->addText('title_field')
+            ->addSelect('choice_field', [
+                'label' => 'Instagram Feed',
+                'instructions' => 'Select which Feed to be used. (Instagram Feed Plugin)',
+                'required' => 1,
+                'choices' => ['1', '2', '3', '4', '5'],
+                'default_value' => '1',
+                'allow_null' => 0,
+                'multiple' => 0
+            ]);
 
         return $instagram->build();
     }
@@ -161,6 +172,11 @@ class Instagram extends Block
     public function titleField()
     {
         return get_field('title_field') ?: $this->example['title_field'];
+    }
+
+    public function choiceField()
+    {
+        return get_field('choice_field') ?: $this->example['choice_field'];
     }
 
     /**

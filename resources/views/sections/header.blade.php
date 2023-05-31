@@ -1,11 +1,11 @@
 @if (has_nav_menu('primary_navigation'))
-<header class="banner hidden lg:flex preload">
+<header class="banner hidden lg:flex font-secondary uppercase">
   {{-- <a class="brand" href="{{ home_url('/') }}">
     {!! $siteName !!}
   </a> --}}
 
   {{-- Large Format --}}
-    <nav class="nav-primary hidden lg:block text-secondary border-b-[1px] border-secondary w-lg xl:w-xl" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+    <nav class="nav-primary hidden lg:block text-secondary border-b-[1px] border-secondary w-lg  " aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
     </nav>
   </header>

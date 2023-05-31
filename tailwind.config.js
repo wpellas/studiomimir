@@ -3,7 +3,8 @@ const config = {
   content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js,blade.php}'],
   theme: {
     fontFamily: {
-      primary: ['Lora', 'serif']
+      primary: ['Lora', 'serif'],
+      secondary: ['Zen Kaku Gothic New', 'serif']
     },
     extend: {
       colors: {

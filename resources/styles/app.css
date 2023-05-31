@@ -1,13 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Zen+Kaku+Gothic+New:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 /* Any and All */
 * {
-    font-family: 'Lora', serif;
     text-decoration: none;
+}
+body {
+    font-family: 'Lora', serif;
 }
 /* Header */
 .banner {
@@ -151,6 +153,10 @@
                 gap: 2rem;
                 .menu-item {
                     color: black;
+                    transition: color 0.15s ease-in-out;
+                    &:hover {
+                        color: var(--wp--preset--color--primary)
+                    }
                 }
                 .current_page_item {
                     text-decoration: none;

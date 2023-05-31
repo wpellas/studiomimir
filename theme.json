@@ -1285,6 +1285,11 @@
           "name": "Lora",
           "slug": "primary",
           "fontFamily": "Lora,serif"
+        },
+        {
+          "name": "Zen Kaku Gothic New",
+          "slug": "secondary",
+          "fontFamily": "Zen Kaku Gothic New,serif"
         }
       ],
       "fontSizes": [

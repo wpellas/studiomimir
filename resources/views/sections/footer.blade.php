@@ -3,7 +3,7 @@
 
     {{-- @php(dynamic_sidebar('sidebar-footer')) --}}
     @if (has_nav_menu('secondary_navigation'))
-    <nav class="nav-secondary uppercase w-full flex justify-center" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
+    <nav class="nav-secondary uppercase w-full flex justify-center font-secondary text-lg" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
       {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
     </nav>
     @endif

@@ -8,11 +8,11 @@
   @if(!$subtitleCheck == "")
   @hasfield('subtitles')
   <div class="w-full h-1/3 flex justify-center">
-    <div class="w-full lg:w-lg xl:w-xl h-full px-4 lg:px-0 flex flex-wrap justify-center items-center text-center">
-      <div class="w-full font-primary">
-        <h1 class="text-xl lg:text-4xl w-full pb-4 lg:pb-8 text-primary mt-4 lg:mt-0">@field('heading')</h1>
+    <div class="w-full lg:w-lg  h-full px-4 lg:px-0 flex flex-wrap justify-center items-center text-center">
+      <div class="w-full">
+        <h1 class="text-xl lg:text-4xl w-full pb-4 lg:pb-8 text-primary font-secondary mt-4 lg:mt-0">@field('heading')</h1>
           @fields('subtitles')
-            <p class="w-full text-sm lg:text-xl">
+            <p class="w-full text-sm lg:text-xl font-primary">
             @sub('subtitle')
             </p>
           @endfields  
