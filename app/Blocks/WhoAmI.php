@@ -12,14 +12,14 @@ class WhoAmI extends Block
      *
      * @var string
      */
-    public $name = 'Who Am I';
+    public $name = 'Mimir Who Am I';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'Showcase who you are with a title, body text and an image.';
+    public $description = 'Studio Mimir Who Am I block. Showcase yourself in this block.';
 
     /**
      * The block category.
@@ -40,7 +40,7 @@ class WhoAmI extends Block
      *
      * @var array
      */
-    public $keywords = ['who', 'am', 'i'];
+    public $keywords = ['studio', 'mimir', 'who', 'am', 'i'];
 
     /**
      * The block post type allow list.

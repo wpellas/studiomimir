@@ -19,9 +19,9 @@
             @endforeach  
           @else
           <div>
-            <p class="w-full text-center text-2xl text-secondary">Add some content in the WordPress Menu!</p>
+            <p class="w-full text-center text-2xl text-secondary">{{__("Add some content in the WordPress Menu!")}}</p>
             @if(is_admin())
-              <p class="w-full text-center text-xl text-secondary">Click this block and then add items in 'Portfolio Cards Field'.</p>
+              <p class="w-full text-center text-xl text-secondary">{{__("Click this block and then add items in 'Portfolio Image'.")}}</p>
             @endif
           </div>
           @endif

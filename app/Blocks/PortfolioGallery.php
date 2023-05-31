@@ -12,14 +12,14 @@ class PortfolioGallery extends Block
      *
      * @var string
      */
-    public $name = 'Portfolio Gallery';
+    public $name = 'Mimir Portfolio Gallery';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Portfolio Gallery block.';
+    public $description = 'Studio Mimir Custom Portfolio Gallery block.';
 
     /**
      * The block category.
@@ -40,7 +40,7 @@ class PortfolioGallery extends Block
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'gallery', 'portfolio', 'custom'];
 
     /**
      * The block post type allow list.

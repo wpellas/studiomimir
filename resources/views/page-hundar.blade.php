@@ -8,7 +8,7 @@
         'posts_per_page' => -1,
         'orderby' => 'rand'
     ])
-    <div class="w-full lg:w-lg   h-full px-8 lg:px-0 font-primary text-primary text-center">
+    <div class="w-full lg:w-lg h-full px-4 lg:px-0 font-primary text-primary text-center">
         <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Hundar")}}</h1>
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     @posts

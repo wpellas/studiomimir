@@ -12,14 +12,14 @@ class Instagram extends Block
      *
      * @var string
      */
-    public $name = 'Instagram';
+    public $name = 'Mimir Instagram';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Instagram block.';
+    public $description = 'Studio Mimir Instagram block.';
 
     /**
      * The block category.
@@ -40,7 +40,7 @@ class Instagram extends Block
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'instagram', 'feed'];
 
     /**
      * The block post type allow list.

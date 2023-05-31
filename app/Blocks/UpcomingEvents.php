@@ -12,14 +12,14 @@ class UpcomingEvents extends Block
      *
      * @var string
      */
-    public $name = 'Upcoming Events';
+    public $name = 'Mimir Upcoming Events';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Upcoming Events block.';
+    public $description = 'Studio Mimir Upcoming Events block.';
 
     /**
      * The block category.
@@ -40,7 +40,7 @@ class UpcomingEvents extends Block
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'events', 'sessions', 'schema', 'calendar', 'upcoming'];
 
     /**
      * The block post type allow list.

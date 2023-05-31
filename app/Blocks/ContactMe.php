@@ -12,14 +12,14 @@ class ContactMe extends Block
      *
      * @var string
      */
-    public $name = 'Contact Me';
+    public $name = 'Mimir Contact Me';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Contact Me block.';
+    public $description = 'Studio Mimir Contact Me block.';
 
     /**
      * The block category.
@@ -40,7 +40,7 @@ class ContactMe extends Block
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'contact', 'me'];
 
     /**
      * The block post type allow list.

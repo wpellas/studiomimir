@@ -12,14 +12,14 @@ class ImageDivider extends Block
      *
      * @var string
      */
-    public $name = 'Image Divider';
+    public $name = 'Mimir Image Divider';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Image Divider block.';
+    public $description = 'Studio Mimir Image Divider block.';
 
     /**
      * The block category.
@@ -33,14 +33,14 @@ class ImageDivider extends Block
      *
      * @var string|array
      */
-    public $icon = 'images-alt2';
+    public $icon = 'ellipsis';
 
     /**
      * The block keywords.
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'divider', 'image'];
 
     /**
      * The block post type allow list.

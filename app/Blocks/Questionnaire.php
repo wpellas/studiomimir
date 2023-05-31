@@ -12,14 +12,14 @@ class Questionnaire extends Block
      *
      * @var string
      */
-    public $name = 'Questionnaire';
+    public $name = 'Mimir Questionnaire';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Questionnaire block.';
+    public $description = 'Studio Mimir Questionnaire block.';
 
     /**
      * The block category.
@@ -40,14 +40,14 @@ class Questionnaire extends Block
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'questionnaire', 'qa', 'faq', 'answer', 'question', 'questions'];
 
     /**
      * The block post type allow list.
      *
      * @var array
      */
-    public $post_types = [];
+    public $post_types = ['page'];
 
     /**
      * The parent block type allow list.
@@ -90,7 +90,7 @@ class Questionnaire extends Block
      * @var array
      */
     public $supports = [
-        'align' => true,
+        'align' => false,
         'align_text' => false,
         'align_content' => false,
         'full_height' => false,
@@ -151,9 +151,18 @@ class Questionnaire extends Block
 
         $questionnaire
             ->addText('questionnaire_title_field')
-            ->addRepeater('questions_field')
-                ->addText('question_title_field')
-                ->addText('question_answer_field')
+            ->addRepeater('questions_field', [
+                'layout' => 'block'
+            ])
+                ->addText('question_title_field', [
+                    'label' => 'Question'
+                ])
+                ->addWysiwyg('question_answer_field', [
+                    'label' => 'Answer',
+                    'tabs' => 'visual',
+                    'toolbar' => 'basic',
+                    'media_upload' => 0,
+                ])
             ->endRepeater();
 
         return $questionnaire->build();

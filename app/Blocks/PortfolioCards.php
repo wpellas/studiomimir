@@ -12,14 +12,14 @@ class PortfolioCards extends Block
      *
      * @var string
      */
-    public $name = 'Portfolio Cards';
+    public $name = 'Mimir Portfolio Cards';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Portfolio Cards block.';
+    public $description = 'Studio Mimir Portfolio Cards block.';
 
     /**
      * The block category.
@@ -40,7 +40,7 @@ class PortfolioCards extends Block
      *
      * @var array
      */
-    public $keywords = [];
+    public $keywords = ['studio', 'mimir', 'portfolio', 'cards'];
 
     /**
      * The block post type allow list.
