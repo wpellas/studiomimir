@@ -154,7 +154,7 @@ class PortfolioGallery extends Block
             'post_type' => 'portfolio_image',
             'filters' => [],
             'return_format' => 'object',
-            'elements' => '',
+            'elements' => ['featured_image'],
             'min' => 1
         ]);
 
