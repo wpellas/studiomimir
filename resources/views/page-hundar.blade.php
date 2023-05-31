@@ -12,8 +12,10 @@
         <h1 class="text-2xl lg:text-4xl w-full py-8 uppercase">{{__("Hundar")}}</h1>
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     @posts
-
+    
     @php($pedigreeImages = get_field('pedigree_images'))
+    @php($breed = get_the_terms(get_the_ID(), 'dog_breed'))
+    @php($titles = get_the_terms(get_the_ID(), 'dog_titles'))
     {{-- Small Format --}}
     <li class="w-full h-full block lg:hidden">
         <a class="w-full h-full cursor-pointer" href="{{the_permalink()}}">
@@ -37,16 +39,23 @@
                             </div>
                             <div class="w-full h-[30px] flex justify-center items-center">
                             <span id="pedigreePrevious" class="material-symbols-outlined select-none cursor-pointer">arrow_back_ios</span>
-                            <p class="text-zinc-800 select-none"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
+                            <p class="text-zinc-800 select-none font-secondary"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                             <span id="pedigreeNext" class="material-symbols-outlined select-none cursor-pointer">arrow_forward_ios</span>
                         </div>
                     </div>
                     <div class="relative w-full text-left">
-                        <a class="text-5xl" href="{{the_permalink()}}">@title</a>
+                        <a class="text-5xl font-secondary" href="{{the_permalink()}}">@title</a>
                         <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name')</h3>
+                        <h5 class="font-secondary">
+                            @if($titles)
+                                @foreach($titles as $title)
+                                    {{$title->name}}
+                                @endforeach
+                            @endif
+                        </h5>
                         <div class="pt-4 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
                         @if(get_field('dog_owner'))
-                            <h5 class="absolute bottom-0 text-sm italic text-zinc-800">Ägare: @field('dog_owner')</p>
+                            <h5 class="absolute bottom-0 text-sm italic text-zinc-800 font-secondary">Ägare: @field('dog_owner')</p>
                         @endif
                         </div>
                     </div>

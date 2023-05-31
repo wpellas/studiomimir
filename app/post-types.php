@@ -66,6 +66,12 @@ add_action('init', function() {
         'hierarchical' => true
     ]);
 
+    register_taxonomy('dog_titles', 'dog_pedigree', [
+        'label' => __('Dog Titles'),
+        'rewrite' => ['slug' => 'dog_titles'],
+        'hierarchical' => true
+    ]);
+
     // Upcoming Events
     register_post_type('upcoming_events', [
         'map_meta_cap' => true,
