@@ -4,5 +4,5 @@
 <section class="min-h-[100vh]">
     @dump(the_title())
     @dump(get_permalink())
-    
+    d
 </section>
