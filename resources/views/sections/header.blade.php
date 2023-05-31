@@ -1,5 +1,5 @@
 @if (has_nav_menu('primary_navigation'))
-<header class="banner hidden lg:flex">
+<header class="banner hidden lg:flex preload">
   {{-- <a class="brand" href="{{ home_url('/') }}">
     {!! $siteName !!}
   </a> --}}
@@ -12,7 +12,7 @@
   @endif
 
 @if (has_nav_menu('primary_navigation'))
-<header class="block lg:hidden z-10 fixed w-[100vw] top-0">
+<header class="block lg:hidden z-20 fixed w-[100vw] top-0">
     <span id="openSmallMenu" class="material-symbols-outlined absolute top-4 right-4 text-black cursor-pointer text-4xl select-none bg-secondary p-2">menu</span>
     {{-- Small Format --}}
     <nav id="smallMenu" class="nav-small relative top-0 left-0 hidden flex justify-end h-[100vh]" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
