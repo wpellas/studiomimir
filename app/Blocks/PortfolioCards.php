@@ -148,21 +148,17 @@ class PortfolioCards extends Block
         $portfolioCards = new FieldsBuilder('portfolio_cards');
 
         $portfolioCards
-            ->addRepeater('portfolio_cards_field', [
+            ->addRelationship('portfolio_cards_field', [
+                'label' => 'Portfolio Image',
+                'required' => 1,
+                'post_type' => 'portfolio_image',
+                'filters' => [],
+                'return_format' => 'object',
+                'elements' => '',
                 'min' => 1,
-                'max' => 1
-            ])
-                ->addRelationship('title_field', [
-                    'label' => 'Portfolio Image',
-                    'required' => 1,
-                    'post_type' => 'portfolio_image',
-                    'filters' => [],
-                    'return_format' => 'object',
-                    'elements' => 'featured-image',
-                    'min' => 1,
-                    'max' => 4,
-                ])
-            ->endRepeater();
+                'max' => 4,
+            ]);
+            
 
         return $portfolioCards->build();
     }
