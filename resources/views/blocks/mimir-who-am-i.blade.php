@@ -3,7 +3,7 @@
       <div class=" w-full lg:w-1/2 py-2 lg:py-10 text-center flex flex-wrap justify-center items-stretch gap-4 text-lg">
 
         @if ($title_field)
-          <h1 class="text-xl lg:text-2xl xl:text-3xl uppercase text-primary font-secondary">{{$title_field}}</h1>
+          <h1 class="text-2xl xl:text-3xl uppercase text-primary font-secondary">{{$title_field}}</h1>
         @endif
 
         @if ($body_field)
