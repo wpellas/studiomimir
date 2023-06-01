@@ -2,6 +2,7 @@
 
 @section('content')
   @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url()])
+
   <section class="section min-h-[100vh] flex justify-center">
     <div class="w-full lg:w-lg pt-8">
         <ul class="relative w-full lg:w-lg px-4 lg:px-0 flex flex-wrap after:flex-grow-[999] gap-2">

@@ -1,7 +1,9 @@
 <div class="w-full h-full relative flex flex-wrap justify-center my-4 lg:my-8 {{ $block->classes }} {{is_admin() ? "pointer-events-none" : ""}}">
-  <div class="w-full h-full z-10">
+  <div class="w-lg lg:w-full lg:px-36 h-full z-10">
       <ul class="w-full h-full min-h-[512px] flex-wrap flex lg:flex-nowrap justify-center items-center gap-4 lg:gap-8">
+
           @if($portfolio_cards_field)
+          
             @foreach($portfolio_cards_field as $portfolio_card)
               @php($terms = get_the_terms($portfolio_card->ID, 'portfolio_category')[0])
               <li class="max-h-[320px] lg:max-h-[350px] lg:min-h-[280px] xl:max-h-[448px] max-w-full bg-secondary list-none aspect-[88/107]">
@@ -15,15 +17,19 @@
                   </a>
                 </div>
               </li>
-            @endforeach  
+            @endforeach
+
           @else
+
           <div>
             <p class="w-full text-center text-2xl text-secondary">{{__("Add some content in the WordPress Menu!")}}</p>
             @if(is_admin())
               <p class="w-full text-center text-xl text-secondary">{{__("Click this block and then add items in 'Portfolio Image'.")}}</p>
             @endif
           </div>
+
           @endif
+
       </ul>
     </div>
   <div class="absolute h-[200px] xl:h-[350px] w-full bg-primary top-[calc(50%-50px)] xl:top-[calc(50%-90px)] hidden lg:block"></div>
