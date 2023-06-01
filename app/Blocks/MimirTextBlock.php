@@ -105,17 +105,7 @@ class MimirTextBlock extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'light',
-            'label' => 'Light',
-            'isDefault' => true,
-        ],
-        [
-            'name' => 'dark',
-            'label' => 'Dark',
-        ]
-    ];
+    public $styles = [];
 
     /**
      * The block preview example data.
@@ -148,6 +138,7 @@ class MimirTextBlock extends Block
         $mimirTextBlock = new FieldsBuilder('mimir_text_block');
 
         $mimirTextBlock
+
             ->addWysiwyg('text_block_field', [
                 'label' => 'Text Body',
                 'tabs' => 'visual',

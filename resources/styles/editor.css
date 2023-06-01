@@ -44,4 +44,7 @@ a {
     h6 {
         @apply text-base;
     }
+    ol, ul {
+        @apply list-decimal;
+    }
 }

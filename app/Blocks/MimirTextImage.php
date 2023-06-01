@@ -105,17 +105,7 @@ class MimirTextImage extends Block
      *
      * @var array
      */
-    public $styles = [
-        [
-            'name' => 'left',
-            'label' => 'Left',
-
-        ],
-        [
-            'name' => 'right',
-            'label' => 'Right',
-        ]
-    ];
+    public $styles = [];
 
     /**
      * The block preview example data.
@@ -123,11 +113,9 @@ class MimirTextImage extends Block
      * @var array
      */
     public $example = [
-        'items' => [
-            ['item' => 'Item one'],
-            ['item' => 'Item two'],
-            ['item' => 'Item three'],
-        ],
+        'choice_field' => 'Left',
+        'text_block_field' => '',
+        'image_field' => '',
     ];
 
     /**
@@ -138,7 +126,9 @@ class MimirTextImage extends Block
     public function with()
     {
         return [
-            'items' => $this->items(),
+            'choice_field' => $this->choiceField(),
+            'text_block_field' => $this->textBlockField(),
+            'image_field' => $this->imageField(),
         ];
     }
 
@@ -152,9 +142,20 @@ class MimirTextImage extends Block
         $mimirTextImage = new FieldsBuilder('mimir_text_image');
 
         $mimirTextImage
-            ->addRepeater('items')
-                ->addText('item')
-            ->endRepeater();
+            ->addRadio('choice_field', [
+                'label' => 'Image Side',
+                'instructions' => 'Determine which side that the image appears on. Note that this only works on desktop / large view of the website.',
+                'choices' => ['Left', 'Right'],
+                'allow_null' => 0,
+                'default_value' => 'Left',
+                'return_format' => 'value'
+            ])
+            ->addWysiwyg('text_block_field', [
+                'label' => 'Text Body',
+                'tabs' => 'visual',
+                'media_upload' => 0,
+            ])
+            ->addImage('image_field');
 
         return $mimirTextImage->build();
     }
@@ -164,9 +165,20 @@ class MimirTextImage extends Block
      *
      * @return array
      */
-    public function items()
+    public function choiceField()
     {
-        return get_field('items') ?: $this->example['items'];
+        return get_field('choice_field') ?: $this->example['choice_field'];
+    }
+
+
+    public function textBlockField()
+    {
+        return get_field('text_block_field') ?: $this->example['text_block_field'];
+    }
+
+    public function imageField()
+    {
+        return get_field('image_field') ?: $this->example['image_field'];
     }
 
     /**

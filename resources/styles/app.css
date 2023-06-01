@@ -9,12 +9,9 @@
     text-decoration: none;
 }
 body {
-    font-family: 'Lora', serif;
-}
-.mimir {
     @apply font-primary m-0 p-0;
     a {
-        @apply text-blue-600;
+        @apply text-blue-600 m-0 p-0;
     }
     h1, h2, h3, h4, h5, h6 {
         @apply font-secondary text-primary uppercase py-4;
@@ -39,165 +36,108 @@ body {
     }
 }
 
-/* Header */
-.banner {
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    top: 0;
-    justify-content: center;
-    z-index: 20;
-    .nav-primary {
-        
-        .menu-primary_navigation-container {
-            .nav {
-                height: 100px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 4rem;
-                .menu-item {
-                    color: var(--wp--preset--color--secondary);
-                    position: relative;
-                    font-size: 2rem;
-                    padding-top: 1rem;
-                    padding-left: 1rem;
-                    padding-right: 1rem;
-                    margin-bottom: 1rem;
-                    width: 200px;
-                    text-align: center;
-                    border-radius: .5rem .5rem 0 0;
-                    transition: background-color 0.1s;
-                    &:first-child {
-                        border-radius: .5rem;
-                        padding-bottom: 1rem;
-                        margin-bottom: 0;
-                    }
-                    .sub-menu {
-                        opacity: 0;
-                        visibility: hidden;
-                        transition: 0.1s;
-                        pointer-events: none;
-                        width: 100%;
-                        position: absolute;
-                        overflow:visible;
-                        left: 0;
-                        display: flex;
-                        flex-wrap: wrap;
-                        background-color: var(--wp--preset--color--secondary);
-                        border-radius: 0 0 .5rem .5rem;
-                        .menu-item {
-                            position: relative;
-                            width: 100%;
-                            height: 50px;
-                            display: flex;
-                            align-items: center;
-                            text-align: left;
-                            padding: 0;
-                            padding-left: 1rem;
-                            padding-right: 1rem;
-                            margin: 0;
-                            &:first-child {
-                                border-radius: 0;
-                            }
-                        }
-                        
-                        .menu-item:hover {
-                            border-radius: 0;
-                        }
-                        .menu-item:last-child {
-                            padding-bottom: .5rem;
-                            border-radius: 0 1rem 1rem 1rem ;
-                            border: none;
-                        }
-                        a {
-                            position: relative;
-                            height: 25px;
-                            width: 100%;
-                            font-size: 1.1rem;
-                            color: var(--wp--preset--color--primary);
-                        }
-                        a:hover {
-                            color: black;
-                            transition: color 0.1s ease-in-out;
-                        }
-                    }
-                    
-                    &:hover .sub-menu {
-                        opacity: 1;
-                        visibility: visible;
-                        pointer-events: all;
-                    }
-                }
-                .menu-item:hover {
-                    color: var(--wp--preset--color--primary);
-                    background-color: var(--wp--preset--color--secondary);
-                }
-                .current_page_item::after {
-                    content: " ";
-                    position: absolute;
-                    z-index: 20;
-                    width: 8px;
-                    height: 8px;
-                    left: 8px;
-                    top: 8px;
-                    border-radius: 100%;
-                    background-color: var(--wp--preset--color--primary);
-                }
-            }
-        }
+.mimir {
+    ol {
+        @apply list-decimal relative left-6;
+    }
+    ul {
+        @apply list-disc relative left-6;
+
     }
 }
 
+/* Header */
+.banner {
+    @apply w-full h-[100px] absolute top-0 justify-center z-20;
+        .nav {
+            @apply h-[100px] w-full flex justify-center items-center gap-16;
+            li {
+                @apply list-none text-secondary relative text-4xl pt-4 pl-4 pr-4 mb-4 w-[200px] text-center;
+                border-radius: .5rem .5rem 0 0;
+                transition: background-color 0.1s;
+                &:first-child {
+                    @apply pb-4 mb-0 rounded-lg;
+                }
+                &:hover {
+                    @apply text-primary bg-secondary;
+                }
+                &:hover a {
+                    @apply text-primary;
+                }
+                a {
+                    @apply text-secondary;
+                }
+                ul {
+                    @apply opacity-0 invisible pointer-events-none w-full absolute overflow-visible left-0 flex flex-wrap bg-secondary;
+                    transition: 0.1s;
+                    border-radius: 0 0 .5rem .5rem;
+                    li {
+                        @apply relative w-full h-[50px] flex items-center text-left p-0 pl-4 pr-4 m-0;
+                        a {
+                            @apply relative h-[25px] w-full text-lg text-primary;
+                        }
+                        a:hover {
+                            @apply text-black transition-colors duration-100 ease-in-out;
+                        }
+                        &:first-child {
+                            @apply rounded-none pb-0;
+                        }
+                        &:last-child {
+                            @apply pb-4;
+                        }
+                    }
+                    li:hover {
+                        @apply rounded-none bg-none;
+                    }
+                    li:last-child {
+                        @apply pb-2 border-none;
+                        border-radius: 0 1rem 1rem 1rem ;
+                    }
+                }
+                &:hover ul {
+                    @apply opacity-100 visible pointer-events-auto;
+                }
+            }
+        .current_page_item::after {
+            @apply absolute z-20 w-2 h-2 left-2 top-2 rounded-full bg-primary;
+            content: " ";
+        }
+    }      
+}
+
 #smallMenu > div > .menu-primary_navigation-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @apply h-full flex justify-center items-center;
 }
 .mobile-menu {
-    width: 100%;
-    .menu-item {
-        width: 100%;
-        padding-top: 1rem;
-        position: relative;
+    @apply w-full left-0;
+    li {
+        @apply w-full pt-4 relative list-none;
+        a {
+            @apply text-primary;
+        }
         .sub-menu {
-            font-size: 1.25rem;
-            left: 16px;
-            position: relative;
-            .menu-item {
-            }
+            @apply text-xl left-4 relative;
         }
     }
 }
 
 /* Footer */
 .content-info {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    bottom: 0;
-    .nav-secondary {
-        
-        .menu-secondary_navigation-container {
-            .nav {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-                .menu-item {
-                    color: black;
-                    transition: color 0.15s ease-in-out;
-                    &:hover {
-                        color: var(--wp--preset--color--primary)
-                    }
-                }
-                .current_page_item {
-                    text-decoration: none;
+    @apply relative bottom-0 w-full h-[100px]; 
+    .nav {
+        @apply w-full flex justify-center gap-8;
+        li {
+            @apply list-none;
+            transition: color 0.15s ease-in-out;
+            a {
+                @apply text-black;
+                &:hover {
+                    @apply text-primary;
                 }
             }
+        }
+        .current_page_item {
+            @apply no-underline;
         }
     }
 }
