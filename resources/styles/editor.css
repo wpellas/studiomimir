@@ -13,3 +13,6 @@
     max-height: 100px;
     width: auto;
 }
+a {
+    text-decoration: none!important;
+}
