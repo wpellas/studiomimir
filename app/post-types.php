@@ -41,7 +41,8 @@ add_action('init', function() {
     register_taxonomy('portfolio_category', 'portfolio_image', [
         'label' => __('Portfolio Categories'),
         'rewrite' => ['slug' => 'portfolio_category'],
-        'hierarchical' => true
+        'hierarchical' => true,
+        'show_admin_column' => true
     ]);
     
     // Dog Pedigree

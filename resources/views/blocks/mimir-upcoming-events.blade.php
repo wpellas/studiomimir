@@ -28,8 +28,8 @@
                     <p class="w-full text-center font-primary text-xl font-secondary">{{date('F j, H:i', $timestamp)}} - {{$expiredDate}}</p>
                     <br/>
                 </div>
-                <div class="w-full eventBody text-base lg:text-xl">
-                    {!! strip_tags($body, '<div>, <a>') !!}
+                <div class="w-full text-base lg:text-xl">
+                    {!! strip_tags($body, '<div>, <a>, <strong>, <em>') !!}
                 </div>
             </li>
         @endif

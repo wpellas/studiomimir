@@ -5,23 +5,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 /* Extra */
-.bgCalc {
-    top: calc(50% - 150px);
-}
 
 .repeaterImage {
-    max-height: 100px;
-    width: auto;
+    @apply min-h-[100px] w-auto;
 }
 
 a {
     text-decoration: none!important;
 }
 
-.mimir {
+body {
     @apply font-primary m-0 p-0;
     a {
-        @apply text-blue-600;
+        @apply text-blue-600 m-0 p-0 no-underline;
     }
     h1, h2, h3, h4, h5, h6 {
         @apply font-secondary text-primary uppercase py-4;
@@ -44,7 +40,14 @@ a {
     h6 {
         @apply text-base;
     }
-    ol, ul {
-        @apply list-decimal;
+}
+
+.mimir {
+    ol {
+        @apply list-decimal relative left-6;
+    }
+    ul {
+        @apply list-disc relative left-6;
+
     }
 }
