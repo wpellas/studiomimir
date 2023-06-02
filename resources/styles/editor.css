@@ -15,12 +15,12 @@ a {
 }
 
 body {
-    @apply font-primary m-0 p-0;
+    @apply m-0 p-0;
     a {
         @apply text-blue-600 m-0 p-0 no-underline;
     }
     h1, h2, h3, h4, h5, h6 {
-        @apply font-secondary text-primary uppercase py-4;
+        @apply font-secondary text-primary uppercase;
     }
     h1 {
         @apply text-4xl;
@@ -43,6 +43,10 @@ body {
 }
 
 .mimir {
+    @apply font-primary m-0 p-0;
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-secondary text-primary uppercase py-4;
+    }
     ol {
         @apply list-decimal relative left-6;
     }

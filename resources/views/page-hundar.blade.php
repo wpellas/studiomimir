@@ -8,7 +8,7 @@
         'posts_per_page' => -1,
         'orderby' => 'rand'
     ])
-    <div class="w-full lg:w-lg h-full px-4 lg:px-0 font-primary text-primary text-center">
+    <div class="w-full lg:w-lg h-full p-2 lg:p-0 lg:pt-8 font-primary text-primary text-center">
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     @posts
     
@@ -43,16 +43,16 @@
                         </div>
                     </div>
                     <div class="relative w-full text-left">
-                        <a class="text-5xl font-secondary" href="{{the_permalink()}}">@title</a>
+                        <a class="text-5xl font-secondary text-primary" href="{{the_permalink()}}">@title</a>
                         <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name')</h3>
-                        <h5 class="font-secondary">
+                        <p class="text-sm font-secondary !pt-0 !pb-0 border-b-[1px] border-primary border-dotted">
                             @if($titles)
                                 @foreach($titles as $title)
                                     {{$title->name}}
                                 @endforeach
                             @endif
-                        </h5>
-                        <div class="pt-4 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
+                        </p>
+                        <div class="pt-2 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
                         @if(get_field('dog_owner'))
                             <h5 class="absolute bottom-0 text-sm italic text-zinc-800 font-secondary">Ägare: @field('dog_owner')</p>
                         @endif
