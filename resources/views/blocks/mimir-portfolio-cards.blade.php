@@ -9,7 +9,7 @@
               <li class="max-h-[320px] lg:max-h-[350px] lg:min-h-[280px] xl:max-h-[448px] max-w-full bg-secondary list-none aspect-[88/107]">
                 <div class="h-full w-full flex flex-wrap justify-center">
                   <a class="h-full w-full pl-4 pt-4 pr-4 text-2xl lg:text-3xl text-center font-primary text-primary hover:text-black flex flex-wrap" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug"}}">
-                    <img class="object-cover object-center aspect-square" src="{{get_the_post_thumbnail_url($portfolio_card->ID)}}" alt="">
+                    <img class="object-cover object-center aspect-square" src="{{get_the_post_thumbnail_url($portfolio_card->ID, 'large')}}" alt="">
                     
                     <div class="flex-1 w-full flex items-center pb-4">
                       <p class="w-full text-3xl xl:text-4xl mt-4 font-primary">{{esc_html(mb_strtoupper($terms->name))}}</p>

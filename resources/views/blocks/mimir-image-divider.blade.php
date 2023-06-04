@@ -2,7 +2,11 @@
   @if($dividerImages)
 
     @foreach ($dividerImages as $image)
-      <div class="h-full w-full bg-center bg-cover" style="background-image: url({{$image['image']['url']}})"></div>
+
+      @if(!empty($image['image']['url']))
+        <div class="h-full w-full bg-center bg-cover" style="background-image: url({{$image['image']['url']}})"></div>
+      @endif
+
     @endforeach
 
   @else
@@ -12,9 +16,14 @@
       'posts_per_page' => 5,
       'orderby' => 'rand'
     ])
-    @posts
-      <div class="h-full w-full bg-center bg-cover" style="background-image: url({{get_the_post_thumbnail_url()}})"></div>
-    @endposts
+
+    @hasposts
+      @posts
+
+        <div class="h-full w-full bg-center bg-cover" style="background-image: url({{get_the_post_thumbnail_url(get_the_ID(), 'large')}})"></div>
+        
+      @endposts
+    @endhasposts
 
   @endif
 </div>

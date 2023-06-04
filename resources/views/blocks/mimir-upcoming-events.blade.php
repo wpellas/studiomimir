@@ -8,7 +8,7 @@
 ])
 <div class="w-full h-full relative flex flex-wrap justify-center my-4 lg:my-8 {{ $block->classes }}">
     <div class="w-full lg:w-lg h-full px-4 lg:px-0 z-10">
-        <h1 class="text-4xl text-center font-primary text-primary pb-8 uppercase font-secondary">{{esc_html(strip_tags($title_field))}}</h1>
+        <h1 class="text-4xl text-center text-primary pb-8 uppercase font-secondary">{{esc_html(strip_tags($title_field))}}</h1>
         <ul class="w-full h-full flex flex-wrap justify-center items-center gap-4 lg:gap-8">
         @posts
 
@@ -25,7 +25,7 @@
 
                     <h1 class="w-full text-center uppercase text-xl text-primary font-bold font-secondary">@title</h1>
                     <br/>
-                    <p class="w-full text-center font-primary text-xl font-secondary">{{date('F j, H:i', $timestamp)}} - {{$expiredDate}}</p>
+                    <p class="w-full text-center text-xl font-secondary">{{date('F j, H:i', $timestamp)}} - {{$expiredDate}}</p>
                     <br/>
                 </div>
                 <div class="w-full text-base lg:text-xl">

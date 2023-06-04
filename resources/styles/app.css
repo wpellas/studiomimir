@@ -8,6 +8,9 @@
 * {
     text-decoration: none;
 }
+#sbi_images {
+    @apply flex gap-2;
+}
 body {
     @apply font-primary m-0 p-0;
     a {
