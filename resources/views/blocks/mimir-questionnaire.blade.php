@@ -1,14 +1,14 @@
 <div class="w-full h-full relative flex flex-wrap justify-center my-4 lg:my-8 {{ $block->classes }} {{is_admin() ? "pointer-events-none" : ""}}">
   <div class="w-full lg:w-lg h-full px-4 lg:px-0 z-10 flex flex-wrap justify-center py-10">
     
-      <h1 class="text-center w-full text-2xl lg:text-4xl uppercase font-secondary text-primary">
+      <h1 class="text-center w-full text-2xl lg:text-4xl uppercase font-secondary text-primary py-4">
         {{$questionnaire_title_field}}
       </h1>
 
       <ul class="w-full flex justify-center flex-wrap">
           @fields('questions_field')
           <li id="questionnaire" class="relative w-full my-4 pb-2 text-primary font-primary list-none">
-              <h1 class="w-full text-base lg:text-2xl bg-white z-20 font-secondary uppercase">
+              <h1 class="w-full text-base lg:text-2xl bg-white z-20 font-secondary uppercase cursor-pointer">
                 @sub('question_title_field')
               </h1>
 

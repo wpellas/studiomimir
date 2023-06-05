@@ -6,23 +6,23 @@
         @content
 
         <ul class="w-full font-secondary text-xl flex gap-2 justify-center items-center flex-nowrap text-primary uppercase text-center py-8">
-            <li class="flex-1">Allt</li>
+            <li class="flex-1"><a class="text-primary" href="">Allt</a></li>
             <li class="flex-1 border-b-[1px] border-primary">Printables</li>
             <li class="flex-1">Foton</li>
             <li class="flex-1">Presets</li>
             <li class="flex-1">Mallar</li>
         </ul>
-
+        @php($paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1)
         @query([
             'post_type' => 'portfolio_image',
             'posts_per_page' => 9,
-            'paged' => get_query_var( 'paged' ),
+            'paged' => $paged,
         ])
 
         <div class="w-full h-full">
             <ul class="w-full h-full grid grid-cols-3 grid-rows-3 gap-2">
                 @posts
-                <li class="w-full h-full pb-4">
+                <li class="w-full h-full pb-4 webshop">
                     <a href="{{the_permalink()}}">
                         <img class="h-auto w-full aspect-square object-cover object-center" src="{{get_the_post_thumbnail_url()}}" alt="">
                         <div class="w-full text-center">
@@ -34,8 +34,15 @@
                 @endposts
             </ul>
         </div>
-        @dump(is_paged())
-        @dump(the_posts_pagination())
-        
+        <div class="w-full flex justify-center gap-4 font-secondary text-center text-2xl webshop-pagination">
+            {!!paginate_links(array(
+                'base' => str_replace(999, '%#%', get_pagenum_link(999)),
+                'format' => '?paged=%#%',
+                'current' => max(1, get_query_var('paged')),
+                'total' => $query->max_num_pages,
+                'next_text' => '>',
+                'prev_text' => '<',
+                ))!!}
+        </div>
     </div>
 </section>

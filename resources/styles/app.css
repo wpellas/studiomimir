@@ -58,11 +58,11 @@ body {
         .nav {
             @apply h-[100px] w-full flex justify-center items-center gap-16;
             li {
-                @apply list-none text-secondary relative text-4xl pt-4 pl-4 pr-4 mb-4 w-[200px] text-center;
+                @apply list-none text-secondary relative text-4xl w-[200px] text-center p-4;
                 border-radius: .5rem .5rem 0 0;
                 transition: background-color 0.1s;
                 &:first-child {
-                    @apply pb-4 mb-0 rounded-lg;
+                    @apply rounded-lg;
                 }
                 &:hover {
                     @apply text-primary bg-secondary drop-shadow-none;
@@ -78,9 +78,9 @@ body {
                     transition: 0.1s;
                     border-radius: 0 0 .5rem .5rem;
                     li {
-                        @apply relative w-full h-[50px] flex items-center text-left p-0 pl-4 pr-4 m-0;
+                        @apply relative w-full flex items-center text-left p-0 m-0;
                         a {
-                            @apply relative h-[25px] w-full text-lg text-primary;
+                            @apply relative py-2 px-4 w-full text-lg text-primary;
                         }
                         a:hover {
                             @apply text-black transition-colors duration-100 ease-in-out;
@@ -149,4 +149,20 @@ body {
     }
 }
 
+/* Webshop */
+.webshop {
+    &:hover h1 {
+        @apply text-black;
+    }
+}
+.webshop-pagination {
+    a {
+        @apply text-primary;
+    }
+}
 /* Extra */
+.contains-img {
+    &:hover img:first-child {
+        @apply opacity-60;
+    }
+}

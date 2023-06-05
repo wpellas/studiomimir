@@ -21,7 +21,7 @@
           <h1 class="text-2xl lg:text-4xl w-full pb-4 lg:pb-8 text-primary font-secondary mt-4 lg:mt-0">{{get_field('heading', $identifier)}}</h1>
 
           @fields('subtitles', $identifier)
-            <p class="w-full text-sm lg:text-xl font-primary !leading-8">
+            <p class="w-full text-sm lg:text-xl font-primary lg:!leading-8">
             @sub('subtitle')
             </p>
           @endfields

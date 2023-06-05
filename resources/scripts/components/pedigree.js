@@ -17,9 +17,10 @@ if (dogPedigree) {
     let id = 0;
     function registerSmallImages() {
       pedigreeImageSmall.forEach((small) => {
+        let smallImg = small.querySelector('img')
         let smallId = id++
         smallImages.push({
-          image: small.getAttribute('style'),
+          image: smallImg.getAttribute('src'),
           index: smallId,
         })
         small.addEventListener('click', () => {
@@ -70,7 +71,7 @@ if (dogPedigree) {
       smallImages.forEach((item) => {
         pedigreeImageSmall[item.index].classList.remove("border-2")
         if (item.index == id) {
-          pedigreeImageBig.setAttribute('style', item.image)
+          pedigreeImageBig.setAttribute('src', item.image)
           pedigreeImageNumber.innerHTML = Number(item.index) + 1
           id = item.index
           pedigreeImageSmall[item.index].classList.add("border-2")
@@ -88,7 +89,7 @@ if (dogPedigree) {
         item.classList.remove("border-2")
       })
       pedigreeImageSmall[0].classList.add("border-2")
-      pedigreeImageBig.setAttribute('style', smallImages[0].image)
+      pedigreeImageBig.setAttribute('src', smallImages[0].image)
       pedigreeImageNumber.innerHTML = 1
     }
 
@@ -128,9 +129,10 @@ if (singlePedigreeImageBig) {
     let id = 0;
     function registerSmallImages() {
       singlePedigreeImageSmall.forEach((small) => {
+        let smallImg = small.querySelector('img')
         let smallId = id++
         smallImages.push({
-          image: small.getAttribute('style'),
+          image: smallImg.getAttribute('src'),
           index: smallId,
         })
         small.addEventListener('click', () => {
@@ -181,7 +183,7 @@ if (singlePedigreeImageBig) {
     smallImages.forEach((item) => {
       singlePedigreeImageSmall[item.index].classList.remove("border-2")
       if (item.index == id) {
-        singlePedigreeImageBig.setAttribute('style', item.image)
+        singlePedigreeImageBig.setAttribute('src', item.image)
         singlePedigreeImageNumber.innerHTML = Number(item.index) + 1
         id = item.index
         singlePedigreeImageSmall[item.index].classList.add("border-2")

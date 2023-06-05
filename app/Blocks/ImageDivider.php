@@ -113,8 +113,7 @@ class ImageDivider extends Block
      * @var array
      */
     public $example = [
-        'field_image_type' => true,
-        'dividerImages' => ''
+        'divider_field' => ''
     ];
 
     /**
@@ -125,8 +124,7 @@ class ImageDivider extends Block
     public function with()
     {
         return [
-            'field_image_type' => $this->imageType(),
-            'dividerImages' => $this->dividerImages()
+            'divider_field' => $this->dividerField()
         ];
     }
 
@@ -140,36 +138,31 @@ class ImageDivider extends Block
         $imageDivider = new FieldsBuilder('image_divider');
 
         $imageDivider
-            ->addRepeater('dividerImages', [
+            ->addRelationship('divider_field', [
                 'label' => 'Custom Divider Images',
                 'instructions' => 'Leave empty for random portfolio images.',
-                'button_label' => 'Add Image',
+                'required' => 1,
+                'post_type' => 'portfolio_image',
+                'filters' => [],
+                'return_format' => 'object',
+                'elements' => ['featured_image'],
                 'min' => 1,
                 'max' => 5
-            ])
-                ->addImage('image', [
-                    'label' => 'Image',
-                    'instructions' => 'Select image.'
-                ])
-            ->endRepeater();
+            ]);
 
         return $imageDivider->build();
     }
 
     /**
-     * Return the dividerImages field.
+     * Return the divider_field field.
      *
      * @return array
      */
-    public function dividerImages()
+    public function dividerField()
     {
-        return get_field('dividerImages') ?: $this->example['dividerImages'];
+        return get_field('divider_field') ?: $this->example['divider_field'];
     }
 
-    public function imageType()
-    {
-        return get_field('field_image_type') ?: $this->example['field_image_type'];
-    }
 
     /**
      * Assets to be enqueued when rendering the block.
