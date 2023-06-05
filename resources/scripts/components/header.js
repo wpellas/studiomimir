@@ -5,10 +5,10 @@ const closeSmallMenu = document.querySelector("#closeSmallMenu")
 
 if (smallMenu) {
   openSmallMenu.addEventListener("click", () => {
-    smallMenu.classList.toggle("hidden")
+    smallMenu.classList.remove("invisible", "opacity-0", "pointer-events-none", "translate-x-full")
   })
   closeSmallMenu.addEventListener("click", () => {
-    smallMenu.classList.toggle("hidden")
+    smallMenu.classList.add("invisible", "opacity-0", "pointer-events-none", "translate-x-full")
   })
   
 }

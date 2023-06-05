@@ -74,13 +74,21 @@ body {
                     @apply text-secondary drop-shadow-md;
                 }
                 ul {
-                    @apply opacity-0 invisible pointer-events-none w-full absolute overflow-visible left-0 flex flex-wrap bg-secondary;
+                    @apply opacity-0 invisible pointer-events-none w-full absolute top-full overflow-visible left-0 flex flex-wrap bg-secondary;
                     transition: 0.1s;
                     border-radius: 0 0 .5rem .5rem;
+                    .current-menu-item, .current_page_item {
+                        a {
+                            @apply !text-black;
+                        }
+                        &:after {
+                            content: none;
+                        }
+                    }
                     li {
                         @apply relative w-full flex items-center text-left p-0 m-0;
                         a {
-                            @apply relative py-2 px-4 w-full text-lg text-primary;
+                            @apply relative px-4 py-1 w-full text-lg text-primary;
                         }
                         a:hover {
                             @apply text-black transition-colors duration-100 ease-in-out;
@@ -89,7 +97,7 @@ body {
                             @apply rounded-none pb-0;
                         }
                         &:last-child {
-                            @apply pb-4;
+                            @apply mb-2;
                         }
                         &:hover {
                             @apply rounded-none bg-none drop-shadow-none;
@@ -122,8 +130,20 @@ body {
         a {
             @apply text-primary;
         }
-        .sub-menu {
-            @apply text-xl left-4 relative;
+        ul {
+            @apply text-xl left-4 relative transition-all duration-200;
+            li {
+                @apply transition-all duration-200;
+                &:hover {
+                    @apply translate-x-2;
+                }
+            }
+            
+        }
+    }
+    .current-menu-item, .current_page_item {
+        a {
+            @apply !text-black;
         }
     }
 }

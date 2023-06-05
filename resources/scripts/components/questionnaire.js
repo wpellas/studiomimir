@@ -3,11 +3,12 @@ const questionnaire = document.querySelectorAll("#questionnaire")
 
 if (questionnaire) {
   questionnaire.forEach((item) => {
+    let questionnaireTitle = item.querySelector("#questionnaire_title")
     let questionnaireBody = item.querySelector("#questionnaire_body")
     let questionnaireParent = item.querySelector("#questionnaire_parent")
     let questionnaireArrow = item.querySelector("#questionnaire_arrow")
     let checkOpen = false;
-    item.addEventListener("click", () => {
+    questionnaireTitle.addEventListener("click", () => {
       if (checkOpen) {
         questionnaireBody.classList.toggle("opacity-0")
         setTimeout(() => {

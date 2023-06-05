@@ -33,7 +33,7 @@
 
         {{-- Large Format --}}
         <li id="portfolioImage" class="relative h-[400px] w-auto hidden lg:block select-none flex-grow flex-auto contains-img">
-            <img class="h-full w-full object-cover cursor-pointer transition-opacity duration-200" src="{{get_the_post_thumbnail_url(get_the_ID(), 'large')}}" alt="portfolio_image">
+            <img id="jump-{{get_the_ID()}}" class="h-full w-full object-cover cursor-pointer transition-opacity duration-200" src="{{get_the_post_thumbnail_url(get_the_ID(), 'large')}}" alt="portfolio_image">
             <div id="portfolioImageLightbox" class="fixed hidden w-full h-full top-0 left-0 z-30 flex justify-center items-center">
                 <div class="absolute w-[100vw] h-[100vh] bg-opacity-75 z-30 top-0 left-0 bg-black"></div>
                 <div class="relative w-[80vw] h-[80vh] z-30 flex justify-center items-start">
