@@ -2,7 +2,7 @@
   <div class="w-lg lg:w-full lg:px-36 h-full z-10">
       <ul class="w-full h-full min-h-[512px] flex-wrap flex lg:flex-nowrap justify-center items-center gap-4 lg:gap-8">
 
-          @if($portfolio_cards_field)
+          @if(!empty($portfolio_cards_field[0]))
           
             @foreach($portfolio_cards_field as $portfolio_card)
               @php($terms = get_the_terms($portfolio_card->ID, 'portfolio_category')[0])
@@ -12,7 +12,7 @@
                     <img class="object-cover object-center aspect-square" src="{{get_the_post_thumbnail_url($portfolio_card->ID, 'large')}}" alt="">
                     
                     <div class="flex-1 w-full flex items-center pb-4">
-                      <p class="w-full text-3xl xl:text-4xl mt-4 font-primary">{{esc_html(mb_strtoupper($terms->name))}}</p>
+                      <p class="w-full text-2xl xl:text-2xl 2xl:text-3xl mt-4 font-primary overflow-visible text-clip break-normal whitespace-nowrap">{!!mb_strtoupper($terms->name)!!}</p>
                     </div>
                   </a>
                 </div>

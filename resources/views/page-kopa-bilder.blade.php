@@ -1,4 +1,4 @@
-<!-- /portfolio_image -->
+<!-- /page-kopa-bilder -->
 @extends('layouts.app')
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url()])
 <section class="min-h-[100vh] flex justify-center">

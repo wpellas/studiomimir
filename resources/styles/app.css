@@ -65,13 +65,13 @@ body {
                     @apply pb-4 mb-0 rounded-lg;
                 }
                 &:hover {
-                    @apply text-primary bg-secondary;
+                    @apply text-primary bg-secondary drop-shadow-none;
                 }
                 &:hover a {
                     @apply text-primary;
                 }
                 a {
-                    @apply text-secondary;
+                    @apply text-secondary drop-shadow-md;
                 }
                 ul {
                     @apply opacity-0 invisible pointer-events-none w-full absolute overflow-visible left-0 flex flex-wrap bg-secondary;
@@ -91,10 +91,11 @@ body {
                         &:last-child {
                             @apply pb-4;
                         }
+                        &:hover {
+                            @apply rounded-none bg-none drop-shadow-none;
+                        }
                     }
-                    li:hover {
-                        @apply rounded-none bg-none;
-                    }
+                    
                     li:last-child {
                         @apply pb-2 border-none;
                         border-radius: 0 1rem 1rem 1rem ;

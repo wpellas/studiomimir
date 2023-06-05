@@ -3,7 +3,6 @@
     <div class="w-full h-full">
       {!! strip_tags($text_block_field, '<div>, <a>, <p>, <strong>, <em>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <ul>, <ol>, <li>') !!}
     </div>
-    
-    <img class="w-full h-full" src="{{$image_field['sizes']['large']}}" alt="">
+    <img class="w-full h-full" src="{{!empty($image_field) ? $image_field['sizes']['large'] : get_the_post_thumbnail_url(get_the_ID(), 'large')}}" alt="">
   </div>
 </div>

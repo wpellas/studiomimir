@@ -1,5 +1,7 @@
 <ul class="relative w-full lg:w-lg flex flex-wrap after:flex-grow-[999] gap-2">
-  @foreach($portfolio_gallery_field as $gallery_image)
+    @if(!empty($portfolio_gallery_field))
+    @foreach($portfolio_gallery_field as $gallery_image)
+        @if(!empty($gallery_image))
       {{-- Small Format --}}
       <li class="block lg:hidden">
           <a href="{{get_the_post_thumbnail_url($gallery_image->ID)}}" target="_blank">
@@ -19,5 +21,7 @@
               </div>
           </div>
       </li>
-  @endforeach
+      @endif
+    @endforeach
+    @endif
 </ul>

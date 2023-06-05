@@ -1,4 +1,4 @@
-<!-- /portfolio_image -->
+<!-- /hundar -->
 @extends('layouts.app')
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url()])
 <section class="min-h-[100vh] flex justify-center">
@@ -6,18 +6,21 @@
     @query([
         'post_type' => 'dog_pedigree',
         'posts_per_page' => -1,
-        'orderby' => 'rand'
+        'orderby' => 'menu_order',
+        'order' => 'ASC'
     ])
     <div class="w-full lg:w-lg h-full p-2 lg:p-0 lg:pt-8 font-primary text-primary text-center">
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
     @posts
     
-    @php($pedigreeImages = get_field('pedigree_images'))
+    @if(!empty(get_field('pedigree_images')))
+        @php($pedigreeImages = get_field('pedigree_images'))
+    @endif
     @if(!empty($pedigreeImages[0]['pedigree_image']['sizes']['large']))
         @php($largePedigree = $pedigreeImages[0]['pedigree_image']['sizes']['large'])
-    
-    @php($breed = get_the_terms(get_the_ID(), 'dog_breed'))
-    @php($titles = get_the_terms(get_the_ID(), 'dog_titles'))
+        @php($breed = get_the_terms(get_the_ID(), 'dog_breed'))
+        @php($titles = get_the_terms(get_the_ID(), 'dog_titles'))
+
     {{-- Small Format --}}
     <li class="w-full h-full block lg:hidden">
         <a class="w-full h-full cursor-pointer" href="{{the_permalink()}}">
@@ -49,7 +52,7 @@
                         <a class="text-5xl font-secondary text-primary" href="{{the_permalink()}}">@title</a>
                         <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name')</h3>
                         <p class="text-sm font-secondary !pt-0 !pb-0 border-b-[1px] border-primary border-dotted">
-                            @if($titles)
+                            @if(!empty($titles))
                                 @foreach($titles as $title)
                                     {{$title->name}}
                                 @endforeach

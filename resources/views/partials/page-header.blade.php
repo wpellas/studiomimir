@@ -12,16 +12,16 @@
   @php($subtitleCheck = false)
 @endif
 
-<div class="w-full {{$subtitleCheck ? "h-[100vh]" : "h-[66vh]"}}">
-  <div class="w-full {{$subtitleCheck ? "h-2/3" : "h-full"}} bg-cover bg-top" style="background-image: url({{$thumbnail}})"></div>
-  <div class="w-full h-1/3 flex justify-center">
+<div class="w-full {{$subtitleCheck ? "h-[100vh]" : "h-[75vh]"}}">
+  <div class="w-full {{$subtitleCheck ? "h-3/4" : "h-full"}} bg-cover bg-top" style="background-image: url({{$thumbnail}})"></div>
+  <div class="w-full h-1/4 flex justify-center">
     <div class="w-full lg:w-lg h-full px-4 lg:px-0 flex flex-wrap justify-center items-center text-center">
       <div class="w-full">
 
           <h1 class="text-2xl lg:text-4xl w-full pb-4 lg:pb-8 text-primary font-secondary mt-4 lg:mt-0">{{get_field('heading', $identifier)}}</h1>
 
           @fields('subtitles', $identifier)
-            <p class="w-full text-sm lg:text-xl font-primary">
+            <p class="w-full text-sm lg:text-xl font-primary !leading-8">
             @sub('subtitle')
             </p>
           @endfields
