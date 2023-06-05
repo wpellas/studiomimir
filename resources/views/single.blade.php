@@ -1,8 +1,14 @@
 @extends('layouts.app')
+@include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url()])
+
 
 @section('content')
+<section class="min-h-[100vh] flex justify-center items-center">
+  <div class="w-full lg:w-lg h-full">
   @while(have_posts()) @php(the_post())
     @includeFirst(['partials.content-single-' . get_post_type(), 'partials.content-single'])
-    single
+    
   @endwhile
+  </div>
+</section>
 @endsection

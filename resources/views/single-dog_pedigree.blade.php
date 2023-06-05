@@ -1,5 +1,6 @@
+@php($id = get_page_by_title( 'hundar', '', 'page' )->ID)
 @extends('layouts.app')
-@include('partials.page-header', ['thumbnail' => 'https://cdn.discordapp.com/attachments/537909129952624640/1112648478133334066/pexels-simona-kidric-2607544.jpg'])
+@include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url($id)])
 
 <section class="min-h-[100vh] flex justify-center items-center">
     <div class="w-full lg:w-lg h-full flex flex-wrap justify-center items-center text-primary">
