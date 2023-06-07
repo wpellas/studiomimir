@@ -24,6 +24,7 @@
     <div class="w-full h-full lg:w-lg pt-8">
         <ul class="relative w-full lg:w-lg flex flex-wrap after:flex-grow-[999] gap-2">
             @posts
+            @if(get_the_post_thumbnail_url())
         {{-- Small Format --}}
         <li class="block lg:hidden">
             <a href="{{get_the_post_thumbnail_url()}}" target="_blank">
@@ -44,7 +45,7 @@
                 </div>
             </div>
          </li>
-
+         @endif
         @endposts
 
         </ul>

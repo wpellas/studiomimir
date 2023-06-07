@@ -2,7 +2,7 @@
     <div class="w-lg px-4 lg:px-0 h-full z-10 flex flex-wrap justify-center py-10">
       <h1 class="w-full text-center uppercase font-secondary text-primary text-2xl lg:text-4xl py-6">{{esc_html(strip_tags($title_field))}}</h1>
       @hasfield('contact_form_field')
-      <h5 class="font-primary normal-case">{{__("Currently using")}}: <span class="font-extrabold text-black">{{$contact_form_field[0]->post_title}}</span>. {{__("This message is only visible in the editor")}}.</h5>
+      <h5 class="font-primary normal-case">{{__("Currently using")}}: <span class="text-black">{{$contact_form_field[0]->post_title}}</span>. {{__("This message is only visible in the editor")}}.</h5>
       <form class="relative w-full lg:w-[800px] h-full flex flex-wrap gap-4 font-primary" action="POST">
         <input class="w-full h-12 lg:h-16 px-2 text-lg text-primary border-primary border-2 placeholder:text-primary placeholder:uppercase placeholder:text-base placeholder:lg:text-lg" type="text" name="form_name" id="" placeholder="{{__("namn")}}">
         <input class="w-full h-12 lg:h-16 px-2 text-lg text-primary border-primary border-2 placeholder:text-primary placeholder:uppercase placeholder:text-base placeholder:lg:text-lg" type="text" name="form_email" id="" placeholder="{{__("epost")}}">

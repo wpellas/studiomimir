@@ -2,7 +2,7 @@
   <h1 class="text-center w-full text-xl lg:text-4xl uppercase font-secondary text-primary py-6">{{$title_field}}</h1>
 
   @if(is_admin())
-    <p class="w-full text-xl text-primary text-center">{{__('This is where the instagram feed is shown. Your currently selected feed is: ')}}{{get_field('choice_field') ? get_field('choice_field') : '1'}}</p>
+    <h5 class="w-full text-primary text-center font-primary normal-case">{{__('Currently using feed')}} <span class="text-black">#{{get_field('choice_field') ? get_field('choice_field') : '1'}}</span>. This is where the Instagram feed is shown for a page visitor.</h5>
   @else
     <div>[instagram-feed feed={{get_field('choice_field') ? get_field('choice_field') : '1'}}]</div>
   @endif
