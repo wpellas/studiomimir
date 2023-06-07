@@ -1,12 +1,11 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Zen+Kaku+Gothic+New:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 /* Any and All */
 * {
     text-decoration: none;
+    font-display: swap;
 }
 body {
     @apply font-primary m-0 p-0;

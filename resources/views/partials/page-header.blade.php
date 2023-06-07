@@ -13,7 +13,7 @@
 @endif
 
 <div class="w-full {{$subtitleCheck ? "h-[50svh] lg:h-[100vh]" : "h-[50svh] lg:h-[75svh]"}}">
-  <div class="w-full {{$subtitleCheck ? "h-2/4 lg:h-3/4" : "h-full"}} bg-cover bg-top" style="background-image: url({{$thumbnail}})"></div>
+  <img class="w-full {{$subtitleCheck ? "h-2/4 lg:h-3/4" : "h-full"}} object-cover object-top" src="{{$thumbnail}}" loading="eager">
   @if($subtitleCheck)
   <div class="w-full h-1/4 flex justify-center">
     <div class="w-full lg:w-lg h-full px-4 lg:px-0 flex flex-wrap justify-center items-center text-center">

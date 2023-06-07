@@ -14,6 +14,8 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Zen+Kaku+Gothic+New:wght@700&display=swap', array(), null );
+    wp_enqueue_style( 'material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), null );
     bundle('app')->enqueue();
 }, 100);
 

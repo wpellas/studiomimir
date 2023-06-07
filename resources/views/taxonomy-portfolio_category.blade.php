@@ -44,9 +44,9 @@
                     </div>
                 </div>
             </div>
-         </li>
-         @endif
-        @endposts
+        </li>
+            @endif
+            @endposts
 
         </ul>
     </div>
