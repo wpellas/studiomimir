@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class Instagram extends Block
+class MimirVideo extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Mimir Instagram';
+    public $name = 'Mimir Video';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'Studio Mimir Instagram block.';
+    public $description = 'A simple Mimir Video block.';
 
     /**
      * The block category.
@@ -33,14 +33,14 @@ class Instagram extends Block
      *
      * @var string|array
      */
-    public $icon = 'instagram';
+    public $icon = 'editor-ul';
 
     /**
      * The block keywords.
      *
      * @var array
      */
-    public $keywords = ['studio', 'mimir', 'instagram', 'feed'];
+    public $keywords = [];
 
     /**
      * The block post type allow list.
@@ -96,7 +96,7 @@ class Instagram extends Block
         'full_height' => false,
         'anchor' => false,
         'mode' => false,
-        'multiple' => false,
+        'multiple' => true,
         'jsx' => true,
     ];
 
@@ -113,8 +113,7 @@ class Instagram extends Block
      * @var array
      */
     public $example = [
-        'title_field' => 'My Instagram Feed',
-        'choice_field' => '1'
+        'video_field' => '',
     ];
 
     /**
@@ -125,8 +124,7 @@ class Instagram extends Block
     public function with()
     {
         return [
-            'title_field' => $this->titleField(),
-            'choice_field' => $this->choiceField()
+            'video_field' => $this->videoField(),
         ];
     }
 
@@ -137,21 +135,17 @@ class Instagram extends Block
      */
     public function fields()
     {
-        $instagram = new FieldsBuilder('instagram');
+        $mimirVideo = new FieldsBuilder('mimir_video');
 
-        $instagram
-            ->addText('title_field')
-            ->addSelect('choice_field', [
-                'label' => 'Instagram Feed',
-                'instructions' => 'Select which Feed to be used. (Instagram Feed Plugin)',
-                'required' => 1,
-                'choices' => ['1', '2', '3', '4', '5'],
-                'default_value' => '1',
-                'allow_null' => 0,
-                'multiple' => 0
+        $mimirVideo
+            ->addText('video_field', [
+                'label' => 'Video URL ID',
+                'instructions' => 'Only add the end of the video (the unique part). Example below: <br /> <del>https://www.youtube.com/watch?v=</del><strong>dm3dTNcok4E</strong>',
+                'placeholder' => 'dm3dTNcok4E'
             ]);
 
-        return $instagram->build();
+
+        return $mimirVideo->build();
     }
 
     /**
@@ -159,14 +153,9 @@ class Instagram extends Block
      *
      * @return array
      */
-    public function titleField()
+    public function videoField()
     {
-        return get_field('title_field') ?: $this->example['title_field'];
-    }
-
-    public function choiceField()
-    {
-        return get_field('choice_field') ?: $this->example['choice_field'];
+        return get_field('video_field') ?: $this->example['video_field'];
     }
 
     /**
@@ -174,7 +163,7 @@ class Instagram extends Block
      *
      * @return void
      */
-    public function enqueue(): void
+    public function enqueue()
     {
         //
     }

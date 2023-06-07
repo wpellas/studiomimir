@@ -13,7 +13,7 @@
       </div>
 
       @if($image_field)
-        <img class="h-auto w-full lg:w-1/2 object-cover object-center" src="{{$image_field['sizes']['large']}}" alt="who_am_i_image">
+        <img width="100%" height="100%" class="h-auto w-full lg:w-1/2 object-cover object-center" src="{{$image_field['sizes']['large']}}" alt="who_am_i_image">
       @endif
 
   </div>

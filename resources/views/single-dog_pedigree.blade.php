@@ -25,7 +25,7 @@
                                 @endforeach
                             @endif
                         </p>
-                        <img id="singlePedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
+                        <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0">
                             <span id="singlePedigreePrevious" class="material-symbols-outlined select-none cursor-pointer text-3xl lg:text-2xl">arrow_back_ios</span>
                             <p class="text-zinc-800 select-none"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
@@ -54,7 +54,7 @@
                     <ul class="flex gap-[6.4px] w-full h-40">
                         @foreach ($pedigreeImages as $pedigreeImage)
                         <li id="singlePedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                            <img class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['large']}}" alt="{{get_the_title()}}">
+                            <img width="100%" height="100%" class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['large']}}" alt="{{get_the_title()}}">
                         </li>
                         @endforeach
                     </ul>

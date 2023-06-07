@@ -7,7 +7,7 @@
 @php($gallery_image_ids = $product->get_gallery_image_ids())
 <div class="flex">
     @foreach($gallery_image_ids as $image_id)
-    <img src="{{wp_get_attachment_url($image_id)}}" alt="{{get_the_title()}}" class="" style="width: 300px; height: 300px; border-radius: 5px;">
+    <img width="100%" height="100%" src="{{wp_get_attachment_url($image_id)}}" alt="{{get_the_title()}}" class="" style="width: 300px; height: 300px; border-radius: 5px;">
     @endforeach
 </div>
 @dump($product)

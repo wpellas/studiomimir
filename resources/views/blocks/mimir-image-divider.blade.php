@@ -8,7 +8,7 @@
       @php($terms = get_the_terms($image->ID, 'portfolio_category'))
       @if(!empty($terms))
       @php($terms = $terms[0])
-      <a class="flex-1 h-96 w-full contains-img" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug#jump-$image->ID"}}"><img class="w-full h-full object-center object-cover transition-opacity duration-200" src="{{get_the_post_thumbnail_url($image->ID, 'large')}}" alt="divider-image_{{get_the_title()}}"></a>
+      <a class="flex-1 h-96 w-full contains-img" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug#jump-$image->ID"}}"><img width="100%" height="100%" class="w-full h-full object-center object-cover transition-opacity duration-200" src="{{get_the_post_thumbnail_url($image->ID, 'large')}}" alt="divider-image_{{get_the_title()}}"></a>
       @endif
     @endforeach
 
@@ -25,7 +25,7 @@
         @php($terms = get_the_terms(get_the_ID(), 'portfolio_category'))
         @if(!empty($terms))
           @php($terms = $terms[0])
-        <a class="flex-1 h-96 w-full contains-img" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug#jump-" . get_the_ID()}}"><img class="w-full h-full object-center object-cover transition-opacity duration-200" src="{{get_the_post_thumbnail_url(get_the_ID(), 'large')}}" alt="divider-image_{{get_the_title()}}"></a>
+        <a class="flex-1 h-96 w-full contains-img" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug#jump-" . get_the_ID()}}"><img width="100%" height="100%" class="w-full h-full object-center object-cover transition-opacity duration-200" src="{{get_the_post_thumbnail_url(get_the_ID(), 'large')}}" alt="divider-image_{{get_the_title()}}"></a>
         @endif
       @endposts
     @endhasposts
