@@ -210,7 +210,7 @@ body {
 .mimir-form-field {
     @apply w-full flex justify-end;
     p {
-        @apply w-auto;
+        @apply w-auto flex flex-row-reverse items-center;
     }
 }
 .mimir-form-approve {
@@ -224,9 +224,6 @@ body {
 }
 .mimir-form-send {
     @apply bg-primary py-2 lg:py-4 px-4 lg:px-6 uppercase text-secondary font-secondary text-base lg:text-xl hover:animate-pulse;
-}
-.wpcf7-spinner {
-    @apply hidden;
 }
 /* Webshop */
 .webshop {

@@ -114,6 +114,7 @@ class ContactMe extends Block
      */
     public $example = [
         'title_field' => 'Contact Me',
+        'contact_form_field' => '',
     ];
 
     /**
@@ -125,6 +126,7 @@ class ContactMe extends Block
     {
         return [
             'title_field' => $this->titleField(),
+            'contact_form_field' => $this->contactFormField(),
         ];
     }
 
@@ -142,6 +144,16 @@ class ContactMe extends Block
                 'label' => 'Contact Form Title',
                 'placeholder' => 'Contact Me',
                 'prepend' => 'Title:'
+            ])
+            ->addRelationship('contact_form_field', [
+                'label' => 'Contact Form',
+                'instructions' => 'Which Contact Form do you want to use?',
+                'required' => 1,
+                'post_type' => 'wpcf7_contact_form',
+                'filters' => [],
+                'return_format' => 'object',
+                'min' => 1,
+                'max' => 1
             ]);
             
 
@@ -156,6 +168,10 @@ class ContactMe extends Block
     public function titleField()
     {
         return get_field('title_field') ?: $this->example['title_field'];
+    }
+    public function contactFormField()
+    {
+        return get_field('contact_form_field') ?: $this->example['contact_form_field'];
     }
 
     /**
