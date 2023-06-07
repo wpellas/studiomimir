@@ -24,7 +24,7 @@
                 @posts
                 <li class="w-full h-full pb-4 webshop">
                     <a href="{{the_permalink()}}">
-                        <img class="h-auto w-full aspect-square object-cover object-center" src="{{get_the_post_thumbnail_url()}}" alt="">
+                        <img class="h-auto w-full aspect-square object-cover object-center" src="{{get_the_post_thumbnail_url()}}" alt="{{get_the_title()}}">
                         <div class="w-full text-center">
                             <h1 class="text-lg text-primary uppercase font-secondary">Produktnamn</h1>
                             <p class="text-base text-black">1039 SEK</p>

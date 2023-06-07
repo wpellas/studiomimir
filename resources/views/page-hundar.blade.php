@@ -24,13 +24,13 @@
     {{-- Small Format --}}
     <li class="w-full h-full block lg:hidden">
         <a class="w-full h-full cursor-pointer" href="{{the_permalink()}}">
-            <img class="w-full h-full object-cover hover:opacity-60 cursor-pointer" src="{{$largePedigree}}" alt="">
+            <img class="w-full h-full object-cover hover:opacity-60 cursor-pointer" src="{{$largePedigree}}" alt="{{get_the_title()}}">
         </a>
     </li>
     
     {{-- Large Format --}}
     <li id="dogPedigree" class="w-full h-full hidden lg:block contains-img">
-        <img id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer transition-opacity duration-200" src="{{$largePedigree}}" alt="">
+        <img id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer transition-opacity duration-200" src="{{$largePedigree}}" alt="{{get_the_title()}}">
         <div id="pedigreeContainer" class="hidden fixed z-30 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-30"></div>
             <div class="z-30 bg-secondary lg:w-lg   relative">
@@ -40,7 +40,7 @@
                 <div class="p-4">
                     <div class="w-full h-[500px] flex gap-4">
                         <div class="w-full h-full">
-                            <img id="pedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$largePedigree}}">
+                            <img id="pedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
                             <div class="w-full h-[30px] flex justify-center items-center">
                             <span id="pedigreePrevious" class="material-symbols-outlined select-none cursor-pointer transition-colors duration-200 hover:text-black">arrow_back_ios</span>
                             <p class="text-zinc-800 select-none font-secondary"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
@@ -69,7 +69,7 @@
                         <ul class="flex gap-2 w-full h-40">
                             @foreach ($pedigreeImages as $pedigreeImage)
                                 <li id="pedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                                    <img class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['large']}}" alt="">
+                                    <img class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['large']}}" alt="{{get_the_title()}}">
                                 </li>
                             @endforeach
                         </ul>
