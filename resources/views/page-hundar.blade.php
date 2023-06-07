@@ -11,7 +11,7 @@
     ])
     <div class="w-full lg:w-lg h-full p-2 lg:p-0 lg:pt-8 font-primary text-primary text-center">
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-    @posts
+        @posts
     
     @if(!empty(get_field('pedigree_images')))
         @php($pedigreeImages = get_field('pedigree_images'))
@@ -27,6 +27,7 @@
             <img class="w-full h-full object-cover hover:opacity-60 cursor-pointer" src="{{$largePedigree}}" alt="">
         </a>
     </li>
+    
     {{-- Large Format --}}
     <li id="dogPedigree" class="w-full h-full hidden lg:block contains-img">
         <img id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer transition-opacity duration-200" src="{{$largePedigree}}" alt="">
@@ -46,6 +47,7 @@
                             <span id="pedigreeNext" class="material-symbols-outlined select-none cursor-pointer transition-colors duration-200 hover:text-black">arrow_forward_ios</span>
                         </div>
                     </div>
+
                     <div class="relative w-full text-left">
                         <a class="text-5xl font-secondary text-primary" href="{{the_permalink()}}">@title</a>
                         <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name')</h3>
@@ -62,6 +64,7 @@
                         @endif
                         </div>
                     </div>
+
                     <div class="w-full pt-4">
                         <ul class="flex gap-2 w-full h-40">
                             @foreach ($pedigreeImages as $pedigreeImage)
@@ -71,12 +74,14 @@
                             @endforeach
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
     </li>
     @endif
-    @endposts
+
+        @endposts
         </ul>
     </div>
 </section>

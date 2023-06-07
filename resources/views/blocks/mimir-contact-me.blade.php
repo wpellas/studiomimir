@@ -11,3 +11,6 @@
     </form>
   </div>
 </div>
+<div class="w-lg px-4 lg:px-0 h-full z-10 flex flex-wrap justify-center py-10 placeholder:text-primary placeholder:uppercase placeholder:text-base placeholder:lg:text-lg">
+  [contact-form-7 id="727" title="Contact form 1"]
+</div>

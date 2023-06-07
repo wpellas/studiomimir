@@ -1,9 +1,7 @@
-<!-- /portfolio_image -->
+<!-- /404 -->
 @extends('layouts.app')
-@include('partials.page-header', ['thumbnail' => 'https://cdn.discordapp.com/attachments/537909129952624640/1112648478133334066/pexels-simona-kidric-2607544.jpg'])
-<section class="min-h-[100vh]">
-    @posts
-        @title
-    @endposts
+@include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url(2)])
+<section class="h-full w-full flex justify-center items-center">
+    <h1 class="py-8">404, page not found.</h1>    
     
 </section>

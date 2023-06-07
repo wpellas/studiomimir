@@ -5,15 +5,26 @@
 <section class="min-h-[100vh] flex justify-center items-center">
     <div class="w-full lg:w-lg h-full flex flex-wrap justify-center items-center text-primary">
 
+    @hasfield('pedigree_images')
     @php($pedigreeImages = get_field('pedigree_images'))
+    @php($breed = get_the_terms(get_the_ID(), 'dog_breed'))
+    @php($titles = get_the_terms(get_the_ID(), 'dog_titles'))
     <div class="w-full lg:w-lg   h-full  px-4 lg:px-0">
     <div class="top-0 left-0 w-full h-full flex justify-center items-center">
         <div class="w-full lg:w-lg relative">
             <div class="pt-8">
                 <div class="w-full h-full flex flex-wrap lg:flex-nowrap gap-4">
+
                     <div class="w-full h-full">
                         <h1 class="text-5xl lg:hidden block">@title</h1>
                         <h3 class="pt-2 text-lg italic text-zinc-800 lg:hidden block pb-2">@field('pedigree_name') </h3>
+                        <p class="text-sm font-secondary lg:hidden block pb-2">
+                            @if(!empty($titles))
+                                @foreach($titles as $title)
+                                    {{$title->name}}
+                                @endforeach
+                            @endif
+                        </p>
                         <img id="singlePedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}">
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0">
                             <span id="singlePedigreePrevious" class="material-symbols-outlined select-none cursor-pointer text-3xl lg:text-2xl">arrow_back_ios</span>
@@ -24,13 +35,22 @@
                     <div class="relative w-full text-left">
                         <h1 class="text-5xl hidden lg:block">@title</h1>
                         <h3 class="pt-2 text-lg italic text-zinc-800 hidden lg:block">@field('pedigree_name') </h3>
+                        <p class="text-sm font-secondary !pt-0 !pb-0 border-b-[1px] border-primary border-dotted hidden lg:block">
+                            @if(!empty($titles))
+                                @foreach($titles as $title)
+                                    {{$title->name}}
+                                @endforeach
+                            @endif
+                        </p>
                         <div class="pt-4 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
-                        @if(get_field('dog_owner'))
-                        <h5 class="text-sm italic text-zinc-800">Ägare: @field('dog_owner')</p>
-                        @endif
+                        @hasfield('dog_owner')
+                            <h5 class="text-sm italic text-zinc-800 !pt-2">Ägare: @field('dog_owner')</p>
+                        @endfield
                     </div>
+
                 </div>
                 <div class="w-full pt-4 hidden lg:block">
+
                     <ul class="flex gap-[6.4px] w-full h-40">
                         @foreach ($pedigreeImages as $pedigreeImage)
                         <li id="singlePedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
@@ -38,15 +58,19 @@
                         </li>
                         @endforeach
                     </ul>
+
                 </div>
             </div>
         </div>
     </div>
+
     <p class="w-full pt-8 text-black flex items-center">
         <span class="material-symbols-outlined">keyboard_return</span>
-        &nbsp;{{__('Tillbaka till')}} <a class="text-primary" href="{{home_url() . '/hundar'}}">&nbsp;{{__('Hundar')}}</a>.
+        &nbsp;{{__('Tillbaka till')}} <a class="text-primary hover:font-extrabold transition-all duration-200" href="{{home_url() . '/hundar'}}">&nbsp;{{__('Hundar')}}</a>.
     </p>
-</div>
+
+    </div>
+    @endfield
 
 </div>
 </section>
