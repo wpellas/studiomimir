@@ -11,7 +11,7 @@
               <li class="max-h-[320px] lg:max-h-[350px] lg:min-h-[280px] xl:max-h-[448px] max-w-full bg-secondary list-none aspect-[88/107] contains-img">
                 <div class="h-full w-full flex flex-wrap justify-center">
                   <a class="h-full w-full pl-4 pt-4 pr-4 text-2xl lg:text-3xl text-center font-primary text-primary hover:text-black transition-colors duration-200 flex flex-wrap" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug"}}">
-                    <img width="100%" height="100%" class="object-cover object-center aspect-square transition-opacity duration-200" src="{{get_the_post_thumbnail_url($portfolio_card->ID, 'large')}}" alt="portfolio_{{get_the_title()}}">
+                    <img width="600" height="600" class="object-cover object-center aspect-square transition-opacity duration-200" src="{{get_the_post_thumbnail_url($portfolio_card->ID, 'portrait')}}" loading="eager" alt="portfolio_{{get_the_title()}}">
                     
                     <div class="flex-1 w-full flex justify-center items-center pb-4">
                       <p class="max-w-full text-2xl lg:text-xl 2xl:text-2xl mt-4 font-secondary overflow-visible text-clip break-normal whitespace-nowrap">{!!mb_strtoupper($terms->name)!!}</p>

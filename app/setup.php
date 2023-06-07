@@ -35,6 +35,7 @@ add_action('enqueue_block_editor_assets', function () {
  */
 add_action('after_setup_theme', function () {
     add_image_size( 'hero', 2560, 1440, false );
+    add_image_size( 'portrait', 600, 600, false );
     add_theme_support('editor-styles');
     add_editor_style(asset('app.css'));
     /**

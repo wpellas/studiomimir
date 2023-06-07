@@ -54,7 +54,7 @@
                     <ul class="flex gap-[6.4px] w-full h-40">
                         @foreach ($pedigreeImages as $pedigreeImage)
                         <li id="singlePedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                            <img width="100%" height="100%" class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['large']}}" alt="{{get_the_title()}}">
+                            <img width="100%" height="100%" class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}">
                         </li>
                         @endforeach
                     </ul>

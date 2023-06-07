@@ -16,8 +16,8 @@
     @if(!empty(get_field('pedigree_images')))
         @php($pedigreeImages = get_field('pedigree_images'))
     @endif
-    @if(!empty($pedigreeImages[0]['pedigree_image']['sizes']['large']))
-        @php($largePedigree = $pedigreeImages[0]['pedigree_image']['sizes']['large'])
+    @if(!empty($pedigreeImages[0]['pedigree_image']['sizes']['portrait']))
+        @php($largePedigree = $pedigreeImages[0]['pedigree_image']['sizes']['portrait'])
         @php($breed = get_the_terms(get_the_ID(), 'dog_breed'))
         @php($titles = get_the_terms(get_the_ID(), 'dog_titles'))
 
@@ -69,7 +69,7 @@
                         <ul class="flex gap-2 w-full h-40">
                             @foreach ($pedigreeImages as $pedigreeImage)
                                 <li id="pedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                                    <img width="100%" height="100%" class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['large']}}" alt="{{get_the_title()}}">
+                                    <img width="100%" height="100%" class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}">
                                 </li>
                             @endforeach
                         </ul>
