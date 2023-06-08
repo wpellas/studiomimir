@@ -37,7 +37,18 @@ add_action('after_setup_theme', function () {
     add_image_size( 'hero', 2560, 1440, false );
     add_image_size( 'portrait', 600, 600, false );
     add_theme_support('editor-styles');
-    add_theme_support('woocommerce');
+    add_theme_support('woocommerce', array(
+        'product_grid'          => array(
+            'default_rows'    => 3,
+            'min_rows'        => 2,
+            'max_rows'        => 3,
+            'default_columns' => 3,
+            'min_columns'     => 2,
+            'max_columns'     => 3,
+        ),
+    ));
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
     add_editor_style(asset('app.css'));
     /**
      * Enable features from the Soil plugin if activated.

@@ -96,7 +96,7 @@ class MimirTextBlock extends Block
         'full_height' => false,
         'anchor' => false,
         'mode' => false,
-        'multiple' => false,
+        'multiple' => true,
         'jsx' => true,
     ];
 

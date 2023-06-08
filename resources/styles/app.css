@@ -164,11 +164,6 @@ body {
         @apply !text-black;
     }
 }
-.page-header {
-    img {
-        @apply h-full lg:h-3/4;
-    }
-}
 
 /* Footer */
 .content-info {
@@ -238,6 +233,11 @@ body {
 .webshop-pagination {
     a {
         @apply text-primary;
+    }
+}
+.woocommerce-product-gallery__image {
+    img {
+        @apply aspect-square object-center object-cover;
     }
 }
 /* Extra */
