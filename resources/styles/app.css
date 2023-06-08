@@ -164,10 +164,15 @@ body {
         @apply !text-black;
     }
 }
+.page-header {
+    img {
+        @apply h-full lg:h-3/4;
+    }
+}
 
 /* Footer */
 .content-info {
-    @apply relative bottom-0 w-full h-[100px]; 
+    @apply relative bottom-0 w-full h-[100px];
     .nav {
         @apply w-full flex justify-center gap-8;
         li {
