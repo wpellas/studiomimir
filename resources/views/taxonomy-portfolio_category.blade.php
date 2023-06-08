@@ -5,7 +5,7 @@
 @php($term = get_queried_object())
 @php($identifier = 'portfolio_category_' . $term->term_id)
 @php($thumbnail = get_field('portfolio_category_image', $identifier))
-@include('partials.page-header', ['thumbnail' => $thumbnail, 'identifier' => $identifier])
+@include('partials.page-header', ['thumbnail' => $thumbnail['sizes']['hero'], 'identifier' => $identifier])
 
     @query([
         'post_type' => 'portfolio_image',
@@ -19,7 +19,6 @@
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ])
-
 <section class="section min-h-[100vh] flex justify-center">
     <div class="w-full h-full lg:w-lg pt-8">
         <ul class="relative w-full lg:w-lg flex flex-wrap after:flex-grow-[999] gap-2">
