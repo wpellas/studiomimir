@@ -235,11 +235,20 @@ body {
         @apply text-primary;
     }
 }
+
+/* WooCommerce */
+.woocommerce {
+    .product_type_simple {
+        @apply !bg-primary !text-secondary hover:scale-105 transition-transform duration-200;
+    }
+}
+
 .woocommerce-product-gallery__image {
     img {
         @apply aspect-square object-center object-cover;
     }
 }
+
 /* Extra */
 .contains-img {
     &:hover img:first-child {
