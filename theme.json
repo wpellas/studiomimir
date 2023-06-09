@@ -1287,9 +1287,9 @@
           "fontFamily": "Lora,serif"
         },
         {
-          "name": "Zen Kaku Gothic New",
+          "name": "Montserrat",
           "slug": "secondary",
-          "fontFamily": "Zen Kaku Gothic New,serif"
+          "fontFamily": "Montserrat,serif"
         }
       ],
       "fontSizes": [

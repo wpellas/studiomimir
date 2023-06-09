@@ -1,11 +1,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@font-face {
+    font-family: 'Lora';
+    src: local('Lora'),
+        url('../fonts/Lora-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'),
+        url('../fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* Any and All */
 * {
     text-decoration: none;
-    font-display: swap;
 }
 body {
     @apply font-primary m-0 p-0;
@@ -51,6 +65,12 @@ body {
 /* Instagram Plugin Margins */
 #sbi_images {
     @apply flex gap-2;
+    a {
+        @apply !transition-opacity !duration-200 !delay-0;
+        &:hover {
+            @apply !opacity-60 !duration-200 !delay-0;
+        }
+    }
 }
 
 /* Header */
@@ -195,6 +215,12 @@ body {
     @apply relative w-full h-full flex flex-wrap gap-4;
     p, div {
         @apply w-full;
+    }
+}
+.wpcf7-submit{
+    @apply cursor-pointer;
+    &:disabled {
+    @apply bg-gray-300;
     }
 }
 .mimir-form-name {

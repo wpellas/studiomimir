@@ -4,7 +4,7 @@ const config = {
   theme: {
     fontFamily: {
       primary: ['Lora', 'serif'],
-      secondary: ['Zen Kaku Gothic New', 'serif']
+      secondary: ['Montserrat', 'serif']
     },
     extend: {
       colors: {

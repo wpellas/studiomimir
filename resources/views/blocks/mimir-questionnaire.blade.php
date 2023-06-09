@@ -1,5 +1,5 @@
 <div class="w-full h-full relative flex flex-wrap justify-center my-4 lg:my-8 {{ $block->classes }} {{is_admin() ? "pointer-events-none" : ""}}">
-  <div class="w-full lg:w-lg h-full px-4 lg:px-0 z-10 flex flex-wrap justify-center py-10">
+  <div class="w-full lg:w-lg h-full px-4 lg:px-0 z-10 flex flex-wrap justify-center py-8">
     
       <h1 class="text-center w-full text-2xl lg:text-4xl uppercase font-secondary text-primary py-4">
         @hasfield('questionnaire_title_field')
