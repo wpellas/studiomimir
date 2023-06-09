@@ -1256,6 +1256,11 @@
           "name": "Secondary",
           "slug": "secondary",
           "color": "#f2f2f2"
+        },
+        {
+          "name": "Primary-300",
+          "slug": "primary-300",
+          "color": "#cab6b6"
         }
       ]
     },

@@ -220,7 +220,7 @@ body {
 .wpcf7-submit{
     @apply cursor-pointer;
     &:disabled {
-    @apply bg-gray-300;
+    @apply bg-primary-300;
     }
 }
 .mimir-form-name {

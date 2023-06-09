@@ -9,7 +9,8 @@ const config = {
     extend: {
       colors: {
         primary: '#be7272',
-        secondary: '#F2F2F2'
+        secondary: '#F2F2F2',
+        "primary-300": '#CAB6B6'
       }, // Extend Tailwind's default colors
       spacing: {
         sm: '640px',
