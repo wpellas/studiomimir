@@ -255,6 +255,8 @@ body {
 .mimir-form-send {
     @apply bg-primary py-2 lg:py-4 px-4 lg:px-6 uppercase text-secondary font-secondary text-base lg:text-xl hover:animate-pulse;
 }
+
+
 /* Webshop */
 .webshop {
     &:hover h1 {
@@ -277,6 +279,11 @@ body {
 .woocommerce-product-gallery__image {
     img {
         @apply aspect-square object-center object-cover;
+    }
+}
+.woocommerce-ordering {
+    .orderby {
+        @apply bg-white;
     }
 }
 

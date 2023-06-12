@@ -11,13 +11,13 @@
         @hasfields('questions_field')
           @fields('questions_field')
           {{-- Small Format --}}
-          <li class="block lg:hidden relative w-full my-4 pb-2 text-primary font-primary list-none border-b-[1px] border-primary last:border-b-0">
+          <li class="block lg:hidden relative w-full my-4 pb-2 text-primary font-primary list-none border-b-[1px] border-primary border-dotted last:border-none">
               <h1 class="w-full text-base lg:text-2xl bg-white z-20 font-secondary uppercase cursor-pointer">
                 @sub('question_title_field')
               </h1>
 
               <div class="relative w-full mt-2 ease-in-out transition-all duration-300 z-10 pointer-events-none">
-                <div class="my-2 overflow-hidden ease-in-out transition-all duration-300 delay-300 text-sm lg:text-lg">
+                <div class="my-2 overflow-hidden ease-in-out transition-all duration-300 delay-300 text-sm lg:text-lg text-black">
                   @sub('question_answer_field')
                 </div>
               </div>
@@ -36,7 +36,7 @@
             </div>
 
               <div id="questionnaire_parent" class="{{!is_admin() ? "-translate-y-full" : ""}} relative w-full border-b-[1px] border-primary mt-2 ease-in-out transition-all duration-300 z-10 pointer-events-none">
-                <div id="questionnaire_body" class="{{!is_admin() ? "opacity-0 h-0" : ""}} my-2 overflow-hidden ease-in-out transition-all duration-300 delay-300 text-sm lg:text-lg">
+                <div id="questionnaire_body" class="{{!is_admin() ? "opacity-0 h-0" : ""}} my-2 overflow-hidden ease-in-out transition-all duration-300 delay-300 text-sm lg:text-lg text-black">
                   @sub('question_answer_field')
                 </div>
               </div>
