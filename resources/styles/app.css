@@ -292,24 +292,25 @@ body {
   }
 }
 form .cart {
-    
 }
 .product_meta {
-    @apply flex flex-wrap;
-    span {
-        @apply w-full;
-    }
+  @apply flex flex-wrap;
+  span {
+    @apply w-full;
+  }
 }
-.woocommerce-tabs {
-    .tabs::before, .tabs::after {
-        @apply !border-none;
-    }
-    .description_tab {
-        @apply !border-none;
-        &::before, &::after {
-            @apply !border-none;
-        }
-    }
+.tabs {
+  &::before,
+  &::after {
+    @apply !border-none;
+  }
+}
+.description_tab {
+  @apply !border-none;
+  &::before,
+  &::after {
+    @apply !border-none;
+  }
 }
 .onsale {
   @apply !absolute !text-center !text-secondary !font-secondary !uppercase !top-0 !-left-4 !m-0 !right-auto !rounded-none !bg-primary !text-lg !font-normal !p-3 !-rotate-12;
