@@ -8,7 +8,7 @@
               @php($terms = get_the_terms($portfolio_card->ID, 'portfolio_category'))
               @if(!empty($terms))
               @php($terms = $terms[0])
-              <li class="max-h-[320px] lg:max-h-[350px] lg:min-h-[280px] xl:max-h-[448px] max-w-full bg-secondary list-none aspect-[88/107] contains-img">
+              <li class="max-h-max lg:max-h-[350px] lg:min-h-[280px] xl:max-h-[448px] max-w-full mx-4 lg:mx-0 bg-secondary list-none aspect-[88/107] contains-img">
                 <div class="h-full w-full flex flex-wrap justify-center">
                   <a class="h-full w-full pl-4 pt-4 pr-4 text-2xl lg:text-3xl text-center font-primary text-primary hover:text-black transition-colors duration-200 flex flex-wrap" href="{{get_home_url() . "/$terms->taxonomy/$terms->slug"}}">
                     <img width="600" height="600" class="object-cover object-center aspect-square transition-opacity duration-200" src="{{get_the_post_thumbnail_url($portfolio_card->ID, 'portrait')}}" loading="eager" alt="portfolio_{{get_the_title()}}">
@@ -25,9 +25,9 @@
           @else
 
           <div>
-            <p class="w-full text-center text-2xl text-secondary">{{__("Add some content in the WordPress Menu!")}}</p>
+            <p class="w-full text-center text-2xl text-secondary">{{__("Add some content in the WordPress Menu!", 'mimir')}}</p>
             @if(is_admin())
-              <p class="w-full text-center text-xl text-secondary">{{__("Click this block and then add items in 'Portfolio Image'.")}}</p>
+              <p class="w-full text-center text-xl text-secondary">{{__("Click this block and then add items in 'Portfolio Image'.", 'mimir')}}</p>
             @endif
           </div>
 

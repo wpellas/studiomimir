@@ -57,10 +57,10 @@ body {
         @apply font-secondary text-primary uppercase py-4;
     }
     ol {
-        @apply list-decimal;
+        @apply list-decimal pl-4;
     }
     ul {
-        @apply list-disc;
+        @apply list-disc pl-4;
 
     }
 }

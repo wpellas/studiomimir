@@ -26,7 +26,7 @@
                     <span class="hidden lg:block border-b-[1px] border-dotted w-1/4 border-primary"></span>
                     <p class="w-full text-center text-xl font-secondary">{{date('F j, H:i', $timestamp)}} - {{$expiredDate}}</p>
                 </div>
-                <div class="w-full text-base lg:text-xl flex flex-wrap content-center">
+                <div class="w-full text-base lg:text-xl flex flex-wrap content-center text-center lg:text-left">
                     {!! strip_tags($body, '<div>, <a>, <strong>, <em>') !!}
                 </div>
             </li>

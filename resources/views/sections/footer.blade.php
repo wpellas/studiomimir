@@ -21,6 +21,6 @@
     @else
     <span class="w-full py-4"></span>
     @endif
-    <p class="w-full text-sm lg:text-base text-center mb-6 uppercase">{{__("All content copyright")}} &#169; {{date('Y')}} Studio Mimir</p>
+    <p class="w-full text-sm lg:text-base text-center mb-6 uppercase">{{__("All content copyright", 'mimir')}} &#169; {{date('Y')}} Studio Mimir</p>
   </div>
 </footer>

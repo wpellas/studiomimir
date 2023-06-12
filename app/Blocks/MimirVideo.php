@@ -141,7 +141,8 @@ class MimirVideo extends Block
             ->addText('video_field', [
                 'label' => 'Video URL ID',
                 'instructions' => 'Only add the end of the video (the unique part). Example below: <br /> <del>https://www.youtube.com/watch?v=</del><strong>dm3dTNcok4E</strong>',
-                'placeholder' => 'dm3dTNcok4E'
+                'placeholder' => 'dm3dTNcok4E',
+                'prepend' => '/watch?v='
             ]);
 
 

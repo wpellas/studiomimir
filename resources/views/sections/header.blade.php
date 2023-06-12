@@ -9,11 +9,14 @@
 
 @if (has_nav_menu('primary_navigation'))
 {{-- Small Format --}}
-  <header class="block lg:hidden z-20 fixed w-[100vw] top-0 pointer-events-none">
-    <span id="openSmallMenu" class="material-symbols-outlined absolute top-4 right-4 text-black cursor-pointer text-4xl select-none bg-secondary p-2 pointer-events-auto">menu</span>
+  <header class="block lg:hidden z-20 fixed w-full top-0 pointer-events-none">
+    <div class="w-full absolute top-0 h-20 bg-secondary flex flex-nowrap justify-between items-center px-4 drop-shadow-lg pointer-events-auto">
+      <a class="w-full text-black mr-8" href="{{home_url()}}"><img class="relative" src="" alt="studio mimir"></a>
+      <i id="openSmallMenu" class="fa-solid fa-bars relative text-black cursor-pointer text-4xl select-none"></i>
+    </div>
     <nav id="smallMenu" class="nav-small relative top-0 left-0 flex justify-end h-[100vh] invisible opacity-0 pointer-events-auto translate-x-full transition-all duration-200" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
       <div class="text-primary bg-secondary h-full w-full sm:w-[80%] p-16 sm:p-8 text-3xl font-secondary uppercase">
-        <span id="closeSmallMenu" class="absolute right-4 top-4 z-30 text-4xl text-secondary material-symbols-outlined select-none bg-primary p-2 cursor-pointer">close</span>
+        <i id="closeSmallMenu" class="fa-solid fa-xmark absolute right-4 top-4 z-30 text-4xl text-secondary select-none bg-primary py-2 px-3 cursor-pointer"></i>
         {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'mobile-menu', 'echo' => false]) !!}
       </div>
     </nav>

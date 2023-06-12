@@ -75,8 +75,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
-        'secondary_navigation' => __('Secondary Navigation', 'sage'),
+        'primary_navigation' => __('Primary Navigation', 'mimir'),
+        'secondary_navigation' => __('Secondary Navigation', 'mimir'),
     ]);
 
     /**
@@ -156,8 +156,8 @@ add_action('widgets_init', function () {
 add_action('acf/init', function () {
     if(function_exists('acf_add_options_page')) {
         acf_add_options_page([
-            'page_title' => __('Social Media Settings'),
-            'menu_title' => __('Social Media Settings'),
+            'page_title' => __('Social Media Settings', 'mimir'),
+            'menu_title' => __('Social Media Settings', 'mimir'),
             'menu_slug' => 'social-media-settings',
             'redirect' => false,
             'position' => "59.3",

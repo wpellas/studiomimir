@@ -29,17 +29,17 @@ add_action('init', function() {
         'public' => true,
         'has_archive' => true,
         'labels' => [
-            'name' => __('Portfolio Images'),
-            'add_new_item' => __('Add New Portfolio Image'),
-            'edit_item' => __('Edit Portfolio Image'),
-            'all_items' => __('All Portfolio Images'),
-            'singular_name' => __('Portfolio Image'),
+            'name' => __('Portfolio Images', 'mimir'),
+            'add_new_item' => __('Add New Portfolio Image', 'mimir'),
+            'edit_item' => __('Edit Portfolio Image', 'mimir'),
+            'all_items' => __('All Portfolio Images', 'mimir'),
+            'singular_name' => __('Portfolio Image', 'mimir'),
         ],
         'menu_icon' => 'dashicons-format-gallery'
     ]);
     
     register_taxonomy('portfolio_category', 'portfolio_image', [
-        'label' => __('Portfolio Categories'),
+        'label' => __('Portfolio Categories', 'mimir'),
         'rewrite' => ['slug' => 'portfolio_category'],
         'hierarchical' => true,
         'show_admin_column' => true
@@ -52,23 +52,23 @@ add_action('init', function() {
         'has_archive' => true,
         'show_in_rest' => true,
         'labels' => [
-            'name' => __('Dog Pedigrees'),
-            'add_new_item' => __('Add New Dog Pedigree'),
-            'edit_item' => __('Edit Dog Pedigree'),
-            'all_items' => __('All Dog Pedigrees'),
-            'singular_name' => __('Dog Pedigree')
+            'name' => __('Dog Pedigrees', 'mimir'),
+            'add_new_item' => __('Add New Dog Pedigree', 'mimir'),
+            'edit_item' => __('Edit Dog Pedigree', 'mimir'),
+            'all_items' => __('All Dog Pedigrees', 'mimir'),
+            'singular_name' => __('Dog Pedigree', 'mimir')
         ],
         'menu_icon' => 'dashicons-pets'
     ]);
 
     register_taxonomy('dog_breed', 'dog_pedigree', [
-        'label' => __('Dog Breed'),
+        'label' => __('Dog Breed', 'mimir'),
         'rewrite' => ['slug' => 'dog_breed'],
         'hierarchical' => true
     ]);
 
     register_taxonomy('dog_titles', 'dog_pedigree', [
-        'label' => __('Dog Titles'),
+        'label' => __('Dog Titles', 'mimir'),
         'rewrite' => ['slug' => 'dog_titles'],
         'hierarchical' => true
     ]);
@@ -82,11 +82,11 @@ add_action('init', function() {
         'has_archive' => true,
         'show_in_rest' => true,
         'labels' => [
-            'name' => __('Upcoming Events'),
-            'add_new_item' => __('Add New Event'),
-            'edit_item' => __('Edit Event'),
-            'all_items' => __('All Events'),
-            'singular_name' => __('Upcoming Event')
+            'name' => __('Upcoming Events', 'mimir'),
+            'add_new_item' => __('Add New Event', 'mimir'),
+            'edit_item' => __('Edit Event', 'mimir'),
+            'all_items' => __('All Events', 'mimir'),
+            'singular_name' => __('Upcoming Event', 'mimir')
         ],
         'menu_icon' => 'dashicons-calendar'
     ]);

@@ -4,6 +4,7 @@
     @hasfield('contact_form_field')
       [contact-form-7 id="{{$contact_form_field[0]->ID}}" title="{{$contact_form_field[0]->post_title}}"]
     @endfield
+    <a class="w-full lg:w-[800px] text-xs text-black pt-2 italic" href="{{get_privacy_policy_url()}}">{{__('Användarvillkor och behandlingen av uppgifter samt övrig information om hur hemsidan används hittar du', 'mimir')}} <span class="text-primary">{{__('här', 'mimir')}}</span>.</a>
   </div>
 </div>
 

@@ -66,7 +66,7 @@
 
     <a class="w-full pt-8 text-black flex items-center flex-nowrap" href="{{home_url() . '/hundar'}}">
         <i class="fa-solid fa-arrow-left-long"></i>
-        <p class="text-black">&nbsp;{{__('Tillbaka till')}}<span class="text-primary">&nbsp;{{__('Hundar')}}</span></p>.
+        <p class="text-black">&nbsp;{{__('Tillbaka till', 'mimir')}}<span class="text-primary">&nbsp;{{__('Hundar', 'mimir')}}</span></p>.
     </a>
 
     </div>
