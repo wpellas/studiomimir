@@ -19,11 +19,11 @@
     <div class="w-full lg:w-lg h-full px-4 lg:px-0 flex flex-wrap justify-center items-center text-center">
       <div class="w-full flex flex-wrap gap-4 lg:gap-8">
 
-        <h1 class="text-2xl lg:text-4xl w-full text-primary font-secondary mt-4 lg:mt-0">{{get_field('heading', $identifier)}}</h1>
+        <h1 class="text-3xl lg:text-4xl w-full text-primary font-secondary mt-4 lg:mt-0">{{get_field('heading', $identifier)}}</h1>
         @hasfields('subtitles', $identifier)
         <div class="w-full text-center">
           @fields('subtitles', $identifier)
-          <p class="w-full text-sm lg:text-xl font-primary lg:!leading-8">
+          <p class="w-full text-lg lg:text-xl font-primary lg:!leading-8">
             @sub('subtitle')
           </p>
           @endfields
