@@ -4,7 +4,7 @@
 @section('content')
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url($id, 'hero')])
 
-<section class="min-h-[100vh] flex justify-center">
+<section>
 
     @query([
         'post_type' => 'portfolio_image',

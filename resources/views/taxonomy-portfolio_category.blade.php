@@ -19,7 +19,7 @@
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ])
-<section class="section min-h-[100vh] flex justify-center">
+<section>
     <div class="w-full h-full lg:w-lg pt-8 px-2 lg:px-0">
         <ul class="relative w-full lg:w-lg flex flex-wrap after:flex-grow-[999] gap-2">
             @posts

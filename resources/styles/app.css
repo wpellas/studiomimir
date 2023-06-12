@@ -21,6 +21,9 @@
 * {
     text-decoration: none;
 }
+section {
+    @apply flex flex-wrap justify-center;
+}
 body {
     @apply font-primary m-0 p-0;
     a {

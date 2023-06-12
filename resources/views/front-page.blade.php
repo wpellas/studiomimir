@@ -2,7 +2,7 @@
 
 @section('content')
   @include('partials.page-header')
-  <section class="section min-h-[100vh]">
+  <section>
     
   @content
   

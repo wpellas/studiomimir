@@ -1,7 +1,7 @@
 <!-- /hundar -->
 @extends('layouts.app')
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url(get_the_ID(), 'hero')])
-<section class="min-h-[100vh] flex justify-center">
+<section>
     @content
     @query([
         'post_type' => 'dog_pedigree',
@@ -9,7 +9,7 @@
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ])
-    <div class="w-full lg:w-lg h-full p-2 lg:p-0 lg:pt-8 font-primary text-primary text-center">
+    <div class="w-full lg:w-lg h-full p-2 lg:p-0 lg:pt-4 font-primary text-primary text-center">
         <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         @posts
     

@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url($id, 'hero')])
 
-<section class="min-h-[100vh] flex justify-center items-center">
+<section>
     <div class="w-full lg:w-lg h-full flex flex-wrap justify-center items-center text-primary">
 
     @hasfield('pedigree_images')
