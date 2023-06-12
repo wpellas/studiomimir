@@ -7,6 +7,20 @@
       {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
     </nav>
     @endif
-    <p class="w-full text-sm lg:text-base text-center my-8 uppercase">{{__("All content copyright")}} &#169; {{date('Y')}} Studio Mimir</p>
+
+    @if(!empty(get_field('footer_social_media_buttons', 'some-options')))
+      <ul class="w-full flex justify-center py-4">
+        @if(!empty(get_field('footer_instagram_field', 'some-options')))
+        <li>
+          <a class="relative" href="https://www.instagram.com/{{get_field('footer_instagram_field', 'some-options')}}">
+            <i class="fa-brands fa-instagram text-4xl text-black hover:text-primary hover:scale-105 transition-all duration-200"></i>
+          </a>
+        </li>
+        @endif
+      </ul>
+    @else
+    <span class="w-full py-4"></span>
+    @endif
+    <p class="w-full text-sm lg:text-base text-center mb-6 uppercase">{{__("All content copyright")}} &#169; {{date('Y')}} Studio Mimir</p>
   </div>
 </footer>

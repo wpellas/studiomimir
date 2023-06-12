@@ -27,9 +27,9 @@
                         </p>
                         <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0">
-                            <span id="singlePedigreePrevious" class="material-symbols-outlined select-none cursor-pointer text-3xl lg:text-2xl">arrow_back_ios</span>
-                            <p class="text-zinc-800 select-none"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
-                            <span id="singlePedigreeNext" class="material-symbols-outlined select-none cursor-pointer text-3xl lg:text-2xl">arrow_forward_ios</span>
+                            <i id="singlePedigreePrevious" class="fa-solid fa-chevron-left text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                            <p class="text-zinc-800 select-none font-secondary"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
+                            <i id="singlePedigreeNext" class="fa-solid fa-chevron-right text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
                         </div>
                     </div>
                     <div class="relative w-full text-left">
@@ -64,10 +64,10 @@
         </div>
     </div>
 
-    <p class="w-full pt-8 text-black flex items-center">
-        <span class="material-symbols-outlined">keyboard_return</span>
-        &nbsp;{{__('Tillbaka till')}} <a class="text-primary hover:font-extrabold transition-all duration-200" href="{{home_url() . '/hundar'}}">&nbsp;{{__('Hundar')}}</a>.
-    </p>
+    <a class="w-full pt-8 text-black flex items-center flex-nowrap" href="{{home_url() . '/hundar'}}">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        <p class="text-black">&nbsp;{{__('Tillbaka till')}}<span class="text-primary">&nbsp;{{__('Hundar')}}</span></p>.
+    </a>
 
     </div>
     @endfield

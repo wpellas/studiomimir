@@ -34,17 +34,17 @@
         <div id="pedigreeContainer" class="hidden fixed z-30 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-30"></div>
             <div class="z-30 bg-secondary lg:w-lg   relative">
-                <div id="pedigreeExit" class="absolute top-0 right-0 z-40 cursor-pointer">
-                    <span class="material-symbols-outlined z-30 text-5xl transition-colors duration-200 hover:text-black">close</span>
+                <div id="pedigreeExit" class="absolute top-0 right-1 z-40 cursor-pointer">
+                    <i class="fa-solid fa-xmark z-30 text-5xl transition-colors duration-200 hover:text-black"></i>
                 </div>
                 <div class="p-4">
                     <div class="w-full h-[500px] flex gap-4">
                         <div class="w-full h-full">
                             <img width="100%" height="100%" id="pedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
                             <div class="w-full h-[30px] flex justify-center items-center">
-                            <span id="pedigreePrevious" class="material-symbols-outlined select-none cursor-pointer transition-colors duration-200 hover:text-black">arrow_back_ios</span>
-                            <p class="text-zinc-800 select-none font-secondary"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
-                            <span id="pedigreeNext" class="material-symbols-outlined select-none cursor-pointer transition-colors duration-200 hover:text-black">arrow_forward_ios</span>
+                            <i id="pedigreePrevious" class="fa-solid fa-chevron-left text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                            <p class="text-zinc-800 select-none font-secondary text-lg"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
+                            <i id="pedigreeNext" class="fa-solid fa-chevron-right text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
                         </div>
                     </div>
 

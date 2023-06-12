@@ -14,6 +14,7 @@ use function Roots\bundle;
  * @return void
  */
 add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script( 'font-awesome-kit', 'https://kit.fontawesome.com/5a6823260c.js', array(), null );
     wp_enqueue_style( 'material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), null );
     bundle('app')->enqueue();
 }, 100);
@@ -151,4 +152,17 @@ add_action('widgets_init', function () {
         'name' => __('Footer', 'sage'),
         'id' => 'sidebar-footer',
     ] + $config);
+});
+add_action('acf/init', function () {
+    if(function_exists('acf_add_options_page')) {
+        acf_add_options_page([
+            'page_title' => __('Social Media Settings'),
+            'menu_title' => __('Social Media Settings'),
+            'menu_slug' => 'social-media-settings',
+            'redirect' => false,
+            'position' => "59.3",
+            'icon_url' => 'dashicons-share',
+            'post_id' => 'some-options'
+        ]);
+    }
 });

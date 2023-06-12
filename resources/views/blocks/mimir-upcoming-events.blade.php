@@ -20,7 +20,7 @@
         @if($startDate > date('Y-m-d'))
             @php($timestamp = strtotime($startDate))
             
-            <li class="w-full h-full lg:h-36 py-6 lg:py-0 flex flex-wrap lg:flex-nowrap justify-center gap-2 lg:gap-4 font-primary text-center lg:text-left border-b-[1px] lg:border-b-0 border-primary">
+            <li class="w-full h-full lg:h-36 py-6 lg:py-0 flex flex-wrap lg:flex-nowrap justify-center gap-2 lg:gap-4 font-primary text-center lg:text-left border-b-[1px] lg:border-b-0 last:border-b-0 border-primary">
                 <div class="min-w-[256px] border-r-0 lg:border-r-[1px] lg:border-primary">
 
                     <h1 class="w-full text-center uppercase text-xl text-primary font-bold font-secondary">@title</h1>
