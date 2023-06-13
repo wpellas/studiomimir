@@ -1,5 +1,5 @@
 <div class="px-4 lg:px-0 w-full h-full relative flex flex-wrap justify-center {{ $block->classes }} {{is_admin() ? "pointer-events-none" : ""}}">
-  <div class="w-lg h-full z-10 flex flex-wrap lg:flex-nowrap gap-8 font-primary">
+  <div class="w-full lg:w-lg h-full z-10 flex flex-wrap lg:flex-nowrap gap-8 font-primary">
       <div class=" w-full lg:w-1/2 text-center flex flex-wrap justify-center items-stretch gap-4 text-lg">
 
         @if ($title_field)

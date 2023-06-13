@@ -31,7 +31,7 @@
     
     {{-- Large Format --}}
     <li id="dogPedigree" class="w-full h-full hidden lg:block contains-img">
-        <img width="100%" height="100%" id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer transition-opacity duration-200" src="{{$largePedigree}}" alt="{{get_the_title()}}">
+        <img width="100%" height="100%" id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer transition-opacity duration-200" src="{{$largePedigree}}" alt="{{get_the_title()}}" aria-label="{{__('Öppna mer information om hunden', 'mimir')}}.">
         <div id="pedigreeContainer" class="hidden fixed z-30 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-30"></div>
             <div class="z-30 bg-secondary lg:w-lg relative">
@@ -72,7 +72,7 @@
                         <ul class="flex w-full h-40">
                             @foreach ($pedigreeImages as $pedigreeImage)
                                 <li id="pedigreeImageSmall" class="w-full h-full hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                                    <img width="100%" height="100%" class="w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}">
+                                    <img width="100%" height="100%" class="w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}" aria-label="{{__('Klicka för att se denna bild i ett större format', 'mimir')}}.">
                                 </li>
                             @endforeach
                         </ul>

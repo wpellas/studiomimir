@@ -27,9 +27,9 @@
                         </p>
                         <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-[480px] object-cover object-top !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0">
-                            <i id="singlePedigreePrevious" class="fa-solid fa-chevron-left px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                            <i id="singlePedigreePrevious" class="fa-solid fa-chevron-left px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black" aria-label="{{__('Klicka för att se föregående bild på hunden', 'mimir')}}."></i>
                             <p class="text-zinc-800 select-none font-secondary"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
-                            <i id="singlePedigreeNext" class="fa-solid fa-chevron-right px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                            <i id="singlePedigreeNext" class="fa-solid fa-chevron-right px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black" aria-label="{{__('Klicka för att se nästa bild på hunden', 'mimir')}}."></i>
                         </div>
                     </div>
                     <div class="relative w-full text-left">
@@ -54,7 +54,7 @@
                     <ul class="flex gap-[6.4px] w-full h-40">
                         @foreach ($pedigreeImages as $pedigreeImage)
                         <li id="singlePedigreeImageSmall" class="w-full h-full hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                            <img width="100%" height="100%" class="w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}">
+                            <img width="100%" height="100%" class="w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}" aria-label="{{__('Klicka för att se denna bild i ett större format', 'mimir')}}.">
                         </li>
                         @endforeach
                     </ul>

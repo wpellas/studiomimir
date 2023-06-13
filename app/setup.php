@@ -34,7 +34,7 @@ add_action('enqueue_block_editor_assets', function () {
  * @return void
  */
 add_action('after_setup_theme', function () {
-    add_image_size( 'hero', 2560, 1440, false );
+    add_image_size( 'hero', 1920, 1080, false );
     add_image_size( 'portrait', 600, 600, false );
     add_theme_support('editor-styles');
     add_theme_support('woocommerce', array(
