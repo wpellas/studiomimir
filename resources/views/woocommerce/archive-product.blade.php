@@ -18,15 +18,16 @@ the readme will list any important changes.
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url(get_the_ID(), 'hero')])
 
 @section('content')
+
 <section>
   <div class="w-full lg:w-lg px-4 lg:px-0 py-8">
-    
     @php
     do_action('get_header', 'shop');
     do_action('woocommerce_before_main_content');
     @endphp
 
 <header class="woocommerce-products-header">
+  
     @if (apply_filters('woocommerce_show_page_title', true))
     <h1 class="woocommerce-products-header__title page-title">{!! woocommerce_page_title(false) !!}</h1>
     @endif
@@ -35,6 +36,7 @@ the readme will list any important changes.
       do_action('woocommerce_archive_description')
       @endphp
   </header>
+  
   
   @if (woocommerce_product_loop())
   @php

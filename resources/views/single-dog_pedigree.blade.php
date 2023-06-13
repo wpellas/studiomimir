@@ -27,9 +27,9 @@
                         </p>
                         <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-[480px] object-cover object-top !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0">
-                            <i id="singlePedigreePrevious" class="fa-solid fa-chevron-left text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                            <i id="singlePedigreePrevious" class="fa-solid fa-chevron-left px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
                             <p class="text-zinc-800 select-none font-secondary"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
-                            <i id="singlePedigreeNext" class="fa-solid fa-chevron-right text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                            <i id="singlePedigreeNext" class="fa-solid fa-chevron-right px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
                         </div>
                     </div>
                     <div class="relative w-full text-left">
