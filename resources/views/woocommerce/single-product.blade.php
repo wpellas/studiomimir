@@ -15,7 +15,7 @@ the readme will list any important changes.
 --}}
 
 @extends('layouts.app')
-@include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url(get_the_ID(), 'hero')])
+@include('partials.page-header', ['thumbnail' => get_template_directory_uri() . '/resources/images/hero.webp'])
 
 
 @section('content')

@@ -1,7 +1,13 @@
 @if (has_nav_menu('primary_navigation'))
 {{-- Large Format --}}
-  <header class="w-full h-[100px] absolute top-0 justify-center z-20 hidden lg:flex font-secondary uppercase">
-    <nav class="nav-primary hidden lg:block text-secondary border-b-[1px] border-secondary w-lg  " aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+  @if(function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page()))
+  <header class="relative bg-primary w-full h-[100px] top-0 justify-center z-20 hidden lg:flex font-secondary uppercase">
+    <nav class="nav-primary hidden lg:block text-secondary w-lg" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+  @else
+  <header class="absolute w-full h-[100px] top-0 justify-center z-20 hidden lg:flex font-secondary uppercase">
+    <nav class="nav-primary hidden lg:block text-secondary w-lg border-b-[1px] border-secondary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
+  
+  @endif
       {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'large-menu', 'echo' => false]) !!}
     </nav>
   </header>
