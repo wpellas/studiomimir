@@ -3,11 +3,7 @@
 @extends('layouts.app')
 @section('content')
 @include('partials.page-header', ['thumbnail' => get_the_post_thumbnail_url($id, 'hero')])
-
 <section>
-    
-<div class="w-full h-full p-2 lg:p-0 font-primary text-primary text-center flex flex-wrap justify-center">
     @content
-</div>
 </section>
 @endsection

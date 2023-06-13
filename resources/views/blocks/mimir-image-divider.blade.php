@@ -1,7 +1,8 @@
 @if(is_admin())
-  <p class="text-primary text-center">Add custom images in the toolbar to change these, or leave empty to allow five random portfolio images that changes every page reload to exist here instead.</p>
-  @endif
-<div class="w-full h-96 relative hidden lg:flex justify-between gap-2 py-4 lg:py-8 {{is_admin() ? "pointer-events-none" : ""}}">
+  <p class="text-primary text-center">{{__('Add custom images in the toolbar to change these, or leave empty to allow five random portfolio images that changes every page reload to exist here instead.', 'mimir')}}</p>
+@endif
+
+<div class="w-full h-96 relative hidden lg:flex justify-between gap-2 {{is_admin() ? "pointer-events-none" : ""}}">
   @if(!empty($divider_field))
 
     @foreach ($divider_field as $image)

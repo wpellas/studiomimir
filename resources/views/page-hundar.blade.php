@@ -9,8 +9,8 @@
         'orderby' => 'menu_order',
         'order' => 'ASC'
     ])
-    <div class="w-full lg:w-lg h-full p-2 lg:p-0 lg:pt-4 font-primary text-primary text-center">
-        <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+    <div class="w-full lg:w-lg h-full px-4 lg:px-0 font-primary text-primary text-center">
+        <ul class="relative w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         @posts
     
     @if(!empty(get_field('pedigree_images')))
@@ -40,7 +40,7 @@
                 <div class="p-4">
                     <div class="w-full h-[500px] flex gap-4">
                         <div class="w-full h-full">
-                            <img width="100%" height="100%" id="pedigreeImageBig" class="w-full h-[480px] object-cover object-center !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
+                            <img width="100%" height="100%" id="pedigreeImageBig" class="w-full h-[480px] object-cover object-top !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
                             <div class="w-full h-[30px] flex justify-center items-center">
                             <i id="pedigreePrevious" class="fa-solid fa-chevron-left text-lg px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
                             <p class="text-zinc-800 select-none font-secondary text-lg"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
@@ -68,8 +68,8 @@
                     <div class="w-full pt-4">
                         <ul class="flex gap-2 w-full h-40">
                             @foreach ($pedigreeImages as $pedigreeImage)
-                                <li id="pedigreeImageSmall" class="w-full h-full bg-cover bg-center hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                                    <img width="100%" height="100%" class="w-full h-full object-cover object-center !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}">
+                                <li id="pedigreeImageSmall" class="w-full h-full hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
+                                    <img width="100%" height="100%" class="w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}">
                                 </li>
                             @endforeach
                         </ul>

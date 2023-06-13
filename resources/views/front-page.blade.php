@@ -3,8 +3,6 @@
 @section('content')
   @include('partials.page-header')
   <section>
-    
-  @content
-  
+    @content
   </section>
 @endsection

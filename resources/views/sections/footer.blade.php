@@ -1,4 +1,4 @@
-<footer class="content-info flex flex-wrap justify-center items-center font-primary my-8">
+<footer class="content-info flex flex-wrap justify-center items-center font-primary mb-8 mt-16">
   <div class="w-full lg:w-lg mx-4 lg:mx-0 h-[100px] border-t-[1px] border-black pt-4">
 
     {{-- @php(dynamic_sidebar('sidebar-footer')) --}}
