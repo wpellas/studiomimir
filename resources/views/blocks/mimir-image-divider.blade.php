@@ -1,5 +1,5 @@
 @if(is_admin())
-  <p class="text-primary text-center">{{__('Add custom images in the toolbar to change these, or leave empty to allow five random portfolio images that changes every page reload to exist here instead.', 'mimir')}}</p>
+  <p class="text-primary text-center">{{__('Lägg till anpassade bilder i verktygsfältet till höger för att ändra dessa, eller lämna tomt för att låta fem slumpmässiga portfoliobilder ladda in varje omladdning av sidan.', 'mimir')}}</p>
 @endif
 
 <div class="w-full h-96 relative hidden lg:flex justify-between gap-2 {{is_admin() ? "pointer-events-none" : ""}}">

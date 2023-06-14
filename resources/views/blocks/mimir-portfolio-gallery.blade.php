@@ -1,6 +1,6 @@
 <div class="px-4 lg:px-0 w-full h-full relative flex flex-wrap justify-center {{ $block->classes }} {{is_admin() ? "pointer-events-none" : ""}}">
     <ul class="relative w-full lg:w-lg flex flex-wrap after:flex-grow-[999] gap-4 lg:gap-2">
-        @if(!empty($portfolio_gallery_field))
+        @hasfield('portfolio_gallery_field')
         @foreach($portfolio_gallery_field as $gallery_image)
         @if(!empty($gallery_image))
         {{-- Small Format --}}
@@ -24,6 +24,6 @@
     </li>
     @endif
     @endforeach
-    @endif
+    @endfield
     </ul>
 </div>

@@ -25,9 +25,9 @@
           @else
 
           <div>
-            <p class="w-full text-center text-2xl text-secondary">{{__("Add some content in the WordPress Menu!", 'mimir')}}</p>
+            <p class="w-full text-center text-2xl text-secondary">{{__("Lägg till lite kort i WordPress menyn!", 'mimir')}}</p>
             @if(is_admin())
-              <p class="w-full text-center text-xl text-secondary">{{__("Click this block and then add items in 'Portfolio Image'.", 'mimir')}}</p>
+              <p class="w-full text-center text-xl text-secondary">{{__("Klicka på detta block och lägg sedan till dina val under 'Portfoliobilder'", 'mimir')}}.</p>
             @endif
           </div>
 
