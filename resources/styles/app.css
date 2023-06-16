@@ -20,7 +20,7 @@
   text-decoration: none;
 }
 section {
-  @apply flex flex-wrap justify-center gap-8 lg:gap-32;
+  @apply flex flex-wrap justify-center gap-8 lg:gap-16 xl:gap-32;
 }
 body {
   @apply font-primary m-0 p-0;
@@ -56,13 +56,23 @@ body {
 }
 
 .mimir {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
+  h1 {
+    @apply py-6;
+  }
+  h2 {
+    @apply py-5;
+  }
+  h3 {
+    @apply py-4;
+  }
+  h4 {
+    @apply py-3;
+  }
+  h5 {
+    @apply py-2;
+  }
   h6 {
-    @apply font-secondary text-primary uppercase py-4;
+    @apply py-1;
   }
   ol {
     @apply list-decimal pl-4;
@@ -330,7 +340,7 @@ div.product {
     @apply row-span-3 col-span-1 !w-full !mb-0;
     &__image {
       img {
-        @apply aspect-square object-center object-cover;
+        @apply object-center object-cover;
       }
     }
     .flex-viewport {

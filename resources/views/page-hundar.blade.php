@@ -40,10 +40,18 @@
                 </div>
                 <div class="p-4 flex flex-wrap gap-4">
 
-                    <div class="w-full h-[500px] flex gap-4">
-
+                    <div class="w-full h-[500px] flex flex-nowrap gap-4">
+                        <div class="w-1/6">
+                            <ul class="grid grid-cols-1 grid-rows-6 gap-2 h-full ">
+                                @foreach ($pedigreeImages as $pedigreeImage)
+                                    <li id="pedigreeImageSmall" class="w-full h-full hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
+                                        <img width="100%" height="100%" class="aspect-square w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}" aria-label="{{__('Klicka för att se denna bild i ett större format', 'mimir')}}.">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     <div class="relative w-full h-full">
-                        <img width="100%" height="100%" id="pedigreeImageBig" class="w-full h-[500px] object-cover object-top !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
+                        <img width="100%" height="100%" id="pedigreeImageBig" class="w-full h-full object-cover object-center !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
                         <div class="absolute bottom-0 pt-2 w-full h-[30px] flex justify-center items-center bg-secondary">
                             <i id="pedigreePrevious" class="fa-solid fa-chevron-left text-2xl px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
                             <p class="text-zinc-800 select-none font-secondary text-2xl"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
@@ -68,15 +76,7 @@
                         </div>
                     </div>
 
-                    <div class="w-full">
-                        <ul class="flex w-full h-40">
-                            @foreach ($pedigreeImages as $pedigreeImage)
-                                <li id="pedigreeImageSmall" class="w-full h-full hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                                    <img width="100%" height="100%" class="w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}" aria-label="{{__('Klicka för att se denna bild i ett större format', 'mimir')}}.">
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
+                    
 
                 </div>
             </div>

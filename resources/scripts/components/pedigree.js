@@ -97,10 +97,10 @@ if (dogPedigree) {
     document.addEventListener('keydown', arrowKeys)
     function arrowKeys(e) {
         if (checkOpen === true) {
-            if (e.keyCode === 37) {
+            if (e.keyCode === 37 || e.keyCode === 38) {
                 changeImage('previous')
             }
-            if (e.keyCode === 39) {
+            if (e.keyCode === 39 || e.keyCode === 40) {
                 changeImage('next')
             }
         }
