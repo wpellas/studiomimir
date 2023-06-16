@@ -1,0 +1,12 @@
+#sbi_images {
+  @apply flex gap-2 !transition-opacity !duration-200 !delay-0 !ease-in-out;
+  a {
+    @apply !transition-opacity !duration-200 !delay-0 !ease-in-out;
+    &:hover {
+      @apply !opacity-60 !duration-200 !delay-0 !ease-in-out;
+    }
+  }
+  * {
+    @apply !transition-opacity !duration-200 !delay-0 !ease-in-out;
+  }
+}

@@ -1,0 +1,18 @@
+.content-info {
+  @apply relative bottom-0 w-full h-[100px];
+  .nav {
+    @apply w-full flex justify-center gap-8;
+    li {
+      @apply list-none;
+      a {
+        @apply text-black transition-all duration-200 ease-in-out;
+        &:hover {
+          @apply text-primary;
+        }
+      }
+    }
+    .current_page_item {
+      @apply no-underline;
+    }
+  }
+}

@@ -53,3 +53,15 @@ body {
 
     }
 }
+.edit-post-visual-editor__post-title-wrapper {
+    @apply w-full text-center;
+}
+.editor-styles-wrapper {
+    @apply w-full flex flex-wrap justify-center;
+}
+.is-root-container {
+    @apply flex flex-wrap justify-center gap-8;
+}
+.block-list-appender {
+    @apply w-full;
+}

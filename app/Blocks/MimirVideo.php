@@ -33,7 +33,7 @@ class MimirVideo extends Block
      *
      * @var string|array
      */
-    public $icon = 'editor-ul';
+    public $icon = 'video-alt3';
 
     /**
      * The block keywords.

@@ -1,0 +1,109 @@
+.large-menu {
+  @apply h-[100px] w-full flex justify-center items-center gap-16;
+  li {
+    @apply z-20 list-none text-secondary relative text-4xl w-[200px] text-center p-4;
+    border-radius: 0.5rem 0.5rem 0 0;
+    transition: background-color 0.1s;
+    &:first-child {
+      @apply rounded-lg;
+    }
+    &:hover {
+      @apply text-primary bg-secondary drop-shadow-none;
+    }
+    &:hover a {
+      @apply text-primary;
+    }
+    a {
+      @apply text-secondary drop-shadow-md;
+    }
+    ul {
+      @apply opacity-0 invisible pointer-events-none w-full absolute top-full overflow-visible left-0 flex flex-wrap bg-secondary;
+      transition: 0.1s;
+      border-radius: 0 0 0.5rem 0.5rem;
+      .current-menu-item {
+        a {
+          @apply !text-black;
+        }
+        ul > li > a {
+          @apply !text-primary;
+        }
+      }
+      .current_page_item {
+        @apply !text-black;
+      }
+      .current_page_item::after {
+        @apply !w-0 !h-0;
+        content: none;
+      }
+      li {
+        @apply relative w-full flex items-center text-left p-0 m-0;
+        a {
+          @apply relative px-4 py-1 w-full text-lg text-primary;
+        }
+        a:hover {
+          @apply text-black transition-colors duration-100 ease-in-out;
+        }
+        &:first-child {
+          @apply rounded-none pb-0;
+        }
+        &:last-child {
+          @apply mb-2;
+        }
+        &:hover {
+          @apply rounded-none bg-none drop-shadow-none;
+        }
+      }
+      li:last-child {
+        @apply pb-2 border-none;
+        border-radius: 0 1rem 1rem 1rem;
+      }
+    }
+    &:hover ul {
+      @apply opacity-100 visible pointer-events-auto;
+    }
+  }
+  .current_page_item::after {
+    /* @apply z-10 w-full border-b-[1px] border-white absolute left-0 bottom-0; */
+    @apply absolute z-20 w-2 h-2 left-2 top-2 rounded-full bg-primary;
+    content: ' ';
+  }
+}
+
+#smallMenu > div > .menu-primary_navigation-container {
+  @apply h-full flex justify-center items-center;
+}
+.mobile-menu {
+  @apply w-full left-0;
+  li {
+    @apply w-full pt-4 relative list-none transition-all duration-200;
+    &:hover {
+      @apply translate-x-2;
+    }
+    &:hover ul {
+      @apply -translate-x-2;
+    }
+    a {
+      @apply text-primary;
+    }
+    ul {
+      @apply text-xl left-4 relative transition-all duration-200;
+      li {
+        @apply transition-all duration-200;
+        &:hover {
+          @apply translate-x-2;
+        }
+      }
+    }
+  }
+  .current-menu-item {
+    a {
+      @apply !text-black;
+    }
+    ul > li > a {
+      @apply !text-primary;
+    }
+  }
+  .current_page_item {
+    @apply !text-black;
+  }
+}

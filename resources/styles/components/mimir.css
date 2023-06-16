@@ -1,0 +1,26 @@
+.mimir {
+  h1 {
+    @apply py-6;
+  }
+  h2 {
+    @apply py-5;
+  }
+  h3 {
+    @apply py-4;
+  }
+  h4 {
+    @apply py-3;
+  }
+  h5 {
+    @apply py-2;
+  }
+  h6 {
+    @apply py-1;
+  }
+  ol {
+    @apply list-decimal pl-4;
+  }
+  ul {
+    @apply list-disc pl-4;
+  }
+}

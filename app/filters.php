@@ -40,3 +40,25 @@ add_filter('woocommerce_get_breadcrumb', function ($crumbs, $breadcrumb) {
 
     return $crumbs;
 }, 10, 2);
+
+// Filter the allowed block types for specific user roles
+
+add_filter('allowed_block_types', function ($allowed_block_types, $post) {
+    if (function_exists('acf_get_block_types')) {
+
+        // Array of allowed block types for the administrator role
+        $allowed_blocks = array_keys(acf_get_block_types());
+        
+        // Get the current user role
+        $user_role = wp_get_current_user()->roles[0];
+        
+        // Check if the user role is 'administrator'
+        if ($user_role === 'administrator') {
+            // Set the allowed block types to the administrator's allowed blocks
+            $allowed_block_types = $allowed_blocks;
+        }
+        
+        return $allowed_block_types;
+    }
+}, 10, 2);
+ 
