@@ -1287,14 +1287,14 @@
       "dropCap": false,
       "fontFamilies": [
         {
-          "name": "Lora",
+          "name": "Raleway",
           "slug": "primary",
-          "fontFamily": "Lora,serif"
+          "fontFamily": "Raleway,sans-serif"
         },
         {
-          "name": "Montserrat",
+          "name": "Yeseva One",
           "slug": "secondary",
-          "fontFamily": "Montserrat,serif"
+          "fontFamily": "Yeseva One,cursive"
         }
       ],
       "fontSizes": [

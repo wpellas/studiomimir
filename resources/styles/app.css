@@ -8,15 +8,15 @@
 @import 'components/contactform.css';
 @import 'components/woocommerce.css';
 @font-face {
-  font-family: 'Lora';
-  src: local('Lora'), url('../fonts/Lora-Regular.ttf') format('truetype');
+  font-family: 'Raleway';
+  src: local('Raleway'), url('../fonts/Raleway-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: local('Montserrat'),
-    url('../fonts/Montserrat-Medium.ttf') format('truetype');
+  font-family: 'Yeseva One';
+  src: local('Yeseva One'),
+    url('../fonts/YesevaOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,7 +38,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply font-secondary text-primary uppercase;
+    @apply font-secondary text-primary;
   }
   h1 {
     @apply text-4xl;

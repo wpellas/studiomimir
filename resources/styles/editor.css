@@ -60,7 +60,7 @@ body {
     @apply w-full flex flex-wrap justify-center;
 }
 .is-root-container {
-    @apply flex flex-wrap justify-center gap-8;
+    @apply !grid grid-cols-1 row-auto justify-center gap-8;
 }
 .block-list-appender {
     @apply w-full;
