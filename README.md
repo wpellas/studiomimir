@@ -13,9 +13,11 @@ Project built in Sage 10 & Bedrock using:
 * CookieYes
 * GTM4WP
 * Yoast SEO
+* ... and more
 
 ## FEATURES
 * Many custom post types and taxonomies
 * Many custom ACF/Sage Gutenberg Blocks
 * Page-sensitive header layout
 * Responsive Design
+* ... and much more
