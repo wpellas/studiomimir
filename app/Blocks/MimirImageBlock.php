@@ -5,21 +5,21 @@ namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class MimirTextImage extends Block
+class MimirImageBlock extends Block
 {
     /**
      * The block name.
      *
      * @var string
      */
-    public $name = 'Mimir Text Image';
+    public $name = 'Mimir Image Block';
 
     /**
      * The block description.
      *
      * @var string
      */
-    public $description = 'A simple Mimir Text Image block.';
+    public $description = 'A simple Mimir Image Block block.';
 
     /**
      * The block category.
@@ -33,14 +33,14 @@ class MimirTextImage extends Block
      *
      * @var string|array
      */
-    public $icon = 'id';
+    public $icon = 'format-image';
 
     /**
      * The block keywords.
      *
      * @var array
      */
-    public $keywords = ['studio', 'mimir', 'text', 'image'];
+    public $keywords = ['studio', 'mimir', 'image'];
 
     /**
      * The block post type allow list.
@@ -113,9 +113,7 @@ class MimirTextImage extends Block
      * @var array
      */
     public $example = [
-        'choice_field' => 'Left',
-        'text_block_field' => '',
-        'image_field' => '',
+        'image_field' => ''
     ];
 
     /**
@@ -126,8 +124,6 @@ class MimirTextImage extends Block
     public function with()
     {
         return [
-            'choice_field' => $this->choiceField(),
-            'text_block_field' => $this->textBlockField(),
             'image_field' => $this->imageField(),
         ];
     }
@@ -139,25 +135,12 @@ class MimirTextImage extends Block
      */
     public function fields()
     {
-        $mimirTextImage = new FieldsBuilder('mimir_text_image');
+        $mimirImageBlock = new FieldsBuilder('mimir_image_block');
 
-        $mimirTextImage
-            ->addRadio('choice_field', [
-                'label' => 'Image Side',
-                'instructions' => 'Determine which side that the image appears on. Note that this only works on desktop / large view of the website.',
-                'choices' => ['Left', 'Right'],
-                'allow_null' => 0,
-                'default_value' => 'Left',
-                'return_format' => 'value'
-            ])
-            ->addWysiwyg('text_block_field', [
-                'label' => 'Text Body',
-                'tabs' => 'visual',
-                'media_upload' => 0,
-            ])
+        $mimirImageBlock
             ->addImage('image_field');
 
-        return $mimirTextImage->build();
+        return $mimirImageBlock->build();
     }
 
     /**
@@ -165,17 +148,6 @@ class MimirTextImage extends Block
      *
      * @return array
      */
-    public function choiceField()
-    {
-        return get_field('choice_field') ?: $this->example['choice_field'];
-    }
-
-
-    public function textBlockField()
-    {
-        return get_field('text_block_field') ?: $this->example['text_block_field'];
-    }
-
     public function imageField()
     {
         return get_field('image_field') ?: $this->example['image_field'];
