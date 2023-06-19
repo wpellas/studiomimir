@@ -14,7 +14,7 @@
                     <img width="600" height="600" class="object-cover object-center aspect-square transition-opacity duration-200" src="{{get_the_post_thumbnail_url($portfolio_card->ID, 'portrait')}}" loading="eager" alt="portfolio_{{get_the_title()}}">
                     
                     <div class="flex-1 w-full flex justify-center items-center pb-4">
-                      <p class="max-w-full text-2xl lg:text-xl 2xl:text-2xl mt-4 font-secondary overflow-visible text-clip break-normal whitespace-nowrap">{!!mb_strtoupper($terms->name)!!}</p>
+                      <p class="max-w-full text-2xl lg:text-xl 2xl:text-2xl mt-4 font-secondary overflow-visible text-clip break-normal whitespace-nowrap">{!!esc_html($terms->name)!!}</p>
                     </div>
                   </a>
                 </div>

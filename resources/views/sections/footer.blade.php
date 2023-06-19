@@ -3,7 +3,7 @@
 
     {{-- @php(dynamic_sidebar('sidebar-footer')) --}}
     @if (has_nav_menu('secondary_navigation'))
-    <nav class="nav-secondary uppercase w-full flex justify-center font-secondary text-lg" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
+    <nav class="nav-secondary  w-full flex justify-center font-primary uppercase text-lg" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
       {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav', 'echo' => false]) !!}
     </nav>
     @endif
@@ -21,6 +21,6 @@
     @else
     <span class="w-full py-4"></span>
     @endif
-    <p class="w-full text-sm lg:text-base text-center mb-6 uppercase">{{__("All content copyright", 'mimir')}} &#169; {{date('Y')}} Studio Mimir</p>
+    <p class="w-full text-sm lg:text-base text-center mb-6 ">{{__("All content copyright", 'mimir')}} &#169; {{date('Y')}} Studio Mimir</p>
   </div>
 </footer>

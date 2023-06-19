@@ -5,7 +5,7 @@
     <div class="w-full lg:w-lg h-full px-4 lg:px-0 font-primary text-black">
         @content
 
-        <ul class="w-full font-secondary text-xl flex gap-2 justify-center items-center flex-nowrap text-primary uppercase text-center py-8">
+        <ul class="w-full font-secondary text-xl flex gap-2 justify-center items-center flex-nowrap text-primary  text-center py-8">
             <li class="flex-1"><a class="text-primary" href="">Allt</a></li>
             <li class="flex-1 border-b-[1px] border-primary">Printables</li>
             <li class="flex-1">Foton</li>
@@ -26,7 +26,7 @@
                     <a href="{{the_permalink()}}">
                         <img width="100%" height="100%" class="h-auto w-full aspect-square object-cover object-center" src="{{get_the_post_thumbnail_url()}}" alt="{{get_the_title()}}">
                         <div class="w-full text-center">
-                            <h1 class="text-lg text-primary uppercase font-secondary">Produktnamn</h1>
+                            <h1 class="text-lg text-primary  font-secondary">Produktnamn</h1>
                             <p class="text-base text-black">1039 SEK</p>
                         </div>
                     </a>

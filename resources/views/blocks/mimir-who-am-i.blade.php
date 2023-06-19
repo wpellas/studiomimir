@@ -3,7 +3,7 @@
       <div class=" w-full lg:w-1/2 text-center flex flex-wrap justify-center items-stretch gap-4 text-lg">
 
         @hasfield('title_field')
-          <h1 class="text-2xl lg:text-4xl uppercase text-primary font-secondary">@field('title_field')</h1>
+          <h1 class="text-2xl lg:text-4xl  text-primary font-secondary">@field('title_field')</h1>
         @endfield
 
         @hasfield('body_field')
