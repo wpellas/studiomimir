@@ -46,7 +46,7 @@ header {
   li {
     @apply z-20 list-none relative text-4xl w-[200px] text-center p-4;
     border-radius: 0.5rem 0.5rem 0 0;
-    transition: background-color 0.1s;
+    transition: background-color 0.2s;
     &:first-child {
       @apply rounded-lg;
     }
@@ -58,7 +58,7 @@ header {
     }
     ul {
       @apply opacity-0 invisible pointer-events-none w-full absolute top-full overflow-visible left-0 flex flex-wrap bg-secondary;
-      transition: 0.1s;
+      transition: 0.2s;
       border-radius: 0 0 0.5rem 0.5rem;
       .current-menu-item {
         a {
@@ -81,7 +81,7 @@ header {
           @apply relative px-4 py-1 w-full text-lg text-primary;
         }
         a:hover {
-          @apply text-black transition-colors duration-100 ease-in-out;
+          @apply text-black transition-colors duration-200 ease-in-out;
         }
         &:first-child {
           @apply rounded-none pb-0;

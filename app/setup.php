@@ -16,6 +16,9 @@ use function Roots\bundle;
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script( 'font-awesome-kit', 'https://kit.fontawesome.com/5a6823260c.js', array(), null );
     wp_enqueue_style( 'material-symbols', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', array(), null );
+    wp_localize_script(get_template_directory_uri() . '/public/js/app.js', 'sageData', [
+        'homeUrl' => home_url(),
+    ]);
     bundle('app')->enqueue();
 }, 100);
 

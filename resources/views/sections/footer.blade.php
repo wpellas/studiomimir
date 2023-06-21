@@ -12,7 +12,7 @@
       <ul class="w-full flex justify-center py-4">
         @if(!empty(get_field('footer_instagram_field', 'some-options')))
         <li>
-          <a class="relative" href="https://www.instagram.com/{{get_field('footer_instagram_field', 'some-options')}}" aria-label="{{bloginfo('name') . __('s Instagramkonto', 'mimir')}}">
+          <a class="relative" href="https://www.instagram.com/{{get_field('footer_instagram_field', 'some-options')}}" target="_blank" aria-label="{{bloginfo('name') . __('s Instagramkonto', 'mimir')}}">
             <i class="fa-brands fa-instagram text-4xl text-black hover:text-primary hover:scale-105 transition-all duration-200"></i>
           </a>
         </li>

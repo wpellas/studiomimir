@@ -34,33 +34,42 @@
         <img width="100%" height="100%" id="pedigreeImage" class="w-full h-[500px] object-cover hover:opacity-60 cursor-pointer transition-opacity duration-200" src="{{$largePedigree}}" alt="{{get_the_title()}}" aria-label="{{__('Öppna mer information om hunden', 'mimir')}}.">
         <div id="pedigreeContainer" class="hidden fixed z-30 top-0 left-0 w-full h-full flex justify-center items-center">
             <div id="pedigreeBackdrop" class="h-full w-full absolute bg-black opacity-75 z-30"></div>
-            <div class="z-30 bg-secondary lg:w-lg relative">
+            <div class="z-30 bg-white lg:w-lg relative">
                 <div id="pedigreeExit" class="absolute top-0 right-1 z-40 cursor-pointer">
                     <i class="fa-solid fa-xmark z-30 text-5xl transition-colors duration-200 hover:text-black"></i>
                 </div>
                 <div class="p-4 flex flex-wrap gap-4">
 
-                    <div class="w-full h-[500px] flex flex-nowrap gap-4">
-                        <div class="w-1/6">
-                            <ul class="grid grid-cols-1 grid-rows-6 gap-2 h-full ">
-                                @foreach ($pedigreeImages as $pedigreeImage)
-                                    <li id="pedigreeImageSmall" class="w-full h-full hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
-                                        <img width="100%" height="100%" class="aspect-square w-full h-full object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}" aria-label="{{__('Klicka för att se denna bild i ett större format', 'mimir')}}.">
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    <div class="relative w-full h-full">
-                        <img width="100%" height="100%" id="pedigreeImageBig" class="w-full h-full object-cover object-center !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
-                        <div class="absolute bottom-0 pt-2 w-full h-[30px] flex justify-center items-center bg-secondary">
-                            <i id="pedigreePrevious" class="fa-solid fa-chevron-left text-2xl px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
-                            <p class="text-zinc-800 select-none font-secondary text-2xl"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
-                            <i id="pedigreeNext" class="fa-solid fa-chevron-right text-2xl px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
-                        </div>
+                    <div class="w-full flex flex-nowrap gap-4">
+
+                    <div class="w-1/6 my-auto">
+                        <i id="pedigreePrevious" class="fa-solid fa-chevron-up text-2xl select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                        <ul class="grid grid-cols-1 row-auto gap-2">
+                            @foreach ($pedigreeImages as $pedigreeImage)
+                                <li id="pedigreeImageSmall" class="aspect-square hover:opacity-60 cursor-pointer border-primary transition-opacity duration-200">
+                                    <img width="100%" height="100%" class="aspect-square object-cover object-top !opacity-100" src="{{$pedigreeImage['pedigree_image']['sizes']['portrait']}}" alt="{{get_the_title()}}" aria-label="{{__('Klicka för att se denna bild i ett större format', 'mimir')}}.">
+                                </li>
+                            @endforeach
+                        </ul>
+                        <i id="pedigreeNext" class="fa-solid fa-chevron-down text-2xl select-none cursor-pointer transition-colors duration-200 hover:text-black"></i>
+                    </div>
+
+                    <div class="relative w-full h-full aspect-square">
+                        <img width="100%" height="100%" id="pedigreeImageBig" class="aspect-square object-cover object-top !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
+                        <p class="absolute bottom-0 bg-white p-1 rounded-tr-md left-0 text-zinc-800 select-none font-primary text-2xl"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                     </div>
 
                     <div class="relative w-full text-left">
-                        <a class="text-5xl font-secondary text-primary" href="{{the_permalink()}}">@title</a>
+                        <a class="text-5xl font-secondary text-primary flex items-center gap-2" href="{{the_permalink()}}">
+                            @title
+                            @hasfield('gender')
+                                @if(get_field('gender') === 'male')
+                                    <i class="fa-solid fa-mars text-black text-lg"></i>
+                                @else
+                                    <i class="fa-solid fa-venus text-black text-lg"></i>
+                                @endif
+                            @endfield
+                        </a>
                         <h3 class="pt-2 text-lg italic text-zinc-800">@field('pedigree_name')</h3>
                         <p class="text-sm font-secondary !pt-0 !pb-0 border-b-[1px] border-primary border-dotted">
                             @if(!empty($titles))
@@ -70,14 +79,12 @@
                             @endif
                         </p>
                         <div class="pt-2 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
-                        @if(get_field('dog_owner'))
-                            <h5 class="absolute bottom-0 text-sm italic text-zinc-800 font-secondary">Ägare: @field('dog_owner')</p>
-                        @endif
+                        @hasfield('instagram_field')
+                            <a class="absolute bottom-0 right-0 pr-1 flex items-center gap-1 flex-nowrap text-2xl text-black hover:text-primary hover:scale-105 transition-all duration-200" href="https://www.instagram.com/@field('instagram_field')" target="_blank"><i class="fa-brands fa-instagram"></i><span>@field('instagram_field')</span></a>
+                        @endfield
                         </div>
+
                     </div>
-
-                    
-
                 </div>
             </div>
         </div>

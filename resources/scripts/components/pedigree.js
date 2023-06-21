@@ -28,7 +28,7 @@ if (dogPedigree) {
         })
       })
       if (pedigreeImageSmall[0]) {
-        pedigreeImageSmall[0].classList.add('border-2')
+        pedigreeImageSmall[0].classList.add('border-2', "opacity-60")
       }
 
       id = 0
@@ -69,12 +69,12 @@ if (dogPedigree) {
       // Removes styling from all items but adds it to the matching image
       // Also sets the ID variable to properly display which image is currently shown. +1 cause array.
       smallImages.forEach((item) => {
-        pedigreeImageSmall[item.index].classList.remove("border-2")
+        pedigreeImageSmall[item.index].classList.remove("border-2", "opacity-60")
         if (item.index == id) {
           pedigreeImageBig.setAttribute('src', item.image)
           pedigreeImageNumber.innerHTML = Number(item.index) + 1
           id = item.index
-          pedigreeImageSmall[item.index].classList.add("border-2")
+          pedigreeImageSmall[item.index].classList.add("border-2", "opacity-60")
         }
       })
     }
@@ -88,7 +88,7 @@ if (dogPedigree) {
       pedigreeImageSmall.forEach((item) => {
         item.classList.remove("border-2")
       })
-      pedigreeImageSmall[0].classList.add("border-2")
+      pedigreeImageSmall[0].classList.add("border-2", "opacity-60")
       pedigreeImageBig.setAttribute('src', smallImages[0].image)
       pedigreeImageNumber.innerHTML = 1
     }
@@ -102,6 +102,9 @@ if (dogPedigree) {
             }
             if (e.keyCode === 39 || e.keyCode === 40) {
                 changeImage('next')
+            }
+            if (e.keyCode === 27) {
+              toggleHidden()
             }
         }
     }
@@ -120,9 +123,9 @@ if (dogPedigree) {
 const singlePedigreeImageBig = document.querySelector('#singlePedigreeImageBig')
 if (singlePedigreeImageBig) {
   let singlePedigreeImageSmall = document.querySelectorAll("#singlePedigreeImageSmall")
-  let singlePedigreePrevious = document.querySelector("#singlePedigreePrevious")
+  let singlePedigreePrevious = document.querySelectorAll("#singlePedigreePrevious")
   let singlePedigreeImageNumber = document.querySelector("#singlePedigreeImageNumber")
-  let singlePedigreeNext = document.querySelector("#singlePedigreeNext")
+  let singlePedigreeNext = document.querySelectorAll("#singlePedigreeNext")
 
   const smallImages = []
 
@@ -148,12 +151,16 @@ if (singlePedigreeImageBig) {
     registerSmallImages()
     
     // Change image by pressing the arrows on the page
-    singlePedigreePrevious.addEventListener('click', () => {
-      changeImage('previous')
-  })
+    singlePedigreePrevious.forEach((previous) => {
+      previous.addEventListener('click', () => {
+        changeImage('previous')
+    })
+    })
 
-  singlePedigreeNext.addEventListener('click', () => {
+  singlePedigreeNext.forEach((next) => {
+    next.addEventListener('click', () => {
       changeImage('next')
+  })
   })
 
   function changeImage(e) {
@@ -181,12 +188,12 @@ if (singlePedigreeImageBig) {
     // Removes styling from all items but adds it to the matching image
     // Also sets the ID variable to properly display which image is currently shown. +1 cause array.
     smallImages.forEach((item) => {
-      singlePedigreeImageSmall[item.index].classList.remove("border-2")
+      singlePedigreeImageSmall[item.index].classList.remove("border-2", "opacity-60")
       if (item.index == id) {
         singlePedigreeImageBig.setAttribute('src', item.image)
         singlePedigreeImageNumber.innerHTML = Number(item.index) + 1
         id = item.index
-        singlePedigreeImageSmall[item.index].classList.add("border-2")
+        singlePedigreeImageSmall[item.index].classList.add("border-2", "opacity-60")
       }
     })
   }
