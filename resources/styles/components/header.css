@@ -11,7 +11,6 @@ header {
         @apply bg-primary;
         a {
           @apply text-secondary;
-          
         }
         li a {
           @apply bg-primary text-secondary;
@@ -30,7 +29,7 @@ header {
         @apply bg-primary;
       }
     }
-    
+
     a {
       @apply text-primary;
     }

@@ -31,7 +31,7 @@
               </h1>
               
               @if(!is_admin())
-              <i id="questionnaire_arrow" class="fa-solid fa-chevron-down absolute right-2 top-0 select-none cursor-pointer text-2xl transition-all duration-300 hover:animate-pulse ease-in-out" aria-label="{{__('Visa svaret till frågan', 'mimir')}}."></i>
+              <i id="questionnaire_arrow" class="fa-solid fa-chevron-down absolute right-2 top-0 select-none cursor-pointer text-2xl transition-all duration-300 hover:animate-pulse ease-in-out" aria-label="{{__('Visa svaret till frågan', 'mimir')}}: @sub('question_title_field')"></i>
               @endif
             </div>
 

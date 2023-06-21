@@ -20,7 +20,7 @@
 {{-- Small Format --}}
   <header class="block lg:hidden z-20 fixed w-full top-0 pointer-events-none">
     <div class="w-full absolute top-0 h-20 bg-secondary flex flex-nowrap justify-between items-center px-4 drop-shadow-lg pointer-events-auto">
-      <a class="text-black h-full w-auto" href="{{home_url()}}"><img class="relative h-full w-auto" src="{{get_site_icon_url()}}" alt="{{__('studio mimir logo', 'mimir')}}" aria-label="{{bloginfo('name')}}{{__('s Logotyp', 'mimir')}}"></a>
+      <a class="text-black h-full w-auto" href="{{home_url()}}"><img class="relative h-full w-auto" src="{{get_site_icon_url('small')}}" alt="{{__('studio mimir logo', 'mimir')}}" aria-label="{{bloginfo('name')}}{{__('s Logotyp', 'mimir')}}"></a>
       <i id="openSmallMenu" class="fa-solid fa-bars relative text-black cursor-pointer text-4xl select-none" aria-label="{{__('Öppna Mobilmeny', 'mimir')}}"></i>
     </div>
     <nav id="smallMenu" class="nav-small relative top-0 left-0 flex justify-end h-[100vh] invisible opacity-0 pointer-events-auto translate-x-full transition-all duration-200" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
