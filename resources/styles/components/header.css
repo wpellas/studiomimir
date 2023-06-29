@@ -1,5 +1,8 @@
 header {
   .nav-fp {
+    li {
+      @apply transition-all duration-200;
+    }
     a {
       @apply text-secondary drop-shadow-md;
     }
@@ -35,6 +38,9 @@ header {
     }
   }
   .nav-wc {
+    li {
+      @apply transition-all duration-200;
+    }
     a {
       @apply text-secondary drop-shadow-md;
     }

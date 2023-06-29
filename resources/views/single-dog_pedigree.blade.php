@@ -35,12 +35,12 @@
                             @endif
                         </p>
                         <div class="relative">
-                            <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-[480px] aspect-square object-cover object-top !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
+                            <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-full aspect-square object-cover object-top !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
                             <p class="hidden lg:block absolute bottom-0 bg-white p-1 rounded-tr-md text-zinc-800 select-none font-primary text-2xl"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                         </div>
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0 lg:hidden">
                             <i id="singlePedigreePrevious" class="fa-solid fa-chevron-left px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black" aria-label="{{__('Klicka för att se föregående bild på hunden', 'mimir')}}."></i>
-                            <p class="text-zinc-800 select-none font-secondary"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
+                            <p class="text-zinc-800 select-none font-primary"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                             <i id="singlePedigreeNext" class="fa-solid fa-chevron-right px-1 select-none cursor-pointer transition-colors duration-200 hover:text-black" aria-label="{{__('Klicka för att se nästa bild på hunden', 'mimir')}}."></i>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         </p>
                         <div class="pt-4 text-base leading-6">{!!strip_tags(get_field('pedigree_description'), '<p>, <a>, <strong>, <em>')!!}</div>
                         @hasfield('instagram_field')
-                            <a class="absolute bottom-0 right-0 pr-1 flex items-center gap-1 flex-nowrap text-2xl text-black hover:text-primary hover:scale-105 transition-all duration-200" href="https://www.instagram.com/@field('instagram_field')" target="_blank"><i class="fa-brands fa-instagram"></i><span>@field('instagram_field')</span></a>
+                            <a class="lg:absolute bottom-0 right-0 pr-1 flex items-center gap-1 flex-nowrap text-lg lg:text-2xl text-black hover:text-primary hover:scale-105 transition-all duration-200" href="https://www.instagram.com/@field('instagram_field')" target="_blank"><i class="fa-brands fa-instagram"></i><span>@field('instagram_field')</span></a>
                         @endfield
                     </div>
 

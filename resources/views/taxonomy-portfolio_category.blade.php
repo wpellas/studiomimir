@@ -22,7 +22,7 @@
     ])
 <section>
     <div class="w-full h-full lg:w-lg pt-8 px-4 lg:px-0">
-        <ul class="relative flex flex-wrap lg:block w-full lg:w-lg leading-[0] gap-2 columns-2 lg:columns-3">
+        <ul class="relative flex flex-wrap lg:block w-full lg:w-lg leading-[0] gap-4 lg:gap-2 columns-2 lg:columns-3">
             @posts
             @if(get_the_post_thumbnail_url())
         {{-- Small Format --}}

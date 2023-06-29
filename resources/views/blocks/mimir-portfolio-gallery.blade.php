@@ -1,5 +1,5 @@
 <div class="px-4 lg:px-0 w-full h-full relative flex flex-wrap justify-center {{ $block->classes }} {{is_admin() ? "pointer-events-none" : ""}}">
-    <ul class="relative flex flex-wrap lg:block w-full lg:w-lg leading-[0] gap-2 columns-2 lg:columns-3">
+    <ul class="relative flex flex-wrap lg:block w-full lg:w-lg leading-[0] gap-4 lg:gap-2 columns-2 lg:columns-3">
         @hasfield('portfolio_gallery_field')
         @foreach($portfolio_gallery_field as $gallery_image)
         @if(!empty($gallery_image))

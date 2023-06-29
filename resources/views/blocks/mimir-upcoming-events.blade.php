@@ -24,7 +24,7 @@
                 <div class="w-[384px] border-r-0 lg:border-r-[1px] lg:border-primary flex flex-wrap content-center justify-center gap-1">
                     <h1 class="w-full text-center  text-xl text-primary font-bold font-secondary">@title</h1>
                     <span class="hidden lg:block border-b-[1px] border-dotted w-1/4 border-primary"></span>
-                    <p class="w-full text-center text-xl font-secondary">{{date('F j, H:i', $timestamp)}} - {{$expiredDate}}</p>
+                    <p class="w-full text-center text-xl font-secondary capitalize">{{date_i18n('F j, H:i', $timestamp, true, __('sv_SE', 'mimir'))}} - {{$expiredDate}}</p>
                 </div>
                 <div class="w-full text-base lg:text-xl block lg:flex flex-wrap content-center text-center lg:text-left">
                     {!! strip_tags($body, '<div>, <a>, <strong>, <em>') !!}
