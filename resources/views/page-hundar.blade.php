@@ -55,7 +55,7 @@
                     </div>
 
                     <div class="relative w-full h-full aspect-square">
-                        <img width="100%" height="100%" id="pedigreeImageBig" class="aspect-square object-cover object-top !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
+                        <img width="100%" height="100%" id="pedigreeImageBig" class="aspect-square object-scale-down !opacity-100" src="{{$largePedigree}}" alt="{{get_the_title()}}">
                         <p class="absolute bottom-0 bg-white p-1 rounded-tr-md left-0 text-zinc-800 select-none font-primary text-2xl"><span id="pedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                     </div>
 

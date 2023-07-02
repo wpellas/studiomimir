@@ -35,7 +35,7 @@
                             @endif
                         </p>
                         <div class="relative">
-                            <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-full aspect-square object-cover object-center !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
+                            <img width="100%" height="100%" id="singlePedigreeImageBig" class="w-full h-full aspect-square object-scale-down !opacity-100" src="{{$pedigreeImages[0]['pedigree_image']['url']}}" alt="{{get_the_title()}}">
                             <p class="hidden lg:block absolute bottom-0 bg-white p-1 rounded-tr-md text-zinc-800 select-none font-primary text-2xl"><span id="singlePedigreeImageNumber">1</span>/{{count($pedigreeImages)}}</p>
                         </div>
                         <div class="w-full h-[30px] flex justify-center items-center text-3xl lg:text-2xl pt-4 lg:pt-0 lg:hidden">
