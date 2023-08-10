@@ -7,6 +7,7 @@
 @import 'components/footer.css';
 @import 'components/contactform.css';
 @import 'components/woocommerce.css';
+@import 'components/aboutme.css';
 @font-face {
   font-family: 'Raleway';
   src: local('Raleway'), url('../fonts/Raleway-Light.ttf') format('truetype');

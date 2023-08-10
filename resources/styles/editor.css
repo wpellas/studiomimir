@@ -1,7 +1,20 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
+@import 'components/aboutme.css';
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway'), url('../fonts/Raleway-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Yeseva One';
+    src: local('Yeseva One'),
+      url('../fonts/YesevaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 /* Extra */
 
 .repeaterImage {

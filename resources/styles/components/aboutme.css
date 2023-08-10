@@ -1,0 +1,29 @@
+div.mimir-about-me {
+  .wp-block-mimir-about-me-text {
+    @apply w-1/2 h-full flex flex-col items-center justify-center;
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply w-full;
+    }
+  }
+  figure img {
+    @apply h-auto w-full object-cover object-center;
+  }
+  .block-editor-block-list__layout {
+    @apply flex;
+    .wp-block-acf-mimir-about-me-text {
+        @apply w-1/2;
+    }
+    .acf-block-preview {
+        @apply flex justify-center;
+    }
+    .block-editor-block-list__layout {
+        @apply block;
+    }
+  }
+}

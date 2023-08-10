@@ -34,7 +34,7 @@ export default async (app) => {
    */
   app
     .setUrl('http://localhost:3000')
-    .setProxyUrl('http://127.0.0.1')
+    .setProxyUrl('http://studiomimir.localhost')
     .watch(['resources/views', 'app']);
 
   /**
